@@ -1,3 +1,5 @@
+![Tutorial](public/Larave+WhatsappAPI.png "Tutorial")
+---
 # Tutorial: Chat de WhatsApp Básico con Laravel 12, Reverb y Blade
 
 Este repositorio acompaña a un video tutorial sobre cómo crear un chat básico al estilo WhatsApp usando **Laravel 12**, **Reverb**, **Blade** y **JavaScript** (sin Livewire). Además, se explica el uso del paquete [`@djdang3r/whatsapp-api-manager`](https://www.npmjs.com/package/@djdang3r/whatsapp-api-manager).

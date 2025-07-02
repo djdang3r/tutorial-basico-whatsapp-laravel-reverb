@@ -185,29 +185,31 @@
                                                         <div class="tab-pane fade show active" id="private-tab-pane"
                                                             role="tabpanel" aria-labelledby="private-tab" tabindex="0">
                                                             <div class="chat-contact">
-                                                                <div class="chat-contactbox" data-id="">
-                                                                    <div class="position-absolute">
-                                                                        <span class="h-45 w-45 d-flex-center b-r-50 position-relative bg-primary">
-                                                                            <img src="{{ asset('assets/images/avtar/1.png') }}"
-                                                                                alt="" class="img-fluid b-r-50">
-                                                                            <span
-                                                                                class="position-absolute top-0 end-0 p-1 bg-success border border-light rounded-circle"></span>
-                                                                        </span>
-                                                                        <!-- Contenedor para el badge -->
-                                                                        <div class="unread-badge-container"></div>
+                                                                @foreach ($contacts as $contact)
+                                                                    <div class="chat-contactbox" data-id="{{ $contact->contact_id }}">
+                                                                        <div class="position-absolute">
+                                                                            <span class="h-45 w-45 d-flex-center b-r-50 position-relative bg-primary">
+                                                                                <img src="{{ $contact->profile_picture_url ?? asset('assets/images/avtar/1.png') }}"
+                                                                                    alt="" class="img-fluid b-r-50">
+                                                                                <span
+                                                                                    class="position-absolute top-0 end-0 p-1 bg-success border border-light rounded-circle"></span>
+                                                                            </span>
+                                                                            <!-- Contenedor para el badge -->
+                                                                            <div class="unread-badge-container"></div>
+                                                                        </div>
+                                                                        <div class="flex-grow-1 text-start mg-s-50">
+                                                                            <p class="mb-0 f-w-500 text-dark txt-ellipsis-1">
+                                                                                {{ $contact->contact_name }}{{ $contact->first_name && $contact->last_name ? ' - ' . $contact->first_name . ' ' . $contact->last_name : '' }}
+                                                                            <p class="text-secondary mb-0 f-s-12 chat-message"><i
+                                                                                    class="ti ti-checks"></i>
+                                                                                {{ $contact->latestMessage($phoneNumber->phone_number_id)?->message_type !== 'TEXT' ? $contact->latestMessage($phoneNumber->phone_number_id)?->message_type : $contact->latestMessage($phoneNumber->phone_number_id)?->message_content ?? 'Sin mensajes' }}</p>
+                                                                        </div>
+                                                                        <div>
+                                                                            <p class="f-s-12 chat-time">
+                                                                                {{ $contact->latestMessage($phoneNumber->phone_number_id)?->created_at ? \Carbon\Carbon::parse($contact->latestMessage($phoneNumber->phone_number_id)?->created_at)->diffForHumans() : 'Sin tiempo' }}</p>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="flex-grow-1 text-start mg-s-50">
-                                                                        <p class="mb-0 f-w-500 text-dark txt-ellipsis-1">
-                                                                            Contact Name
-                                                                        <p class="text-secondary mb-0 f-s-12 chat-message"><i
-                                                                                class="ti ti-checks"></i>
-                                                                            Last message</p>
-                                                                    </div>
-                                                                    <div>
-                                                                        <p class="f-s-12 chat-time">
-                                                                            Last Message</p>
-                                                                    </div>
-                                                                </div>
+                                                                @endforeach
                                                             </div>
                                                         </div>
                                                         <!-- Group Chat -->

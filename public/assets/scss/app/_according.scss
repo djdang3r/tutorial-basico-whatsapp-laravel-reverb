@@ -1,0 +1,140 @@
+// >>-- 12 According css start --<<
+
+.app-accordion {
+    --bs-accordion-btn-padding-x: 1.25rem;
+    --bs-accordion-btn-padding-y: 0.75rem;
+
+    .accordion-item {
+        .accordion-body {
+            color: var(--font-light-color);
+        }
+
+        .accordion-button {
+            font-size: 15px;
+            font-weight: 500;
+
+            &:focus,
+            &:not(.collapsed) {
+                box-shadow: none !important;
+            }
+
+            &:not(.collapsed) {
+                &::after {
+                    content: "\ea62" !important;
+                    transform: none !important;
+                }
+            }
+
+            &::after {
+                background-image: none;
+                content: "\ea5f";
+                font-family: $tabler-icons;
+            }
+        }
+
+    }
+
+    &.app-accordion-icon-left {
+        .accordion-header {
+            .accordion-button {
+                padding-left: 40px;
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    left: 15px;
+                }
+            }
+        }
+    }
+
+    &.app-accordion-plus {
+        .accordion-item {
+            .accordion-button {
+                &:not(.collapsed) {
+                    &::after {
+                        content: "\eaf2" !important;
+                    }
+                }
+
+                &::after {
+                    content: "\eb0b";
+                }
+            }
+
+        }
+    }
+
+    &.app-accordion-no-icon {
+        .accordion-item {
+            .accordion-button {
+                &:not(.collapsed) {
+                    &::after {
+                        content: none !important;
+                    }
+                }
+
+                &::after {
+                    content: "none";
+                }
+            }
+
+        }
+    }
+}
+
+
+@mixin accordion_mixin($name, $color) {
+    .accordion-#{$name} {
+        .accordion-item {
+            border-color: rgba(#{$color}, 0.2);
+
+            .accordion-button {
+                color: rgba(#{$color}, 1);
+
+                &[aria-expanded=true] {
+                    background-color: rgba(#{$color}, 1) !important;
+                    color: var(--white);
+                }
+            }
+        }
+    }
+
+    .accordion-light-#{$name} {
+        .accordion-item {
+            border-color: rgba(#{$color}, 0.2);
+
+            .accordion-button {
+                color: rgba(#{$color}, 1);
+
+                &[aria-expanded=true] {
+                    background-color: rgba(#{$color}, 0.10) !important;
+                    color: rgba(#{$color}, 1) !important;
+                }
+            }
+        }
+    }
+
+
+    .accordion-outline-#{$name} {
+        .accordion-item {
+            border-color: rgba(#{$color}, 1);
+
+            .accordion-button {
+                color: rgba(#{$color}, 1);
+
+                &[aria-expanded=true] {
+                    border-color: rgba(#{$color}, 0.1) !important;
+                    background-color: rgba(#{$color}, 0.1);
+                    color: rgba(#{$color}, 0.8) !important;
+                }
+            }
+        }
+    }
+}
+
+@each $name, $color in $colors {
+    @include accordion_mixin($name, map-get($colors, $name));
+}
+
+// >>-- 12 According css end --<<

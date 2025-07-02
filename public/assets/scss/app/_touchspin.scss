@@ -1,0 +1,56 @@
+// >>-- 47 Touch spin css start --<<
+
+.app-touchspin {
+    width: 100%;
+    text-align: center;
+    margin: 0px 4px;
+    border-radius: 3px;
+}
+.app-small-touchspin {
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    margin: 0px 4px;
+    border-radius: 3px;
+}
+
+.simplespin{
+    width: 180px;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0 auto;
+    input{
+        border: none;
+    }
+}
+
+.custom-touchspin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .touchspin-circle-btn {
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        border-radius: 50%;
+    }
+}
+.simplerounded{
+    .btn-left{
+        border-radius: 50px 0 0 50px;
+    }
+    .btn-right{
+        border-radius: 0 50px 50px 0;
+    }
+}
+
+
+
+
+
+  // >>-- 47 Touch spin css end --<<

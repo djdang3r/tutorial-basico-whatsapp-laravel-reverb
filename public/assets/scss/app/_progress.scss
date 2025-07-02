@@ -1,0 +1,40 @@
+// >>-- 23 progress css start --<<
+
+.progress {
+  border-radius:  0.25rem 0 0 0.25rem;
+  background-color: rgba(var(--light), 0.20) !important;
+  height: 11px;
+  font-size: 80%;
+  font-weight: 600;
+  .progress-bar {
+    border-radius:  0.25rem 0 0 0.25rem;
+    animation: progress-bar-animation 3s;
+  }
+}
+
+@keyframes progress-bar-animation {
+  from {
+      width: 0px;
+  }
+}
+
+.progress-box{
+  border-radius:  var(--bs-border-radius);
+  position: relative;
+  .progress-content{
+    padding: 16px;
+    .right{
+      position: absolute;
+    right: 1rem;
+    top: 1rem;
+    }
+  }
+
+ .progress{
+  .progress-bar{
+    border-radius: 0;
+  }
+}
+}
+
+// >>-- 23 progress css end --<<

@@ -1,0 +1,35 @@
+// >>-- 60 Map css start --<<
+
+// goggle map
+ .map-overlay{
+    display:block;
+    text-align:center;
+    color:var(--white);
+    font-size:40px;
+    line-height:80px;
+    opacity:0.8;
+    background:rgba(var(--primary),1);
+    border:solid 3px rgba(var(--primary)0.1);
+    border-radius:4px;
+    box-shadow:2px 2px 10px rgba(var(--dark),0.1);
+    text-shadow:1px 1px 1px rgba(var(--secondary),0.1);
+    padding:0 4px;
+    .overlay-arrow{
+      left:50%;
+      margin-left:-16px;
+      width:0;
+      height:0;
+      position:absolute;
+      &.below,
+      &.above{
+        bottom:-15px;
+        border-left:16px solid transparent;
+        border-right:16px solid transparent;
+        border-top:16px solid rgba(var(--primary),0.9);
+    }  
+    }
+  }
+
+  // >>-- 60 Map css end --<<
+
+  

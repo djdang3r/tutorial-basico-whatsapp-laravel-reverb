@@ -1,0 +1,55 @@
+// >>-- 66 Floating Labels css start --<<
+
+.app-form{
+	.floating-form{
+		position: relative;
+		width: 100%;
+
+    label{
+		position: absolute;
+		left: 16px;
+		top: 10px;
+        z-index: 2;
+        padding: 0 0.25rem;
+        font-size: 0.875rem;
+		color: rgba(var(--font-light-color), 0.5);
+		background-color: var(--white);
+		transition: all 0.3s ease;
+	}
+	input{  
+		padding: 1rem 0.75rem;
+		&::placeholder {
+			opacity: 0;
+			visibility: hidden;
+			color: transparent;
+		}
+        &:focus {
+            outline: none;
+        
+            &~label {
+                top: -10px;
+                left: 1rem;
+                z-index: 5;
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: rgb(var(--primary));
+                transition: all 0.2s ease-in-out;
+            }
+        }
+        &:not(:placeholder-shown).form-control {
+			&:not(:focus) {
+				& ~ .form-label {
+					top: -10px;
+					left: 1rem;
+					z-index: 9;
+					font-size: 0.875rem;
+					font-weight: 500;
+					transition: all 0.2s ease-in-out;
+				}
+			}
+		}
+    }
+}
+}
+
+// >>-- 66 Floating Labels css end --<<

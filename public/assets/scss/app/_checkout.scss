@@ -1,0 +1,85 @@
+// >>-- 101 Checkout css start --<<
+.checkout-tabs-step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(var(--light), 0.05);
+    padding: 15px 26px;
+    border-radius: var(--bs-border-radius);
+    h6 {
+        color: rgba(var(--dark), 0.75);
+        font-weight: 600;
+    }
+    span {
+        color: rgba(var(--dark), 0.8);
+    }
+    .tab {
+        .tabs-steps {
+            padding: 8px 14px;
+            text-align: center;
+            font-size: 22px;
+            border-radius: 5px;
+            background-color: rgba(var(--dark), 0.1);
+            border: 1px dashed rgba(var(--dark), 0.6);
+        }
+        &.checkout-current-step {
+            .tabs-steps {
+                background-color: rgba(var(--dark), 1);
+                color: var(--white);
+                border: 1px dashed var(--white);
+            }
+        }
+    }
+}
+
+.tabs-contents {
+    display: none;
+    background-color: rgba(var(--light), 0.05);
+    padding: 0.5rem;
+    &.checkout-current-step {
+        display: block;
+    }
+}
+
+.checkout-cart-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // background-color: rgba(var(--dark), 0.1);
+    border: 1px dashed rgba(var(--dark), 0.6);
+    border-radius: 10px;
+    padding: 0.5rem 1.25rem;
+    padding: 15px 10px;
+    margin-bottom: 1rem;
+    .cart-price-box {
+        text-align: end;
+        align-self: self-start !important;
+        h5 {
+            color: rgba(var(--dark), 0.75);
+            font-weight: 600;
+        }
+    }
+    .cart-images{
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+        // border: 1px dashed rgba(var(--dark), 0.6);
+        border-radius: 0.5rem;
+    }
+    h6 {
+        color: rgba(var(--dark), 0.8);
+        font-weight: 600;
+        margin-bottom: 0;
+        span {
+            font-size: 13px;
+            color: rgba(var(--dark), 0.75);
+        }
+    }
+    p{
+        margin-bottom: 0;
+        span{
+            color: rgba(var(--dark), .75);
+        }
+    }
+}
+// >>-- 101 Checkout css end --<<

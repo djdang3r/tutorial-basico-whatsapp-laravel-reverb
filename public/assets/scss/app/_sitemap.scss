@@ -1,0 +1,142 @@
+// >>-- 71 Sitemap css start --<<
+.sitemap-card {
+	.card-body{
+		height: calc(100vh - 180px);
+	    overflow: auto;
+	}
+}
+.vertical-sitemap {
+	a {
+		color: rgba(var(--primary));
+		display: block;
+	}
+	.parent-title {
+		a {
+			padding-left: 0;
+			&:before {
+				display: none;
+			}
+		}
+		&:before {
+			display: none;
+		}
+	}
+	.first-part {
+		position: relative;
+		padding-top: 10px;
+		&:before {
+			content: "";
+			border-left: 2px dashed rgba(var(--light));
+			position: absolute;
+			top: 0;
+			height: 100%;
+			bottom: 0;
+			left: 0;
+		}
+		.list-wrap {
+			a {
+				position: relative;
+				padding: 10px 16px 4px 36px;
+       
+				&::before {
+					content: "";
+					width: 24px;
+					border-top: 2px dashed rgba(var(--light));
+					position: absolute;
+					top: 50%;
+					-webkit-transform: translateY(-50%);
+					transform: translateY(-50%);
+					left: 0;
+				}
+			}
+		}
+		li {
+			a {
+				position: relative;
+				padding: 10px 16px 4px 36px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 1;
+				-webkit-box-orient: vertical;
+				&::before {
+					content: "";
+					width: 24px;
+					border-top: 2px dashed rgba(var(--light));
+					position: absolute;
+					top: 50%;
+					-webkit-transform: translateY(-50%);
+					transform: translateY(-50%);
+					left: 0;
+				}
+			}
+		}
+		.second-part {
+			margin-left: 42px;
+			position: relative;
+			li {
+				position: relative;
+				&:before {
+					content: "";
+					height: 100%;
+					border-left: 2px dashed rgba(var(--light));
+					position: absolute;
+					top: 0;
+					left: 0;
+					margin: 0 auto;
+				}
+				&:last-child {
+					&::before {
+						height: 13px;
+					}
+				}
+			}
+			.content-box {
+        max-width: 60%;
+        width: 100%;
+        margin-top: 10px;
+        margin-left: 19px;
+        border: 2px solid rgba(var(--info), .1);
+        padding: 10px;
+        border-radius: 10px;
+				&::before {
+					content: "";
+					height: 20px;
+					border-left: 2px dashed rgba(var(--light));
+					position: absolute;
+					top: 28px;
+					left: 62px;
+					margin: 0 auto;
+				}
+			}
+		}
+		.third-part {
+			margin-left: 42px;
+			position: relative;
+			li {
+				position: relative;
+				&:before {
+					content: "";
+					height: 100%;
+					border-left: 2px dashed rgba(var(--light));
+					position: absolute;
+					top: 0;
+					left: 0;
+					margin: 0 auto;
+				}
+				&:last-child {
+					&::before {
+						height: 13px;
+					}
+				}
+			}
+		}
+		&:last-child {
+			&::before {
+				height: 25px;
+			}
+		}
+	}
+}
+
+// >>-- 71 Sitemap css start --<<

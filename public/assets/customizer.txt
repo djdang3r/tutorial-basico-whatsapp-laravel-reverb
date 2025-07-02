@@ -1,0 +1,111 @@
+<button class="customizer-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#customizerOptions"
+        aria-controls="customizerOptions">
+  <i class="ti ti-settings-2"></i>
+</button>
+
+<div class="offcanvas offcanvas-end app-customizer" data-bs-scroll="true" tabindex="-1" id="customizerOptions"
+     aria-labelledby="customizerOptionsLabel">
+
+  <div class="offcanvas-header flex-wrap bg-primary">
+    <h5 class="offcanvas-title text-white" id="customizerOptionsLabel"> Admin Customizer </h5>
+    <p class="d-block text-white opacity-75">it's time to style according to your choice ..!</p>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <div class="app-divider-v secondary py-3">
+      <h6 class="mt-2">Sidebar option</h6>
+    </div>
+    <ul class="sidebar-option">
+      <li class="vertical-sidebar">
+        <ul>
+          <li class="header"></li>
+          <li class="sidebar"></li>
+          <li class="body"> <span class="badge text-bg-secondary b-r-6"> Vertical</span> </li>
+        </ul>
+      </li>
+      <li class="horizontal-sidebar">
+        <ul>
+          <li class="header h-20"><span class="badge text-bg-secondary b-r-6"> Horizontal</span></li>
+          <li class="body w-100"></li>
+        </ul>
+      </li>
+      <li class="dark-sidebar">
+        <ul>
+          <li class="header"></li>
+          <li class="sidebar bg-dark-600"></li>
+          <li class="body"><span class="badge text-bg-secondary b-r-6"> Dark </span></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="app-divider-v secondary py-3">
+      <h6 class="mt-2">Layout option</h6>
+    </div>
+    <ul class="layout-option">
+      <li class="ltr">
+        <ul>
+          <li class="header"></li>
+          <li class="sidebar"></li>
+          <li class="body"><span class="badge text-bg-secondary b-r-6"> LTR </span></li>
+        </ul>
+      </li>
+      <li class="rtl">
+        <ul>
+          <li class="header"></li>
+          <li class="body"> <span class="badge text-bg-secondary b-r-6"> RTL </span> </li>
+          <li class="sidebar"></li>
+        </ul>
+      </li>
+      <li class="box-layout">
+        <ul>
+          <li class="header"></li>
+          <li class="sidebar"></li>
+          <li class="body"> <span class="badge text-bg-secondary b-r-6"> Box </span> </li>
+        </ul>
+      </li>
+    </ul>
+    <h6 class="mt-3">Color Hint</h6>
+    <ul class="color-hint p-0">
+      <li class="default">
+        <div></div>
+      </li>
+      <li class="gold">
+        <div></div>
+      </li>
+      <li class="warm">
+        <div></div>
+      </li>
+      <li class="happy">
+        <div></div>
+      </li>
+      <li class="nature">
+        <div></div>
+      </li>
+      <li class="hot">
+        <div></div>
+      </li>
+    </ul>
+    <div class="app-divider-v secondary py-3">
+      <h6 class="mt-2 font-primary">Text size</h6>
+    </div>
+    <ul class="text-size">
+      <li class="small-text"> sm </li>
+      <li class="medium-text"> md </li>
+      <li class="large-text"> lg </li>
+    </ul>
+  </div>
+
+  <div class="offcanvas-footer">
+    <div class="d-flex gap-2">
+      <button type="button" class="btn btn-danger w-100" onclick="resetCustomizer()">Reset</button>
+      <a type="button" class="btn btn-success w-100" href="https://themeforest.net/user/la-themes/portfolio" target="_blank">Buy Now</a>
+    </div>
+    <div class="d-flex gap-2 mt-2">
+      <a type="button" class="btn btn-primary w-100" href="mailto:teqlathemes@gmail.com" target="_blank">Support</a>
+      <a type="button" class="btn btn-dark w-100" href="document.html" target="_blank">Document</a>
+    </div>
+
+  </div>
+
+</div>

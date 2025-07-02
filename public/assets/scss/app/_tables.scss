@@ -1,0 +1,187 @@
+// >>-- 25 Table css start --<<
+
+
+.table-bordered{
+    tr{
+        th{
+            padding:0.8rem 0.75rem;
+            &:first-child{
+                padding-left: 1.25rem;
+            }
+            &:last-child{
+                padding-right: 1.25rem;
+            }
+        }
+    }
+}
+.table{
+    user-select: none;
+    thead{
+        tr{
+            th{
+                padding: 0.5rem 0.75rem ;
+                &:first-child{
+                    padding-left: 1.25rem;
+                }
+                &:last-child{
+                    padding-right: 1.25rem;
+                }
+            }
+        }
+    }
+    tbody{
+        tr{
+            td{
+                padding:0.8rem 0.75rem;
+                &:first-child{
+                    padding-left: 1.25rem;
+                }
+                &:last-child{
+                    padding-right: 1.25rem;
+                }
+            }
+        }
+    }
+    &.table-sm{
+        tr{
+            td{
+                padding: 0.5rem !important;
+            }
+        }
+    }
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: rgba(var(--dark), 0.03);
+    color: rgba(var(--dark), 1);
+}
+
+.table-striped-columns>:not(caption)>tr>:nth-child(2n) {
+    --bs-table-accent-bg: rgba(var(--dark), 0.03);
+    color: rgba(var(--dark), 1);
+}
+
+.table-hover>tbody>tr:hover>* {
+    --bs-table-accent-bg: rgba(var(--dark), 0.05);
+    color: rgba(var(--dark), 1);
+}
+.table-box-hover>tbody>tr:hover{
+    transform: translateY(-1px);
+    transition: var(--app-transition);
+}
+.table-bottom-border{
+    &>tbody{
+        &>tr{
+            border-top: 1px dashed rgba(var(--secondary), 0.4);
+        }
+    }
+}
+
+.table-section{
+    .table{
+        &>tbody{
+            &>tr{
+                td{
+                    max-width: calc(100% - 60px);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
+
+
+.table-lg>:not(caption)>*>* {
+    padding: 0.7rem 0.7rem !important;
+    font-size: 110%;
+}
+
+.table-sm>:not(caption)>*>* {
+    padding: 0.4rem 0.5rem !important;
+    font-size: 95%;
+}
+
+.table>:not(caption)>*>* {
+    padding: 0.5rem 0.5rem;
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 0;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+.table-variants-striped-dark{
+    tbody{
+        &>tr{
+            &:nth-child(odd){
+                background-color: rgba(var(--dark), 0.1);
+                color: rgba(var(--dark), 0.75);
+            }
+            &:nth-child(even){
+                background-color: rgba(var(--dark), 1);
+                td,th{
+                    color: var(--white) !important;
+                }
+            }
+        }
+    }
+}
+// Table css start
+
+@mixin tablecolor_mixin($name, $color) {
+    .table-#{$name} {
+        thead{
+            tr{
+                th{
+                    background-color: rgba(#{$color},9) !important;
+                    color: var(--white);
+                }
+
+                &:hover,&:active ,&.active ,&.show,&:checked,&:focus {
+                    th{
+                        background-color: rgba(#{$color},1) !important;
+                    }
+                }
+            }
+        }
+
+        tbody{
+            tr{
+                td{
+                    background-color: rgba(#{$color},0.15) !important;
+                    border-color: rgba(#{$color},0.25) !important;
+                    color: rgba(var(--dark), 1) !important;
+                }
+
+                &:hover,&:active ,&.active ,&.show,&:checked,&:focus {
+                    td{
+                        background-color: rgba(#{$color},0.2) !important;
+                    }
+                }
+            }
+        }
+    }
+    .table-Variants{
+        .table-#{$name}{
+            --bs-table-bg: rgba(#{$color},0.14) !important;
+            color: var(--dark);
+        }
+    }
+}
+
+@each $name, $color in $colors {
+    @include tablecolor_mixin($name, map-get($colors, $name));
+}
+.table-responsive{
+    tr{
+        th{
+            padding: 0.5rem 0.75rem ;
+            &:first-child{
+                padding-left: 1.25rem;
+            }
+            &:last-child{
+                padding-right: 1.25rem;
+            }
+        }
+    }
+}
+// >>-- 25 Table css end --<<

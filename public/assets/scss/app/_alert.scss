@@ -1,0 +1,90 @@
+// >>-- 51 Alert css start --<<
+
+
+@mixin alert_mixin($name, $color) {
+    .alert-#{$name} {
+        background-color: rgba(#{$color}, 1);
+        border: 1px solid rgba(#{$color}, 1);
+        color: var(--white);
+    }
+    .alert-outline-#{$name} {
+        border: 1px solid rgba(#{$color}, 1);
+        color: rgba(#{$color}, 1);
+        &:hover {
+            background-color: rgba(#{$color}, 1);
+            color: var(--white);
+            transition: var(--app-transition);
+        }
+    }
+    .alert-light-#{$name} {
+        background-color: rgba(#{$color}, 0.1);
+        color: rgba(#{$color}, 1);
+        &:hover {
+            background-color: rgba(#{$color}, 0.2);
+            border-color: rgba(#{$color}, 1);
+            color: rgba(#{$color}, 1);
+        }
+    }
+    .alert-light-border-#{$name}{
+        border: 1px solid rgba(#{$color}, 1);
+        background-color: rgba(#{$color}, 0.1);
+        color: rgba(#{$color}, 1);
+        &:hover {
+            background-color: rgba(#{$color}, 0.2);
+        }
+    }
+    .alert-border-#{$name} {
+        border: 1px solid var(--border_color);
+        border-left: 4px solid rgba(#{$color}, 1);
+    }
+    .alert-label {
+        &.alert-label-#{$name}{
+            background-color: rgba(#{$color}, 0.6);
+            color: var(--white);
+            .label-icon {
+                &.label-icon-#{$name}{
+                    background-color: rgba(#{$color}, 1);
+                    color: var(--white);
+                }
+            }
+        }
+    }
+}
+
+@each $name, $color in $colors {
+    @include alert_mixin($name, map-get($colors, $name));
+}
+.alert-label {  
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    border: none;
+    .label-icon {
+        position: absolute;
+        width: 50px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        border-radius:6px 0 0 6px;
+    }
+}
+.custom-alert{
+    border: 1px solid var(--border_color);
+    .alert-header{
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color:rgba( var(--danger));
+        border-radius: 6px 6px 0 0;
+        text-align: end;
+    }
+    .alert-body{
+        padding: 0.375rem 0.75rem;
+    }
+}
+
+// >>-- 51 Alert css end --<<
+

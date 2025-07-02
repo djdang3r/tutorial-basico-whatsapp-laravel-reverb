@@ -1,0 +1,26 @@
+// >>-- 76 Add product css start --<<
+
+.app-product-section {
+   .main-title {
+      h6 {
+         font-size: 18px;
+         color: rgba(var(--dark), 0.75);
+         font-weight: 600;
+         margin-bottom: 1.5rem;
+      }
+   }
+   .addproduct {
+      .filepond--credits {
+         display: none;
+      }
+   }
+
+   .variants-box {
+      text-align: center;
+      border: 1px dashed rgba(var(--secondary), 0.6);
+      border-radius: 5px;
+      padding: 1rem;
+   }
+}
+
+// >>-- 76 Add product css end --<<

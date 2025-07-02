@@ -1,0 +1,20 @@
+// >>-- 117 Editor css start --<<
+    .trumbowyg-box{
+        border: 2px dashed rgba(var(--dark),.4);
+        border-radius: var(--app-border-radius);
+        overflow: hidden;
+        .trumbowyg-button-pane{
+            border-bottom: 0;
+            background: rgba(var(--dark),.1);
+            border-color:black ;
+            .trumbowyg-button-group{
+                &:hover {
+                    button{
+                    background: rgba(var(--dark),.1) ;
+                }
+                }
+            }
+        }
+    }
+
+// >>-- 117 Editor css end --<<

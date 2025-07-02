@@ -1,0 +1,591 @@
+// >>-- 61 Ribbons css start --<<
+
+
+@mixin ribbon_mixin($name, $color) {
+    .ribbon {
+        &.ribbon-right,
+        &.ribbon-left-bottom,
+        &.ribbon-right-bottom,
+        &.ribbon-left {
+            &.ribbon-#{$name} {
+                background-color: rgba(#{$color}, 1);
+            }
+        }
+    }
+    .ribbon-shape {
+        display: inline-block;
+        &.shape-left-bottom,
+        &.shape-left {
+            &.ribbon-#{$name} {
+                background-color: rgba(#{$color}, 1);
+                &::after {
+                    border-left-color: rgba(#{$color}, 1);
+                    border-bottom-color: rgba(#{$color}, 1);
+                }
+                &::before {
+                    border-left-color: rgba(#{$color}, 1);
+                    border-top-color: rgba(#{$color}, 1);
+                }
+            }
+        }
+        &.shape-right-bottom,
+        &.shape-right {
+            &.ribbon-#{$name} {
+                background-color: rgba(#{$color}, 1);
+                &::after {
+                    border-right-color: rgba(#{$color}, 1);
+                    border-bottom-color: rgba(#{$color}, 1);
+                }
+                &::before {
+                    border-right-color: rgba(#{$color}, 1);
+                    border-top-color: rgba(#{$color}, 1);
+                }
+            }
+        }
+    }
+    .arrow-ribbon {
+        &.arrow-left-bottom,
+        &.arrow-left {
+            &.ribbon-#{$name} {
+                background-color: rgba(#{$color}, 1);
+                &:before {
+                    border-left: 12px solid rgba(#{$color}, 1);
+                }
+            }
+        }
+        &.arrow-right-bottom,
+        &.arrow-right {
+            &.ribbon-#{$name} {
+                background-color: rgba(#{$color}, 1);
+                &:before {
+                    border-right: 12px solid rgba(#{$color}, 1);
+                }
+            }
+        }
+    }
+    .ribbon-side {
+        &.side-left {
+            &.ribbon-#{$name} {
+                background-color: rgba(#{$color}, 1);
+                &::before {
+                    border-top-color: rgba(#{$color}, 1);
+                    border-right-color: rgba(#{$color}, 1);
+                }
+            }
+        }
+        &.side-left-bottom {
+            &.ribbon-#{$name} {
+                background-color: rgba(#{$color}, 1);
+                &::before {
+                    border-right-color: rgba(#{$color}, 1);
+                    border-bottom-color: rgba(#{$color}, 1);
+                }
+            }
+        }
+        &.side-right-bottom,
+        &.side-right {
+            &.ribbon-#{$name} {
+                background-color: rgba(#{$color}, 1);
+                &::before {
+                    border-left-color: rgba(#{$color}, 1);
+                    border-bottom-color: rgba(#{$color}, 1);
+                }
+            }
+        }
+    }
+    .cross-shadow-ribbon {
+        &.cross-right,
+        &.cross-left {
+            &.ribbon-#{$name} {
+                background-color: rgba(#{$color}, 1);
+                &::before {
+                    border-bottom: 15px solid rgba(#{$color}, 1);
+                }
+            }
+        }
+        &.cross-right-bottom,
+        &.cross-left-bottom {
+            &.ribbon-#{$name} {
+                background-color: rgba(#{$color}, 1);
+                &::before {
+                    border-top: 15px solid rgba(#{$color}, 1);
+                }
+            }
+        }
+    }
+    .ribbon-top {
+        &.top-left,
+        &.top-left-bottom,
+        &.top-right,
+        &.top-right-bottom {
+            &.ribbon-#{$name} {
+                background-color: rgba(#{$color}, 1);
+            }
+        }
+    }
+    .circle-ribbon {
+        &.circle-left,
+        &.circle-left-bottom,
+        &.circle-right,
+        &.circle-right-bottom {
+            &.ribbon-#{$name} {
+                background-color: rgba(#{$color}, 1);
+            }
+        }
+    }
+    .ribbon-file {
+        .ribbon {
+            &.file-right,
+            &.file-right-bottom,
+            &.file-left-bottom,
+            &.file-left {
+                &.ribbon-#{$name} {
+                    background-color: rgba(#{$color}, 1);
+                }
+            }
+        }
+    }
+
+    .box-ribbon{
+        &.box-right,
+        &.box-right-bottom,
+        &.box-left-bottom,
+        &.box-left {
+            .ribbonbox{
+                &.ribbon-#{$name} {
+                    background-color: rgba(#{$color}, 1);
+                    &::after {
+                        border-right: 3px solid rgba(#{$color}, 1);
+                        border-top: 3px solid rgba(#{$color}, 1);
+                    }
+                    &::before {
+                        border-left: 3px solid rgba(#{$color}, 1);
+                        border-top: 3px solid rgba(#{$color}, 1);
+                    }
+                }
+            }
+        }
+    }
+}
+@each $name, $color in $colors {
+    @include ribbon_mixin($name, map-get($colors, $name));
+}
+
+// 1. ribbon
+.ribbon-box {
+    position: relative;
+    border: 1px solid rgb(var(--secondary), 0.2);
+    background-color: var(--white);
+    // border-radius: 10px;
+    padding: 20px;
+    .ribbon {
+        position: absolute;
+        padding: 4px 16px;
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 600;
+
+        &.ribbon-left {
+            left: 0px;
+            top: 5px;
+        }
+        &.ribbon-right {
+            right: 0px;
+            top: 5px;
+        }
+        &.ribbon-left-bottom {
+            left: 0px;
+            bottom: 5px;
+        }
+        &.ribbon-right-bottom {
+            right: 0px;
+            bottom: 5px;
+        }
+    }
+}
+
+// 2. shap ribbon
+.ribbon-shape {
+    position: absolute;
+    padding: 4px 16px;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+        border: 14px solid transparent;
+    }
+    &.shape-left {
+        left: 0px;
+        top: 5px;
+        &::after {
+            right: -17px;
+            bottom: 0;
+        }
+        &::before {
+            right: -17px;
+            top: 0;
+        }
+    }
+    &.shape-left-bottom {
+        left: 0px;
+        bottom: 5px;
+        &::after {
+            right: -17px;
+            bottom: 0;
+        }
+        &::before {
+            right: -17px;
+            top: 0;
+        }
+    }
+    &.shape-right {
+        right: 0px;
+        top: 5px;
+        &::after {
+            left: -17px;
+            bottom: 0;
+        }
+        &::before {
+            left: -17px;
+            top: 0;
+        }
+    }
+    &.shape-right-bottom {
+        right: 0px;
+        bottom: 5px;
+        &::after {
+            left: -17px;
+            bottom: 0;
+        }
+        &::before {
+            left: -17px;
+            top: 0;
+        }
+    }
+}
+
+// 3.  arrow ribbon
+.arrow-ribbon {
+    position: absolute;
+    color: var(--white);
+    padding: 6px 15px;
+
+    &:before {
+        position: absolute;
+        content: "";
+        right: -12px;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        width: 0;
+    }
+    &.arrow-left {
+        top: 5px;
+        left: -1px;
+        &:before {
+            top: 0;
+            bottom: 0;
+        }
+    }
+    &.arrow-right {
+        top: 5px;
+        right: -1px;
+        &:before {
+            top: 0;
+            bottom: 0;
+            left: -12px;
+        }
+    }
+    &.arrow-left-bottom {
+        bottom: 5px;
+        left: -1px;
+        &:before {
+            top: 0;
+            bottom: 0;
+        }
+    }
+    &.arrow-right-bottom {
+        bottom: 5px;
+        right: -1px;
+        &:before {
+            top: 0;
+            bottom: 0;
+            left: -12px;
+        }
+    }
+}
+
+// 4. side ribbon
+.ribbon-side {
+    position: absolute;
+    padding: 4px 16px;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    &::before {
+        position: absolute;
+        width: 0;
+        height: 0;
+        content: "";
+        border: 7px solid transparent;
+    }
+    &.side-left {
+        left: -15px;
+        &::before {
+            top: 29px;
+            left: 0;
+        }
+    }
+    &.side-left-bottom {
+        left: -15px;
+        bottom: 0px;
+        &::before {
+            top: -14px;
+            left: 0;
+        }
+    }
+    &.side-right {
+        right: -15px;
+        &::before {
+            bottom: 29px;
+            right: 0;
+        }
+    }
+    &.side-right-bottom {
+        right: -15px;
+        bottom: 0px;
+        &::before {
+            bottom: 29px;
+            right: 0;
+        }
+    }
+}
+
+// 5. cross-shadow ribbon
+.cross-shadow-ribbon {
+    position: absolute;
+    margin-left: 15px;
+    color: var(--white);
+    border-radius: 0 0 2px 2px;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+    }
+    &.cross-left {
+        top: -15px;
+        padding: 10px;
+        &::before {
+            left: -15px;
+            top: 0;
+        }
+    }
+    &.cross-left-bottom {
+        bottom: -15px;
+        left: 0px;
+        padding: 10px;
+        &::before {
+            left: -15px;
+            bottom: 0;
+        }
+    }
+    &.cross-right {
+        right: 0px;
+        top: -15px;
+        padding: 10px;
+        &::before {
+            left: -15px;
+            top: 0;
+        }
+    }
+    &.cross-right-bottom {
+        bottom: -15px;
+        right: 0px;
+        padding: 10px;
+        &::before {
+            left: -15px;
+            bottom: 0;
+        }
+    }
+}
+
+// 6. top ribbon
+.ribbon-top {
+    position: absolute;
+    width: 30px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    padding: 0px 5px;
+    &.top-left {
+        left: 10px;
+        top: 0px;
+    }
+    &.top-left-bottom {
+        left: 10px;
+        bottom: 0px;
+    }
+    &.top-right {
+        right: 10px;
+        top: 0px;
+    }
+    &.top-right-bottom {
+        right: 10px;
+        bottom: 0px;
+    }
+}
+
+// 7. circle-ribbon
+.circle-ribbon {
+    position: absolute;
+    margin-left: auto;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    color: var(--white);
+    align-items: center;
+    border: 1px dashed var(--white);
+    &.circle-left {
+        left: 0px;
+        top: -15px;
+    }
+    &.circle-left-bottom {
+        left: 0px;
+        bottom: -15px;
+    }
+    &.circle-right {
+        right: 0px;
+        top: -15px;
+    }
+    &.circle-right-bottom {
+        right: 0px;
+        bottom: -15px;
+    }
+}
+
+// 8. ribbon-file
+.ribbon-file {
+    position: relative;
+    border: 1px solid rgb(var(--secondary), 0.2);
+    background-color: var(--white);
+    padding: 16px;
+    overflow: hidden;
+    .ribbon {
+        position: absolute;
+        color: var(--white);
+        width: 93px;
+        height: 52px;
+        display: flex;
+        justify-content: center;
+        box-align: end;
+        align-items: flex-end;
+        &.file-left {
+            transform: rotate(-45deg);
+            left: -36px;
+            top: -16px;
+        }
+        &.file-left-bottom {
+            transform: rotate(-134deg);
+            left: -36px;
+            bottom: -16px;
+            top: auto;
+        }
+        &.file-right {
+            transform: rotate(45deg);
+            right: -36px;
+            top: -16px;
+        }
+        &.file-right-bottom {
+            transform: rotate(-230deg);
+            bottom: -16px;
+            right: -36px;
+        }
+    }
+}
+
+// 9.  box ribbon
+.box-ribbon {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    width: 75px;
+    height: 75px;
+    text-align: right;
+
+    .ribbonbox {
+        font-size: 13px;
+        color: var(--white);
+        text-align: center;
+        line-height: 20px;
+        width: 100px;
+        display: block;
+        position: absolute;
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 100%;
+            left: 0;
+            border-right: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 100%;
+            right: 0;
+            border-left: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+        }
+    }
+
+    &.box-left {
+        left: -5px;
+        top: -5px;
+        .ribbonbox {
+            transform: rotate(-45deg);
+            top: 19px;
+            left: -21px;
+        }
+    }
+    &.box-left-bottom{
+        left: -5px;
+        bottom: -5px;
+        .ribbonbox {
+            transform: rotate(-136deg);
+            bottom: 19px;
+            right: -5px;
+        }
+    }
+    &.box-right {
+        right: -5px;
+        top: -5px;
+        .ribbonbox {
+            transform: rotate(45deg);
+            top: 19px;
+            right: -21px;
+        }
+    }
+    &.box-right-bottom {
+        right: -5px;
+        bottom: -5px;
+        .ribbonbox {
+            transform: rotate(136deg);
+            bottom: 19px;
+            left: -5px;
+        }
+    }
+}
+
+// >>-- 61 Ribbons css end --<<

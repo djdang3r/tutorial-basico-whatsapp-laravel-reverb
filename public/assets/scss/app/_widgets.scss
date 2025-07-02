@@ -1,0 +1,23 @@
+// >>-- 95 Widgets css start --<<
+
+@media screen and (max-width: 1399px) and (min-width: 768px) {
+  .widget-container{
+    .spent-hours-content {
+      flex-direction: row;
+    }
+  }
+
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px){
+  .col-order-lg-1{
+    order: 1;
+  }
+  .col-order-lg-2{
+    order: 2;
+  }
+
+}
+
+
+ // >>-- 95 Widgets css end --<<

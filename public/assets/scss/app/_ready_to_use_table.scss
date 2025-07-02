@@ -1,0 +1,100 @@
+// >>-- 97 Ready_to_use_table css start --<<
+.student-list-table{
+    thead{
+        tr{
+            th:nth-child(2){
+                min-width: 150px;
+            }
+            th:nth-child(3){
+                min-width: 150px;
+            }
+            th:nth-child(4){
+                min-width: 100px;
+            }
+            th:nth-child(6){
+                min-width: 100px;
+            }
+            th:nth-child(7){
+                min-width: 100px;
+            }
+        }
+    }
+}
+
+.payment-details-table{
+    thead{
+        tr{
+            th:nth-child(1){
+                min-width: 150px;
+            }
+            th:nth-child(2){
+                min-width: 100px;
+            }
+            th:nth-child(6){
+                min-width: 100px;
+            }
+        }
+    }
+}
+
+.patients-list-table{
+    thead{
+        tr{
+            th:nth-child(1){
+                min-width: 200px;
+            }
+            th:nth-child(2){
+                min-width: 350px;
+            }
+            th:nth-child(3){
+                min-width: 100px;
+            }
+            th:nth-child(6){
+                min-width: 150px;
+            }
+        }
+    }
+}
+
+.ticket-detail-table{
+        thead{
+            tr{
+                th:nth-child(1) {
+                    min-width: 150px;
+                }
+                th:nth-child(5),
+                th:nth-child(6),
+                th:nth-child(7),
+                th:nth-child(8){
+                    min-width: 100px;
+                }
+                th:nth-child(4){
+                    min-width: 300px;
+                }
+            }
+        }
+    }
+
+
+.job-resumes-table{
+    thead{
+        tr{
+            th:nth-child(2){
+                min-width: 100px;
+            }
+            th:nth-child(3){
+                min-width: 150px;
+            }
+            th:nth-child(5){
+                min-width: 150px;
+            }
+            th:nth-child(6){
+                min-width: 300px;
+            }
+            th:nth-child(7){
+                min-width: 150px;
+            }
+        }
+    }
+}
+// >>-- 97 Ready_to_use_table css end --<<

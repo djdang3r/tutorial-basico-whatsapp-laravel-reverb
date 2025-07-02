@@ -1,0 +1,262 @@
+// >>-- 74 Form_wizard_2 css start --<<
+
+//  wizard css
+.step-status {
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+
+  span {
+    font-size: 16px;
+    color: rgba(var(--dark),.8);
+  }
+
+  li {
+    width: 100%;
+
+    .nav-link {
+      width: 100%;
+      border: none;
+      color: rgba(var(--secondary), 0.8);
+      padding: 1rem 0.5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      &.active{
+        background-color: rgba(var(--primary), 0.1);
+        color: rgba(var(--primary), 1) !important;
+        border: 1px solid rgba(var(--primary), 1);
+        span{
+          color: rgba(var(--primary), 1) !important;
+        }
+      }
+    }
+
+  }
+
+}
+
+.cart-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0.5rem 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px dashed rgba(var(--secondary), .2);
+  background-color: var(--white);
+
+  h6 {
+    color: rgba(var(--dark), .8);
+  }
+
+  p {
+    margin-bottom: 0;
+
+    span {
+      color: rgba(var(--dark), .75);
+    }
+  }
+
+  .cart-price-box {
+    text-align: right;
+
+    h5 {
+      color: rgba(var(--dark), .75);
+      font-weight: 600;
+    }
+
+    .link {
+      color: rgba(var(--dark));
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+}
+
+.tab-heading {
+  color: rgba(var(--dark), .75);
+  font-weight: 600;
+}
+
+.offer-content-box {
+  h6 {
+    color: rgba(var(--dark), .75);
+    font-weight: 600;
+  }
+   .offer-list-group{
+     p {
+       overflow: hidden;
+       text-overflow: ellipsis;
+       -webkit-line-clamp: 1;
+       -webkit-box-orient: vertical;
+     }
+   }
+}
+
+.address-content {
+  border: 1px solid var(--border_color);
+  border-radius: var(--bs-border-radius);
+
+  p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    color: rgba(var(--dark));
+  }
+}
+
+.added-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dotted var(--border_color);
+  border-radius: var(--bs-border-radius);
+}
+
+.pricing-details {
+  .promo {
+    width: 100%;
+    outline: none;
+    border-color: transparent;
+    border-bottom: 1px solid rgba(var(--secondary), .2);
+    margin: 10px 0px 20px 0px;
+  }
+
+  table {
+    th {
+      color: rgba(var(--dark), .75);
+    }
+
+    td {
+      color: rgba(var(--dark), .8);
+    }
+  }
+}
+
+// vertical wizard
+.tabs-step {
+  display: flex;
+  align-items: center;
+  background-color: rgba(var(--secondary), 0.05);
+  padding: 15px 20px;
+  border-radius: var(--bs-border-radius);
+
+  h6 {
+    color: rgba(var(--dark), .75);
+    font-weight: 600;
+  }
+
+  span {
+    color: rgba(var(--dark), .8);
+  }
+
+  .tab {
+    width: 20%;
+
+    .step {
+      padding: 8px 14px;
+      text-align: center;
+      font-size: 22px;
+      border-radius: 5px;
+      background-color: rgba(var(--secondary), 0.1);
+    }
+
+    &.current {
+      .step {
+        background-color: rgba(var(--primary), 1);
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.tab-checkout-content,
+.vertical-contents,
+.tab-contents {
+  display: none;
+
+  &.current-checkout-tab,
+  &.current-tab,
+  &.current {
+    display: block;
+  }
+}
+
+.checkout-tab,
+.vertical-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 100%;
+  background-color: rgba(var(--secondary), 0.05);
+  padding: 20px;
+  border-radius: var(--bs-border-radius);
+  cursor: pointer;
+
+  h5 {
+    font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1920 - 300)));
+    color: rgba(var(--dark), .8);
+    font-weight: 500;
+  }
+
+  span {
+    color: rgba(var(--dark), .8);
+  }
+
+  .tabs,
+  .tab {
+    .steps,
+    .step {
+      width: 55px;
+      height: 55px;
+      text-align: center;
+      font-size: 24px;
+      border-radius: 5px;
+      background-color: rgba(var(--secondary), 0.1);
+      border: 1px solid rgba(var(--secondary), .2);
+      color: rgba(var(--secondary),1);
+      padding: 10px;
+    }
+
+    &.current-checkout-tab,
+    &.current-tab {
+      .steps,
+      .step {
+        background-color: rgba(var(--primary), 1);
+        color: var(--white);
+      }
+        h5{
+          color: rgba(var(--primary), 1);;
+        }
+    }
+  }
+}
+
+.tab-contents-list {
+  background-color: rgba(var(--secondary), 0.05);
+  padding: 20px;
+  border-radius: var(--bs-border-radius);
+  height: 100%;
+}
+
+.completed-contents {
+  line-height: 250px;
+  text-align: center;
+
+  .completbox {
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+// >>-- 74 Form_wizard_2 css end --<<

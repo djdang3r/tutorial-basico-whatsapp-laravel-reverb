@@ -1,0 +1,147 @@
+// >>-- 11 Tabs css start --<<
+.nav-tabs{
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-color: rgba(var(--secondary),.4);
+
+    &[class*=bg-]{
+      border-bottom: 0;
+      .nav-link{
+        color: var(--white);
+      }
+    }
+
+  .nav-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 1rem;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+  }
+}
+
+.vertical-tab{
+  display: flex;
+  
+  >ul{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-right: 20px;
+    border-bottom: 0;
+    width: min-content;
+    li{
+      width: 100%;
+      button{
+        width: 100%;
+      }
+    }
+  }
+}
+.vertical-right-tab{
+  display: flex;
+  flex-direction: row-reverse;
+  >ul{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-right: 20px;
+    border-bottom: 0;
+    width: min-content;
+    li{
+      width: 100%;
+      button{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@mixin tab_mixin($name, $color) {
+  .nav-tabs{
+    &.bg-#{$name}{
+      .nav-link{
+        &.active{
+          color: rgba(#{$color}, 1) !important;
+         }
+      }
+    }
+  }
+
+  .vertical-tab{
+    .app-tabs-#{$name} {
+      padding: 5px;
+      &.nav-tabs[class*=bg-] {
+      .nav-item{
+        .nav-link{
+          color: var(--white) !important;
+          &.active{
+              color:rgba(#{$color},1) !important;
+              background-color: var(--white) !important;
+             }
+          }
+        }
+        }
+    }
+  }
+
+  .app-tabs-#{$name} {
+    .nav-item{
+      .nav-link{
+        color: rgba(#{$color},1) !important;
+        &.active{
+            background-color: rgba(#{$color},1) !important;
+            color: var(--white) !important;
+           }
+          }
+        }
+    }
+
+  .tab-outline-#{$name}{
+    .nav-item{
+      .nav-link{
+        color: rgba(#{$color},1) !important;
+        &.active{
+          background-color: transparent;
+          border: 1px solid rgba(#{$color}, 1);
+        }
+      }
+    }
+  }
+
+  .tab-light-#{$name} {
+    .nav-item{
+      .nav-link{
+        color: rgba(#{$color},1) !important;
+        &.active{
+          background-color: rgba(#{$color}, 0.2);
+          border-color: rgba(#{$color}, 1);
+        }
+      }
+    }
+  }
+}
+
+.bottom-tab{
+  display: flex;
+  flex-wrap: wrap;
+  
+  .nav-tabs{
+    width: 100%;
+    order: 1;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-bottom: 0;
+    border-top: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
+    border-color: rgba(var(--secondary),.4);
+  }
+}
+
+@each $name, $color in $colors {
+  @include tab_mixin($name, map-get($colors, $name));
+}
+
+// >>-- 11 Tabs css end --<<

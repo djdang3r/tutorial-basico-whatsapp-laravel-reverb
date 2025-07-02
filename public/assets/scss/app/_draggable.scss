@@ -1,0 +1,126 @@
+// >>-- 109 Draggable css start --<<
+.share-menu-list{
+    user-select: none;
+    li{
+        .card{
+            border: 1px dashed rgba(var(--dark),.2) !important;
+        }
+        .share-menu-item{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor:  all-scroll;
+        
+            .share-menu-content{
+                margin-left: 50px;
+            }
+            .share-menu-img{
+                position: absolute;
+            }
+            .share-menu-icons{
+              
+                .icon-btn{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
+.clonic-menu-list{
+    li{
+        &+{
+            li{
+                margin-top: 1rem;
+            }
+        }
+    }
+    .clonic-menu-item{
+        width: 100%;
+        box-shadow: var(--box-shadow);
+        padding: 18px;
+        position: relative;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        border-radius: var(--app-border-radius);
+        border: 1px dashed rgba(var(--dark), 0.2) !important;
+        cursor: all-scroll;
+    
+        .clonic-menu-img{
+            position: absolute;
+        }
+     .clonic-menu-content{
+        margin-left: 55px;
+     }
+    }
+}
+.handle-list-group{
+    .list-group-item{
+        font-size: 16px;
+        margin-bottom: 1rem;
+        border-radius: var(--app-border-radius);
+.list-handle{
+    margin-right: 0.5rem;
+    font-size: 20px;
+    cursor: all-scroll;
+}
+    }
+}
+.grid-box-list{
+  gap: 15px;
+  user-select: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .grid-box {
+        width: 100px;
+        height: 100px;
+        border:  1px dashed rgba(var(--dark), 0.2) !important;
+        border-radius: var(--app-border-radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: all-scroll;
+      
+        
+    }
+    .highlight{
+        background-color:rgba(var(--light),.2);
+        border-radius: var(--app-border-radius);
+        
+    }
+}
+.nested-sortable {
+    .list-group-item{
+        border: 1px dashed rgba(var(--dark), 0.2) !important;
+        margin: 0.5rem;
+        cursor: all-scroll;
+    //    display: flex;
+    //    justify-content: space-between;
+    }
+}
+.draggable-card{
+    .draggable-card-img{
+        position: relative;
+       img{
+        border-radius: var(--app-border-radius);
+       }
+       .draggable-card-icon{
+        position: absolute;
+        right: 33px;
+        bottom: -18px; 
+        span{
+             box-shadow: var(--box-shadow);
+        }
+       }
+    }
+    .draggable-card-content{
+        p{
+            line-break: anywhere;
+        }
+    }
+}
+// >>-- 109 Draggable css end --<<

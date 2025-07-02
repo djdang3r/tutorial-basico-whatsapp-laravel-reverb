@@ -1,0 +1,129 @@
+// >>-- 63 Range slider css start --<<
+
+.slider-round{
+    height: 10px;
+    .noUi-connect {
+        background: rgb(var(--primary));
+    }
+    .noUi-handle {
+        height: 18px;
+        width: 18px;
+        top: -5px;
+        right: -9px;
+        border-radius: 9px;
+        &::before,
+        &::after{
+            display: none;
+        }
+    }
+}
+@mixin rangslider_mixin($name, $color) {
+    .slider-#{$name}{
+        .noUi-connect {
+            background-color: rgba(#{$color},1);
+        }
+    }
+}
+@each $name, $color in $colors {
+    @include rangslider_mixin($name, map-get($colors, $name));
+}
+
+.red, .green, .blue {
+	margin-left: 15px;
+	display: inline-block;
+}
+
+.result {
+	margin-left: 26px;
+	height: 100px;
+	width: 100px;
+	display: inline-block;
+	vertical-align: baseline;
+	box-shadow: none;
+}
+
+.verticalsliders{
+    &.red {
+        .noUi-connect {
+            background: rgb(var(--danger));
+        }
+    }
+    
+    &.green {
+        .noUi-connect {
+            background: rgb(var(--success));
+        }
+    }
+    
+    &.blue {
+        .noUi-connect {
+            background: rgb(var(--primary));
+        }
+    }
+}
+.c1-color { background: rgb(var(--primary));}
+.c2-color { background:rgb(var(--secondary));}
+.c3-color { background: rgb(var(--success));}
+.c4-color { background: rgb(var(--warning)); }
+.c5-color {background:rgb(var(--info)); }
+
+.vertical{
+    width: 10px;
+    height: 250px;
+    // margin: auto;
+    .noUi-connect {
+        background: rgb(var(--primary));
+    }
+    .noUi-handle {
+        height: 18px;
+        width: 18px;
+        bottom: -5px;
+        border-radius: 10px;
+        &::before,
+        &::after{
+            display: none;
+        }
+    }
+}
+.colorpicker-slider{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.noUi-target{
+    border: 0 !important;
+}
+.noUi-base{
+    background-color: rgba(var(--primary), .1);
+}
+
+.primary-slider-round{
+    .noUi-connect{
+        background: rgb(var(--primary));
+    }
+    .noUi-base{
+        background-color: rgba(var(--primary), .1);
+    }
+    
+}
+.primary-colored-slider{
+    .noUi-base{
+        background-color: rgba(var(--primary), .1);
+    }  
+}
+.noUi-tooltip{
+    display: block;
+    position: absolute;
+    border: 1px solid #75cde1; 
+    border-radius: 3px;
+    background: rgba(var(--primary), .1);
+    color: rgba(var(--primary));
+    padding: 5px;
+    text-align: center;
+    white-space: nowrap;
+
+} 
+
+// >>-- 63 Range slider css end --<<

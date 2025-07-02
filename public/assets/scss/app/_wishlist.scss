@@ -1,0 +1,54 @@
+// >>-- 90 wishlist css start --<<
+
+
+
+.wishlist-container {
+  .product-content-box {
+    position: relative;
+
+    .wishlist-like-icon {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      cursor: pointer;
+
+      i {
+        font-size: 20px;
+        color: rgb(var(--danger), 1);
+      }
+    }
+  }
+
+  .product-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .d-flex {
+    a {
+      color: rgb(var(--dark), 0.75);
+      font-weight: 600;
+    }
+  }
+
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .wishlist-btn {
+    margin-top: 0 !important;
+
+    .btn {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+
+}
+
+// >>-- 90 wishlist css end --<<

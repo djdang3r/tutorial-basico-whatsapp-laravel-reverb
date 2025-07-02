@@ -1,0 +1,57 @@
+// >>-- 116 Ticket Details css start --<<
+.ticket-details-profile{
+  background-image: url("../images/dashboard/project/chat-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-blend-mode: overlay;
+  background-color: rgba(var(--light),.4);
+}
+.ticket-details{
+    .ticket-profile{
+        display: flex;
+        justify-content: center;
+    }
+    .ticket-profile-con{
+        text-align: center;
+    }
+    .ticket-catagory{
+        // text-align: center;
+        box-shadow: var(--box-shadow);
+        border-radius: var( --app-border-radius);
+    }
+    .about-list {
+        padding-top: 30px;
+          div {
+            &+div{
+              margin-top: 20px;
+            }
+          }
+      }
+      .file-upload-btn{
+        display: flex;
+        justify-content: space-between;
+        span{
+         box-shadow: var(--box-shadow);
+        }
+      }
+      .ticket-comment-box{
+        border: 1px solid var(--border_color);
+        border-radius: 10px;
+        padding: 1rem;
+      }
+      .ticket-details-comment{
+        border: 1px dashed rgba(var(--light));
+        border-radius: var(--app-border-radius);
+        background-color: var(--white);
+      }
+}
+
+.ticket-file-upload{
+  &.filepond--root {
+    .filepond--drop-label {
+      height: 280px;
+    }
+  }
+}
+// >>-- 116 Ticket Details css end --<<

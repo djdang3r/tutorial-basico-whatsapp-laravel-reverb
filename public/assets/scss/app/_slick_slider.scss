@@ -1,0 +1,249 @@
+// >>-- 18 SLick slider css start --<<
+
+.filtering,
+.multiple-items {
+  .items {
+    padding: 10px;
+  }
+}
+.center-mode {
+  .item {
+    position: relative;
+    // opacity: 0.4;
+    transform: scale(0.9, 0.9);
+    transition: all 0.4s ease-in-out;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(var(--dark), 0.4);
+      border-radius: 10px;
+    }
+    &.slick-current {
+      transform: scale(1, 1);
+        &:before{
+          background-color: transparent;
+        } 
+    }
+    img{
+      width: 100%;
+    }
+  }
+}
+.responsive {
+  .resopns-item {
+    // height: 244px;
+    margin: 10px;
+    border-radius: 10px;
+  }
+}
+
+.variable-width {
+  .slider_width_1 {
+    width: 175px;
+    height: 220px;
+    background-image: url("../images/slick/32.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  .slider_width_2 {
+    width: 250px;
+    height: 220px;
+    background-image: url("../images/slick/29.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  .slider_width_3 {
+    width: 225px;
+    height: 220px;
+    background-image: url("../images/slick/30.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  .slider_width_4 {
+    height: 220px;
+    width: 200px;
+    background-image: url("../images/slick/31.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  .slider_width_5 {
+    width: 350px;
+    height: 220px;
+    background-image: url("../images/slick/11.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  .slider_width_6 {
+    width: 275px;
+    height: 220px;
+    background-image: url("../images/slick/33.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 10px;
+  }
+}
+.autoplay-item {
+  transition: all 0.4s ease-in-out;
+  padding: 10px;
+}
+
+.slider-for {
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.app-arrow {
+  .slick-prev {
+    left: 15px;
+    top: 56%;
+  }
+  .slick-next {
+    right: 30px;
+    top: 56%;
+  }
+  &:hover {
+    .slick-prev,
+    .slick-next {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    padding: 0;
+    transform: translate(0, -50%);
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    z-index: 1;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-family: "tabler-icons" !important; 
+    font-size: 28px;
+    background-color: rgb(var(--primary), 0.9)!important;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 4px;
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+  }
+  .slick-prev:before {
+    content: "\ea60";
+  }
+  .slick-next:before {
+    content: "\ea61";
+  }
+
+  .slick-dots {
+    li {
+      width: 10px;
+      height: 10px;
+      border: none;
+      border-radius: 1rem;
+      background-color: rgba(var(--secondary), 0.6);
+      cursor: pointer;
+      // transition: width 0.5s;
+      &.slick-active {
+        // width: 32px;
+        outline: 1px solid rgba(var(--primary), 1);
+        outline-offset: 2px;
+        background-color: rgba(var(--primary), 1);
+      }
+      button {
+        &:before {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
+
+.slideshow {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  max-width: 700px;
+  margin: 50px auto;
+  
+  * {
+    outline: none;
+  }
+  
+  .slider {
+    box-shadow: 0 20px 50px -25px rgba(0, 0, 0, 1);
+  }
+  
+  .slider-track {
+    transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  
+  .item {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    
+    img {
+      width: 100%;
+      transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+      transform: scale(1.2);
+    }
+    
+    &.slick-active img {
+      transform: scale(1);
+    }
+  }
+}
+.lazy-item{
+  padding: 10px;
+}
+
+.carousel{
+  .carousel-caption{
+    position: absolute;
+    right: 15%;
+    width: 100%;
+    bottom: 42px;
+    left: 0;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: rgba(var(--dark), 1);
+    font-weight: 600;
+    text-align: center;
+    background: rgba(var(--light), .6);
+  }
+}
+
+// >>-- 18  SLick slider css end --<<

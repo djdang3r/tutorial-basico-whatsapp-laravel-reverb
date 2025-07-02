@@ -1,0 +1,45 @@
+// >>-- 29 Date_picker css start --<<
+
+.flatpickr-calendar {
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(var(--secondary),.2);
+    .flatpickr-months {
+        // background: rgb(var(--primary),1);
+        border-bottom: 1px solid var(--border_color);
+        padding-bottom: 10px;
+    }
+    .flatpickr-current-month {
+        .numInputWrapper,
+        .flatpickr-monthDropdown-months {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+    .flatpickr-day {
+        &.selected,
+        &.today {
+            background-color: rgba(var(--primary), 1);
+            color: var(--white);
+            border: none;
+        }
+    }
+    .flatpickr-prev-month,
+    .flatpickr-next-month {
+        svg {
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+        }
+        &:hover{
+            svg {
+                background-color: rgba(var(--light),0.2);
+                border-radius: 50px;
+                fill: var(--dark);
+            }
+        }
+    }
+}
+
+// >>-- 29 Date_picker css end --<<

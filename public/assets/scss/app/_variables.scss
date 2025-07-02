@@ -1,0 +1,200 @@
+// >>-- 01 Variables css start --<<
+:root {
+    --font-color: #15264b;
+    --font-title-color: #1c3264;
+    --body-color: #f9f9f9;
+    --bodybg-color: #f6f6f6;
+    --font-secondary-color: #22242c;
+    --font-light-color: #a0a0b0;
+    --grid_color: rgba(144, 164, 246, 0.21);
+    --border_color: rgba(0, 0, 0, 0.21);
+    --primary: 72, 190, 206;
+    --secondary: 139, 132, 118;
+    --success: 174, 204, 52;
+    --danger: 299,94,64;
+    --warning: 235,195,63;
+    --info : 83,90,231;
+    --light: 229, 227, 224;
+    --dark: 72, 68, 61;
+    --black: 0, 0, 0;
+    --border_color: #ebedf0;
+
+    --bs-dropdown-link-active-color: rgba(var(--primary), 1);
+    --bs-dropdown-link-active-bg: rgba(var(--primary), 0.2);
+
+
+
+    @mixin btn_css($name, $color) {
+        .btn-#{$name}{
+            --bs-btn-disabled-bg: rgba(var(--#{$color}), 0.8);
+            --bs-btn-disabled-border-color: rgba(var(--#{$color}), 0.8);
+        }
+        .btn-outline-#{$name}{
+            --bs-btn-color: rgba(var(--#{$color}), 1);
+            --bs-btn-border-color: rgba(var(--#{$color}), 1);
+            --bs-btn-hover-bg: rgba(var(--#{$color}), 1);
+            --bs-btn-hover-border-color: rgba(var(--#{$color}), 1);
+            --bs-btn-active-bg: rgba(var(--#{$color}), 1);
+            --bs-btn-active-border-color: rgba(var(--#{$color}), 1);
+            --bs-btn-disabled-color: rgba(var(--#{$color}), 1);
+            --bs-btn-disabled-border-color: rgba(var(--#{$color}), 1);
+        }
+    }
+
+    // Social media colors
+    --facebook : 59, 89, 152;
+    --twitter : 85, 172, 238;
+    --pinterest : 189, 8, 28;
+    --linkedin : 0, 119, 181;
+    --reddit : 255, 69, 0;
+    --whatsapp : 67, 216, 84;
+    --gmail : 234, 67, 53;
+    --telegram : 0, 64, 93;
+    --youtube : 205, 32, 31;
+    --vimeo : 26, 183, 234;
+    --behance : 23, 105, 255;
+    --github : 0, 64, 93;
+    --skype : 0, 175, 240;
+    --snapchat : 255, 250, 55;
+
+    // --box-shadow: 0 0.20rem 2rem  var(--light-gray);
+    --box-shadow: 0px 0px 21px 3px rgba(var(--secondary), 0.05);
+    --hover-shadow: 0 0.5rem 2rem  var(--light-gray);
+    --app-transition: all 0.3s ease;
+    --light-gray: #f4f7f8;
+    --white: #ffffff;
+    --p-line-height: 1.6;
+    --link-color: var(--primary-color);
+
+
+    //Typography
+    --font-size: 14px;
+    --p-font-size: 14px;
+    --h1-font-size :  2.5rem;
+    --h2-font-size : 2rem;
+    --h3-font-size : 1.75rem;
+    --h4-font-size : 1.25rem;
+    --h5-font-size : 1.125rem;
+    --h6-font-size : 1rem;
+    --btn-font-size : 15px;
+    --app-border-radius: 0.8rem;
+    --bs-border-radius: 0.5rem;
+    --bs-accordion-inner-border-radius: 0.5rem;
+}
+.default{
+    --primary: 79,201,218;
+    --secondary: 139, 132, 118;
+}
+.gold{
+    --primary: 192,127,0;
+    --secondary: 76,61,61;
+}
+.warm{
+    --primary: 255,103,125;
+    --secondary: 111,90,126;
+}
+.happy{
+    --primary: 36,114,145;
+    --secondary: 129, 125, 141;
+}
+.nature{
+    --primary: 127,180,20;
+    --secondary: 82,80,80;
+}
+.cold{
+    --primary: 3, 4, 94;
+    //--secondary: 96, 114, 116;
+}
+.hot{
+    --primary: 255,0,77;
+    --secondary: 29, 43, 83;
+}
+
+
+
+nav.dark-sidebar,body[class='ltr dark'] {
+    --white: #333644;
+    --black: #DCE2F0;
+    --bodybg-color: #282a36;
+    --bs-body-bg: #333644;
+    --font-color: #fff;
+    --box-shadow: 0 0.2rem 1rem #333644;
+    --hover-shadow: 0 0.2rem 2rem #333644;
+    --light-gray: #333644;
+     --light: 71, 71, 96;
+    --dark:  234, 234, 236;
+    --secondary: 185 ,179, 166;
+    //--light:87, 88, 99l;
+    //--dark: 87, 88, 99;
+    --link-color: #eaeaec;
+    --border_color: #474a56;
+    --bs-border-color: #474a56;
+    --bs-card-border-color: #5B5E69;
+    --bs-form-control-bg: #333644;
+    --bs-body-color: #ffffff;
+    --bs-secondary-color:#eaeaec;
+    --bs-list-group-color:#eaeaec;
+    --bs-body-color-rgb:#eaeaec;
+    --bs-text-opacity: 0;
+    --bs-card-color:#eaeaec;
+    --bs-tertiary-bg: #242425;
+    .default {
+        --secondary: 185 ,179, 166;
+    }
+
+    //.btn-dark,.btn{
+    //    --bs-btn-color: #000000;
+    //    --bs-btn-hover-color: #5B5E69;
+    //}
+    .disabled>.page-link, .page-link.disabled {
+        color:#eaeaec;
+        background-color: #333644;
+        border-color: #474a56;
+    }
+
+}
+body{
+    &[text='small-text']{
+        --font-size: 13px;
+        --p-font-size: 13px;
+        --h1-font-size :  2rem;
+        --h2-font-size : 1.75rem;
+        --h3-font-size : 1.25rem;
+        --h4-font-size : 1.125rem;
+        --h5-font-size : 1rem;
+        --h6-font-size : 15px;
+        --btn-font-size : 13px;
+    }
+    &[text='medium-text']{
+        --font-size: 14px;
+        --p-font-size: 14px;
+        --h1-font-size :  2.81rem;
+        --h2-font-size : 2.18rem;
+        --h3-font-size : 1.875rem;
+        --h4-font-size : 1.625rem;
+        --h5-font-size : 1.25rem;
+        --h6-font-size : 1rem;
+        --btn-font-size : 15px;
+    }
+    &[text='large-text']{
+        --font-size: 16px;
+        --p-font-size: 16px;
+        --h1-font-size :  2.75rem;
+        --h2-font-size : 2.5rem;
+        --h3-font-size : 2rem;
+        --h4-font-size : 1.75rem;
+        --h5-font-size : 1.25rem;
+        --h6-font-size : 1.125rem;
+        --btn-font-size : 17px;
+    }
+}
+
+
+$bottom-shadow : 0 8px 6px -5px var(--light-gray);
+$sidebar-width: 17rem;
+$semi-nav: 4.5rem;
+$font-Golos: "Golos Text", sans-serif;
+$theme-body-font-color: #2b2b2b;
+$theme-body-sub-title-color: rgba($theme-body-font-color, 0.7);
+$tabler-icons : tabler-icons;
+// >>-- 01 Variables css start --<<

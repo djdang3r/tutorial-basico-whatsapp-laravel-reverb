@@ -1,0 +1,95 @@
+// >>-- 100 countup css start --<<
+
+.simple-counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 1px dotted rgb(var(--primary),0.2);
+    gap: 20px;
+    .simple{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgb(var(--primary),0.2);
+        font-size: 20px;
+        height: 130px;
+        width: 130px;    
+        justify-content: center;
+        align-items: center;
+        border-radius: 36px;
+        .counter{
+            font-size: 30px;
+            font-weight: 500;
+
+        }
+        div{
+            font-size: 32px;
+            margin-bottom: 5px;
+            background-color: var(--white);
+            color: rgb(var(--primary), 1);
+            border: 2px dotted rgb(var(--dark), 0.2);
+            padding: 0px 7px;
+            border-radius: var(--bs-border-radius);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    p{
+        margin-top: 8px;
+        font-weight: 500;
+        i{
+            font-weight: 500;
+            font-size: 16px;
+        }
+    }
+}
+.customized-counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 1px dotted rgb(var(--primary),0.2);
+    gap: 20px;
+    .customized{
+        display: flex;
+        flex-direction: column;
+        border: 2px dotted rgb(var(--primary),0.3);
+        font-size: 20px;
+        height: 180px;
+        width: 180px;    
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--bs-border-radius);
+        div{
+            font-size: 25px;
+            font-weight: 500;
+        }
+        i{
+            font-size: 29px;
+            margin-bottom: 12px;
+            background-color: rgb(var(--info), 0.1);
+            color: rgb(var(--info), 1);
+            border: 1px dashed rgb(var(--info), 0.5);
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    p{
+        margin-top: 3px;
+        text-align: center;
+        color: rgb(var(--secondary),1);
+    }
+}
+.under-tab-section{
+    .under-tab{
+        border-bottom: 0;
+    }
+}
+
+// >>-- 100 countup css end --<<

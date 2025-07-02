@@ -1,0 +1,87 @@
+// >>-- 115 Ticket css start --<<
+.ticket-app {
+    .ticket-card {
+        overflow: hidden;
+        .circle-bg-img {
+            font-size: 840%;
+            position: absolute;
+            right: -16px;
+            top: -43px;
+            opacity: 0.25;
+            overflow: hidden;
+        }
+ 
+    }
+}
+
+.ticket-slider {
+    li {
+        padding: 0.5rem;
+
+        .ticket-catagory {
+            background-color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            border-radius: var(--app-border-radius);
+            box-shadow: var(--box-shadow);
+            align-items: center;
+            border: 1px dashed rgba(var(--dark), .2);
+            .badge {
+                height: fit-content;
+            }
+        }
+    }
+}
+
+
+.create-ticket-card {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        left: 249px;
+        top: -147px;
+    }
+
+    &:after {
+        bottom: -141px;
+        left: 186px;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: rgba(var(--primary), .2);
+        position: absolute;
+    }
+}
+.ticket-app-table{
+    thead{
+        th{
+            &:nth-child(3){
+              min-width: 150px;
+            }
+
+            &:nth-child(5){
+                min-width: 200px;
+            }
+            &:nth-child(7),
+            &:nth-child(8),
+            &:nth-child(2){
+                min-width: 100px;
+            }
+        }
+    }
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+// >>-- 115 Ticket css end --<<

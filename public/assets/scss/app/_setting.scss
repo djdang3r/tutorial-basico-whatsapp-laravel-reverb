@@ -1,0 +1,330 @@
+// >>-- 111 Setting css start --<<
+.setting-tab {
+    .nav-tabs {
+        width: 100%;
+        padding: 0;
+
+        .nav-link {
+            font-size: 15px;
+            justify-content: start;
+            padding: 0.625rem 1.125rem;
+            color: rgba(var(--secondary), 1) !important;
+
+            i {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+.profile-tab {
+    .image-details {
+        .profile-image {
+            height: 235px;
+        }
+    }
+
+    .image-details {
+        height: 300px;
+
+        .profile-pic {
+            position: absolute;
+            bottom: 10px;
+        }
+    }
+
+    .person-details {
+        margin-top: 0;
+    }
+
+}
+
+.security-box-card {
+
+    span {
+        font-size: 15px;
+    }
+
+    .anti-code {
+        position: absolute;
+        top: -6px;
+    }
+}
+
+.active-device-list {
+    user-select: none;
+
+    li {
+        .card {
+            border: 1px dashed rgba(var(--dark), .2) !important;
+        }
+
+        .device-menu-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            // cursor: all-scroll;
+
+            .device-menu-content {
+                margin-left: 3.125rem;
+            }
+
+            .device-menu-img {
+                position: absolute;
+            }
+
+            .device-menu-icons {
+
+                .icon-btn {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
+.active-device-session{
+    li {
+        .card{
+            &:hover{
+                border: 1px dashed rgba(var(--primary), 1) !important;
+            }
+        }
+        .share-menu-active {
+            border: 1px dashed rgba(var(--success), 1) !important;
+        }
+    }
+}
+
+.account-security {
+    .account-security-img {  
+        text-align: end; 
+    }
+}
+
+.input-group-password {
+    .input-group-text {
+        background-color: transparent;
+    }
+
+    .form-control {
+        border-left: 0;
+        border-right: 0;
+    }
+}
+
+.setting-privacy-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.625rem;
+
+    .select-item {
+        width: 100%;
+        padding: 16px;
+        border: 1px dashed rgb(var(--dark), 0.2);
+        border-radius: var(--app-border-radius);
+
+        &:has(input):has(input:checked) {
+            border: 1px dashed rgb(var(--success), 1);
+
+        }
+
+        .form-check-label {
+            margin-left: 0;
+        }
+
+        .form-check-input {
+            right: 10px;
+
+            &:checked {
+                background-color: rgba(var(--success));
+                border: none;
+
+                .select-item {
+                    border: 1px dashed rgb(var(--success), 1) !important;
+                }
+            }
+        }
+    }
+
+    [type=radio] {
+        &:checked {
+            .select-item {
+                border: 1px dashed rgb(var(--success), 1) !important;
+            }
+        }
+    }
+
+
+}
+
+.publishe-card {
+    width: 100%;
+    border: 1px dashed rgb(var(--dark), 0.2);
+    border-radius: var(--app-border-radius);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.notification-content {
+    .select-item {
+        border: none;
+        padding-top: 20px;
+        padding-left: 0;
+
+        align-items: normal;
+    }
+    .privacy-content{
+        display: flex;
+        flex-direction: column;
+    }
+}
+.team-accounts{
+    .privacy-content{
+        display: flex;
+        flex-direction: column;
+    }
+}
+.month-timeline{
+    .icon-direction{
+        direction: ltr;
+    }
+}
+.notified-contet {
+    li {
+        .share-menu-item {
+            .share-menu-content {
+                margin-left: 62px;
+            }
+        }
+    }
+}
+
+.subscription-plan {
+    .plan-choose {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form-selectgroup {
+        border: 1px dashed rgb(var(--dark), 0.2);
+        border-radius: var(--app-border-radius);
+
+        // padding: 1rem 1.25rem;
+        &:has(input):has(input:checked) {
+            border: 1px dashed rgb(var(--primary), 1);
+            background-color: rgb(var(--primary), .1);
+
+        }
+
+        .select-item {
+            justify-content: space-between;
+            margin-bottom: 0;
+            border: none;
+            padding: 1rem 1.25rem;
+        }
+
+        .feachers-list {
+            padding: 0 1.25rem;
+        }
+
+        .team-accounts {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1.25rem;
+        }
+
+        .simplespin {
+            margin: 0 0;
+            box-shadow: none;
+            background-color: unset;
+            input{
+                background-color: rgba(var(--primary), .1);
+
+                &.app-small-touchspin {
+                    height: 28px;
+                    
+                }
+            }
+        }
+    }
+}
+
+.conection-setting {
+    .conection-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .form-check-input {
+        width: 2rem !important;
+        height: 1rem;
+        margin-left: 0;
+    }
+}
+
+.assigned-users {
+    .assiged-user-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        cursor: all-scroll;
+
+        .asigned-user-img {
+            position: absolute;
+        }
+
+        .assign-user-content {
+            margin-left: 50px;
+        }
+    }
+}
+
+.privacy-card{
+    .privacy-content{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+// activities section //
+.activity-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .activity-tab-section {
+        .nav-tabs {
+            border: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.app-timeline-box{
+    .timeline-border-box{
+        border: 1px dashed rgb(var(--dark), 0.2);
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+// >>-- 111 Setting css end --<<

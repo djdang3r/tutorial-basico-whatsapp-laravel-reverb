@@ -1,0 +1,155 @@
+// >>-- 13 Card css start --<<
+
+.card{
+    box-shadow: var(--box-shadow);
+    border: none;
+    margin-bottom: 1.25rem;
+    transition: var(--app-transition);
+    border-radius: var(--app-border-radius);
+    // border: 1px dashed rgba(var(--secondary),.3);
+      &.hover-effect{
+        &:hover{
+          transform: translateY(-2px);
+          transition: var(--app-transition);
+          box-shadow: var(--hover-shadow);
+        }
+      }
+      &.border-0{
+        .card-header{
+          border-bottom: 0;
+            &+.card-body{
+                padding-top: 0;
+            }
+        }
+        .card-body{
+            &+.card-footer{
+              border-top: 0;
+                padding-top: 0;
+            }
+        }
+      }
+      .icon-bg{
+        font-size: 500%;
+        position: absolute;
+        right: -4px;
+        top: -8px;
+        opacity: 0.15;
+      }
+
+    .card-body, .card-header,.card-footer{
+      padding: 1rem 1.25rem;
+    }
+    .card-header,.card-footer{
+        background-color: transparent;
+        border-color: var(--border_color);
+        h5{
+          font-weight: 600;
+          color: rgba(var(--dark), .75);
+        }
+        p{
+          color: rgba(var(--dark), .8);
+          margin-bottom: 0;
+        }
+    }
+    .card-body,
+    .card-header{
+      &.code-header{
+        .source{
+          font-size: 20px;
+          color: rgba(var(--dark), 1);
+          position: absolute;
+          right: 20px;
+          top: 14px;
+          background-color: rgba(var(--dark), 0.1);
+          padding: 6px;
+          border-radius: 100%;
+        }
+      }
+    }
+    .card-footer{
+      &.code-footer{
+        .source{
+          font-size: 20px;
+          color: rgba(var(--dark), 1);
+          position: absolute;
+          right: 20px;
+          bottom: 14px;
+          background-color: rgba(var(--dark), 0.1);
+          padding: 6px;
+          border-radius: 100%;
+        }
+      }
+    }
+}
+.horizontal-card{
+  img{
+    object-fit: cover;
+    min-height: 100%;
+  }
+}
+.equal-card {
+  height: calc(100% - 1.25rem);
+}
+
+  @mixin card_mixin($name, $color) {
+    .card-#{$name} {
+      background-color: rgba(#{$color},1);
+      *{
+        color: var(--white) !important;
+      }
+      &:hover,&:active ,&.active ,&.show,&:checked,&:focus {
+        background-color: rgba(#{$color},1)  !important;
+        transition: var(--app-transition);
+      }
+    }
+
+    .card-outline-#{$name} {
+      background-color: transparent;
+      border:1px solid rgba(#{$color},1);
+      *{
+        color: rgba(#{$color},0.8);
+      }
+      .card-header{
+          *{
+            color: rgba(#{$color},1);
+          }
+        }
+      .card-header,.card-footer{
+        border-color: rgba(#{$color},1);
+      }
+      &:hover,&.active ,&.show,&:checked,&:focus {
+        background-color: rgba(#{$color},1);
+        *{
+          color: var(--white);
+        }
+        .card-header,.card-footer{
+          border-color: var(--white);
+        }
+      }
+    }
+
+    .card-light-#{$name} {
+      background-color: rgba(#{$color},0.10) ;
+      .card-header,.card-footer{
+        border-color: rgba(#{$color},0.4);
+      }
+      *{
+        color: rgba(#{$color},1) ;
+      }
+      &:hover,&.active ,&.show,&:checked,&:focus {
+        background-color: rgba(#{$color},0.20) ;
+        border-color: rgba(#{$color}, 1) ;
+        color: rgba(#{$color},1) ;
+      }
+
+      &.disabled{
+        background-color: rgba(#{$color},0.5) ;
+      }
+    }
+  }
+
+  @each $name, $color in $colors {
+    @include card_mixin($name, map-get($colors, $name));
+  }
+
+  // >>-- 13 Card css end --<<

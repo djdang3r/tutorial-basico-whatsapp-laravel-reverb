@@ -1,0 +1,71 @@
+// >>-- 103 Footer Page css start --<<
+.footer-page {
+  footer {
+    position: unset;
+    padding-left: 0 !important;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    font-weight: 500;
+  }
+
+  .footer-list {
+    ul {
+      li {
+        font-size: 16px;
+        color: rgba(var(--secondary), 1);
+
+        i {
+          color: rgba(var(--dark), .75);
+        }
+
+        a {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+
+  .footer-first {
+    p {
+      font-size: 16px;
+      color: rgba(var(--secondary), 1);
+    }
+  }
+}
+
+@mixin footer-page_mixin($name, $color) {
+  .footer-#{$name} {
+    background-color: rgba(#{$color}, 1);
+
+    .footer-brand {
+      color: var(--white);
+    }
+
+    li {
+      a {
+        color: var(--white) !important;
+      }
+    }
+  }
+}
+
+@each $name, $color in $colors {
+  @include footer-page_mixin($name, map-get($colors, $name));
+}
+
+.footer-light {
+  //color: rgba(var(--dark), 1) !important;
+
+  .footer-brand {
+    color: rgba(var(--dark), 1) !important;
+  }
+  li {
+    a {
+      color: rgba(var(--dark), 1) !important;
+    }
+  }
+
+}
+
+// >>-- 103 Footer Page css end --<<

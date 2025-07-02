@@ -1,0 +1,180 @@
+// >>-- 62 List js css start --<<
+
+.list-table-data {
+    &.table-bottom-border {
+        & > thead {
+            th {
+                color: rgb(var(--dark), 0.75);
+                font-weight: 600;
+                font-size: 16px;
+                &:first-child{
+                    padding-left: 20px;
+                }
+            }
+        }
+        & > tbody {
+            & > tr {
+                border-top: 1px dashed var(--border_color);
+                td {
+                    color: rgb(var(--secondary));
+                    font-size: 14px;
+                }
+            }
+            th{
+                &:first-child{
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+    thead {
+        tr {
+            th:nth-child(3) {
+                min-width: 200px;
+            }
+            th:nth-child(4) {
+                min-width: 200px;
+            }
+            th:nth-child(6) {
+                min-width: 150px;
+            }
+        }
+    }
+}
+
+.list-table-header {
+    padding: 1rem;
+    border-bottom: 1px dashed var(--border_color);
+}
+.list-tables {
+   .d-flex{
+    padding: 0.5rem;
+    &+{
+        .d-flex{  
+            border-top: 1px dashed var(--border_color);
+        }
+    }
+   }
+}
+
+.existing-list,
+.list-tables {
+    h6 {
+        color: rgb(var(--dark), 0.75);
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    p {
+        color: rgb(var(--secondary));
+        font-size: 14px;
+        overflow: hidden;
+        margin-bottom: 0;
+    }
+}
+
+.list-pagination {
+    .pagination {
+        margin: 16px;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: end;
+        li a {
+            text-decoration: none;
+            color: #111;
+            background-color: var(--border_color);
+            text-decoration: none;
+            margin: 5px;
+            border-radius: 5px;
+            padding: 0.8rem 1rem;
+        }
+        li.active a {
+            background-color: rgb(var(--primary));
+            color: #fff;
+        }
+    }
+}
+
+.existing-list {
+    height: 222px;
+    overflow: auto;
+    > div {
+        border-bottom: 1px solid var(--border_color);
+        padding: 1rem 0;
+        &:last-child {
+            border: none;
+        }
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+            .text-muted{
+              font-size: 11px;
+              white-space: nowrap;
+            }
+    }
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.fuzzy-list {
+    height: 222px;
+    overflow-x: scroll;
+
+    li {
+        color: rgb(var(--dark), 0.75);
+        font-size: 14px;
+        padding: 6px 0;
+        p{
+            margin-bottom: 0;
+        }
+    }
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(var(--secondary));
+        border-radius: 10px;
+    }
+}
+.app-sort {
+    .sort {
+        &.asc,
+        &.desc {
+            &:after {
+                font-family: "tabler-icons";
+                border: none;
+                display: inline-block;
+                color: var(--black);
+                font-size: 10px;
+                padding-left: 10px;
+            }
+        }
+        &.asc::after {
+            content: "\ea62";
+        }
+        &.desc::after {
+            content: "\ea5f";
+        }
+    }
+}
+
+
+.table-list-box{
+    tbody{
+        tr{
+            td{
+                &:first-child {
+                    min-width: 150px;
+                }
+            }
+        }
+    }
+}
+
+// >>-- 62 List js css end --<<

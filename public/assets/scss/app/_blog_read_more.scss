@@ -1,0 +1,51 @@
+
+// >>-- 91 Blog Read More css start --<<
+
+.blog-tags{
+    .text-light-secondary,
+    .text-light-dark{
+        &:hover{
+            background-color: rgba(var(--primary),1);
+            color: var(--white);
+            cursor: pointer;
+        }
+    }
+}
+
+.categories-list{
+    .list-group-item{
+        border: none;
+        padding-left: 0px;
+        padding-right: 0px;
+    
+    .categories-content{
+        p{
+            transition: var(--app-transition);
+            &:hover{
+                font-weight: 600;
+                cursor: pointer;
+                text-shadow: 0 0 15px #FFFFFF;
+                -webkit-transform: scale(1.05);
+                -o-transform: scale(1.05);
+                transform: scale(1.10);
+              
+            }
+        }
+    }
+    }
+}
+.blogcomment-box{
+    position: relative;
+    border: 1px solid rgba(var(--secondary),.2);
+    border-radius: 10px;
+    padding: 1rem;
+    .comment-img{
+        position: absolute;
+        left: 5px;
+    }
+    .commentdiv{
+        margin-left: 40px;
+    }
+}
+
+// >>-- 91 Blog Read More css end --<<

@@ -1,0 +1,118 @@
+// >>-- 64 File upload css start --<<
+
+.app-file-upload{
+    &.filepond--root {
+        background-color: var(--white) !important;
+        border: 2px dashed rgb(var(--dark), 0.2);
+        border-radius: 18px;
+        overflow: hidden;
+        margin-bottom: 0;
+        .filepond--drop-label {
+            background-color: var(--white) !important;
+            height: 150px;
+        }
+    }
+    .filepond--credits {
+        display: none;
+    }
+}
+
+.filepond-file,
+.filepond-1 {
+    &.filepond--root {
+        background-color: var(--white) !important;
+        border: 2px dashed rgb(var(--dark), 0.2);
+        border-radius: 18px;
+        overflow: hidden;
+        margin-bottom: 0;
+        .filepond--drop-label {
+            background-color: var(--white) !important;
+            height: 200px;
+        }
+    }
+    .filepond--credits {
+        display: none;
+    }
+}
+
+.filepond-2 {
+    &.filepond--root {
+        width: 200px;
+        height: 200px !important;
+        background-color: var(--white) !important;
+        border: 2px dashed rgba(var(--secondary), 0.6);
+        border-radius: 50%;
+        overflow: hidden;
+        color: rgb(var(--dark), 1);
+        .filepond--drop-label {
+            height: 100%;
+            background-color: var(--white);
+            color: rgb(var(--dark), 1);
+        }
+    }
+    .filepond--credits {
+        display: none;
+    }
+}
+
+.rounded-fileuploader {
+    margin: auto !important;
+}
+
+@mixin fileupload_mixin($name, $color) {
+    .file-#{$name} {
+        &.filepond--root {
+            background-color: rgba(#{$color}, 1) !important;
+            .filepond--drop-label {
+                background-color: rgba(#{$color}, 1) !important;
+                color: var(--white) !important;
+            }
+        }
+    }
+}
+
+@each $name, $color in $colors {
+    @include fileupload_mixin($name, map-get($colors, $name));
+}
+
+@mixin fileuploadlight_mixin($name, $color) {
+    .file-light-#{$name} {
+        &.filepond--root {
+             border:2px dashed rgba(#{$color}, 1) !important;
+            background-color: rgba(#{$color}, 0.1);
+            .filepond--drop-label {
+                background-color: rgba(#{$color}, 0.1);
+                color: rgba(#{$color}, 1);
+            }
+        }
+    }
+}
+
+@each $name, $color in $colors {
+    @include fileuploadlight_mixin($name, map-get($colors, $name));
+}
+
+.filelight,
+.filesolid {
+    &.filepond--root {
+        border-radius: 18px;
+        overflow: hidden;
+        margin-bottom: 0;
+        .filepond--drop-label {
+            height: 150px;
+        }
+    }
+    .filepond--credits {
+        display: none;
+    }
+}
+.file-uploader-box{
+    --bs-gutter-y: 1rem;
+}
+.custom-text{
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+// >>-- 64 File upload css end --<<

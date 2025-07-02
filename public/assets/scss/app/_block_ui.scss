@@ -1,0 +1,75 @@
+// >>-- 110 Block Ui css start --<<
+.blockOverlay {
+        z-index: 1004 !important;
+}
+.bolckui-msg-box{
+    background-color: rgb(var(--primary));
+    padding: 10px 0;
+    color: var(--white);
+    border-radius: 10px;
+}
+.block-msg-card{
+    .msg-card{
+        width: 100%;
+        background-color: rgb(var(--warning));
+        padding: 0.938rem;
+        color: var(--white);
+        border-radius: 10px;
+    }
+    .blockMsg{
+        width: 100% !important;
+        left: 5px;
+
+    }
+}
+
+.mutiple-msg {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 20px;
+}
+.block-ui-cards{
+    p{
+        line-break: anywhere;
+    }
+}
+
+@keyframes spinnerz {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+.loader-container-box{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .loader {
+        width: 50px;
+        aspect-ratio: 1;
+        display: grid;
+        border-radius: 50%;
+        background: linear-gradient(0deg ,rgb(var(--light)) 30%,#0000 0 70%,rgb(var(--light),.2) 0) 50%/8% 100%, linear-gradient(90deg,rgb(var(--light)) 30%,#0000 0 70%,rgb(var(--light),.1) 0) 50%/100% 8%;
+        background-repeat: no-repeat;
+        animation: spinnerz 1s infinite steps(12);
+        &::before {
+            content: "";
+            grid-area: 1/1;
+            border-radius: 50%;
+            background: inherit;
+            opacity: 0.915;
+            transform: rotate(30deg);
+        }
+        &::after {
+            content: "";
+            grid-area: 1/1;
+            border-radius: 50%;
+            background: inherit;
+            opacity: 0.915;
+            transform: rotate(30deg);
+            opacity: 0.83;
+            transform: rotate(60deg);
+        }
+    }
+}
+// >>-- 110 Block Ui css end --<<

@@ -1,0 +1,271 @@
+// >>-- 44 Helper_classes css start --<<
+
+@mixin text_mixin($name, $color) {
+  .text-#{$name} {
+    color: rgba(#{$color}, 1) !important;
+
+    &:hover {
+      color: rgba(#{$color}, 0.8) !important;
+      cursor: pointer;
+    }
+  }
+
+  .link-#{$name} {
+    color: rgba(#{$color}, 1) !important;
+
+    &:hover {
+      color: rgba(#{$color}, 0.8) !important;
+      cursor: pointer;
+    }
+  }
+
+  .txt-bg-#{$name} {
+    background-color: rgba(#{$color}, 0.1) !important;
+    color: rgba(#{$color}, 1) !important;
+
+    &:hover {
+      color: rgba(#{$color}, 0.8) !important;
+      cursor: pointer;
+    }
+  }
+}
+
+@each $name, $color in $colors {
+  @include text_mixin($name, map-get($colors, $name));
+}
+
+// font weight
+$unit: "px"; // Feel free to change the unit.
+
+@mixin font-loop($classname, $stylename, $max, $offset) {
+  $i: 0;
+
+  @while $i <=$max {
+    #{$classname + $i} {
+      #{$stylename}: #{$i} !important;
+    }
+
+    $i: $i + $offset;
+  }
+}
+
+@include font-loop(".f-fw-", "font-weight", 900, 100);
+
+// font style
+.f-fs-normal {
+  font-style: normal;
+}
+
+.f-fs-italic {
+  font-style: italic;
+}
+
+.f-fs-oblique {
+  font-style: oblique;
+}
+
+.f-fs-initial {
+  font-style: initial;
+}
+
+.f-fs-inherit {
+  font-style: inherit;
+}
+
+//  text decoration
+.text-d-underline {
+  text-decoration: underline;
+}
+
+.text-d-line-through {
+  text-decoration: line-through;
+}
+
+.text-d-overline {
+  text-decoration: overline;
+}
+
+.text-d-overline-underline {
+  text-decoration: underline overline;
+}
+
+.text-d-line-underline {
+  text-decoration: underline line-through;
+}
+
+//  border
+.border {
+  border: 1px solid var(--border_color) !important;
+}
+
+.border-t {
+  border-top: 1px solid var(--border_color);
+}
+
+.border-b {
+  border-bottom: 1px solid var(--border_color);
+}
+
+.border-s {
+  border-left: 1px solid var(--border_color);
+}
+
+.border-e {
+  border-right: 1px solid var(--border_color);
+}
+
+.border-0 {
+  border: none;
+}
+
+.border-t-0 {
+  border: none;
+  border-top: 1px solid var(--border_color);
+}
+
+.border-b-0 {
+  border: 1px solid var(--border_color);
+  border-bottom: none;
+}
+
+.border-s-0 {
+  border: 1px solid var(--border_color);
+  border-left: none;
+}
+
+.border-e-0 {
+  border: 1px solid var(--border_color);
+  border-right: none;
+}
+
+.app-example [class^=d]{
+  text-align: center;
+  display: inline-block;
+  width: 200px;
+  height: 120px;
+  background-color: rgb(var(--light), 0.1);
+  margin: 0.25rem;
+  padding: 50px 0 !important;
+  border-radius: 15px;
+}
+
+.app-example [class^=b] {
+  text-align: center;
+  display: inline-block;
+  width: 150px;
+  height: 120px;
+  background-color: rgb(var(--light), 0.1);
+  margin: 0.25rem;
+  padding: 50px 0 !important;
+}
+
+.app-example {
+  img {
+    width: 160px;
+    height: 120px;
+    margin: 0.25rem;
+  }
+}
+.rotaed-box{
+  --bs-gutter-y: 1rem;
+}
+.rotate {
+  width: 135px;
+  height: 135px;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 2px dashed rgb(var(--dark), 0.3);
+  margin: auto;
+
+  span {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-right: 5px solid rgb(var(--primary));
+      left: -22px;
+      top: -22px;
+      border-radius: 50%;
+      opacity: 0;
+    }
+
+  }
+
+  &:hover {
+    span {
+      &:after {
+        opacity: 1;
+        transform: rotate(90deg);
+        transition: var(--app-transition);
+      }
+    }
+
+  }
+
+  &.rotate-180 {
+    &:hover {
+      span {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  &.rotate-270{
+    &:hover{
+      span{
+        &:after{
+          transform: rotate(270deg);
+        }
+      }
+    }
+  }
+  &.rotate-90-1{
+    &:hover{
+      span{
+        &:after{
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+  &.rotate-90-1{
+    &:hover{
+      span{
+        &:after{
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+  &.rotate-180-1{
+    &:hover{
+      span{
+        &:after{
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+  &.rotate-280-1{
+    &:hover{
+      span{
+        &:after{
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+
+  
+}
+
+// >>-- 44 Helper_classes css end --<<

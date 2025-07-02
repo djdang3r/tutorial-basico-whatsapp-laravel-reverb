@@ -1,0 +1,193 @@
+// >>-- 35 Count_down css start --<<
+
+%countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// countdown 1
+.countdown-seconds {
+  & .timer {
+    @extend %countdown;
+    flex-direction: column;
+    border-radius: 5px;
+    & .seconds {
+      font-size: 20px;
+      height: 60px;
+      width: 60px;
+      line-height: 60px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+      border: 1px solid rgba(var(--primary), 1);
+      color: rgba(var(--primary), 1);
+    }
+    & .timer-countdown {
+      background-color: rgba(var(--primary), 1);
+      color: var(--white);
+      padding: 8px;
+      border-radius: 4px;
+    }
+  }
+}
+
+// countdown 2
+.app-countdown-min {
+  @extend %countdown;
+  & .timer {
+    @extend %countdown;
+    text-align: center; 
+    border-radius: 4px;
+    padding: 12px 24px;
+    gap: 8px;
+    border: 1px solid var(--border_color);
+    background-color: rgba(var(--secondary), 0.2);
+    & .app-line {
+      font-size: 34px;
+      margin: 3px;
+      color: var(--white);
+    }
+    & .countdown {
+      display: flex;
+      flex-direction: column;
+      padding: 8px;
+      margin: 2px;
+      background-color: var(--white);
+      & .seconds,
+      & .minutes {
+        font-size: 20px;
+        color: rgb(var(--dark), 1);
+      }
+      & .timer-countdown {
+        font-size: 16px;
+        color: rgb(var(--dark), 1);
+      }
+    }
+  }
+}
+
+// countdown 3
+.app-countdown-hours {
+  .timer {
+    @extend %countdown;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    padding: 6px;
+    gap: 10px;
+    .app-countdown {
+      @extend %countdown;
+      flex-direction: column;
+      color: var(--white);
+      padding: 4px;
+      border-radius: 5px;
+      padding: 7px 7px;
+      border: 1px solid rgba(var(--success), 1);
+      color: rgba(var(--success), 1);
+      &.minutes,
+      &.seconds,
+      &.Hours {
+        font-size: 34px;
+        border-radius: 8px;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .timer-countdown {
+        padding: 6px 12px;
+        text-align: center;
+        border-radius: 4px;
+      }
+      &.countdown-border{
+        border-radius: 20px 0 0 20px
+      }
+      &.countdown-border-1{
+        border-radius: 0 20px 20px 0
+      }
+    }
+  }
+}
+
+// countdown 4
+.app-countdown-background {
+  @extend %countdown;
+  & .timer {
+    @extend %countdown;
+    text-align: center; 
+    border-radius: 4px;
+    padding: 12px 24px;
+    gap: 25px;
+    & .countdown {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      background-color: var(--white);
+      border: 2px dashed rgb(var(--danger));
+    }
+  }
+}
+
+// countdown 5
+.app-countdown-circle{
+  & .timer {
+    @extend %countdown;
+    gap: 10px;
+    border-radius: 5px;
+    .countdown{
+      @extend %countdown;
+       flex-direction: column;
+      .minutes,
+      .hours,
+      .days,
+      .seconds {
+        font-size: 20px;
+        height: 100px;
+        width: 100px;
+        line-height: 100px;
+        text-align: center;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        background-color: rgb(var(--light));
+        color: rgba(var(--dark), 1);
+      }
+      .timer-countdown {
+        width: 80px;
+        text-align: center;
+        font-weight: 600;
+        padding: 8px;
+        border-radius: 4px;
+
+      }
+    }
+  }
+}
+
+// countdown 6
+.app-countdown-square {
+  .timer{
+    display: flex;
+    gap: 20px;
+    .countdown{
+      @extend %countdown;
+      font-family: math;
+      flex-direction: column;
+      border-radius: 10px;
+      width: 112px;
+      height: 107px;
+      padding: 6px;
+      color: rgb(var(--dark));
+      border: 2px solid rgb(var(--info));
+  
+    }
+  }
+}
+
+
+// >>-- 35 Count_down css end --<<

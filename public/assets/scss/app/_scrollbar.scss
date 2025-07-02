@@ -1,0 +1,32 @@
+// >>-- 16 Scrollbar css start --<<
+.scroll-list-group{
+	height: 330px;
+}
+.vertical-scrollbar-box{
+	height: 350px;
+}
+
+.simplebar-vertical {
+	.simplebar-scrollbar {
+		&::before {
+			background-color: rgba(var(--secondary), 0.5);
+			width: 3px;
+		}
+	}
+}
+.simplebar-horizontal {
+	.simplebar-scrollbar {
+		&::before {
+			background-color: rgba(var(--secondary), 0.5);
+			height: 4px;
+		}
+	}
+}
+
+.both-scroll {
+	&.scroll-bar {
+		height: 350px;
+	}
+}
+
+// >>-- 16 Scrollbar css end --<<

@@ -1,0 +1,66 @@
+// >>-- 55 Notification css start --<<
+
+//color-toast
+@mixin notifications_mixin($name, $color) {
+  .app-toast-#{$name} {
+    border: 1px solid rgba(#{$color},1);
+    .toast-line{
+      &::before{
+        background:rgba(#{$color},1) !important;
+      }
+    }
+  }
+}
+@each $name, $color in $colors {
+  @include notifications_mixin($name, map-get($colors, $name));
+}
+
+.app-color-toast{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  height: 51px;
+  border-radius: 5px;
+  background: var(--white);
+  padding: 14px;
+  margin-top: 20px;
+  position: relative;
+  .toast-item{
+    .toast-line{
+      &::before{
+        position: absolute;
+        content: "";
+        height: 3px;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        animation: toast 5s linear forwards;
+      }
+    }
+    .tost-icon{
+      font-size: 20px;
+      color: rgb(var(--primary),1);
+    }
+  }
+}
+.app-center{
+  right: 38%;
+  border: 1px solid rgb(var(--secondary), 0.4);
+  .toast-line::before{
+    background: rgb(var(--secondary), 1) !important;
+  }
+}
+.app-left{
+  border: 1px solid rgb(var(--success), 0.4);
+  left: 46px;
+  top: 10px;
+  .toast-line::before{
+    background: rgb(var(--success), 1) !important;
+  }
+}
+.toast-close{
+  cursor: pointer;
+}
+
+// >>-- 55 Notification css end --<<

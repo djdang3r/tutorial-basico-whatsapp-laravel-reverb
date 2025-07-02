@@ -1,0 +1,55 @@
+// >>-- 68 Scrollpy css start --<<
+
+@mixin btn_pill($name, $color) {
+
+    .nav-link,
+    .dropdown-item {
+        &.nav-pill-#{$name}{
+            &.active{
+                background-color: rgba(#{$color},1);
+                color: var(--white);
+            }
+        }
+    }
+    .list-group-item{
+        &.nav-pill-#{$name}{
+            &.active{
+                background-color: rgba(#{$color},1);
+                border-color:rgba(#{$color},1);
+            }
+        }
+    }
+  }
+  
+  @each $name, $color in $colors {
+    @include btn_pill($name, map-get($colors, $name));
+  }
+
+.simple-list-example-scrollspy{
+    .active{
+        color: rgba(var(--primary),1);
+    }
+}
+
+.scrollpy-navbar{
+    background-color: rgba(var(--primary),.1) !important;
+    border-radius: var(--bs-border-radius);
+    .navbar-collapse{
+        padding: 0.5rem !important;
+    }
+    .nav-link{
+        color: rgba(var(--primary),1);
+        font-weight: 500;
+    }
+}
+.nested-nav ,
+.scrollpy-nested-nav  {
+    .nav-link{
+        color: rgba(var(--primary)) ;
+    }
+}
+.nav-link.nav-pill-primary.active{
+    color: white !important;
+}
+
+// >>-- 68 Scrollpy css end --<<

@@ -1,0 +1,139 @@
+// >>-- 28 Switch css start --<<
+
+.main-switch{
+  input[type="checkbox"].toggle {
+    opacity: 0;
+    position: absolute;
+  }
+
+  input[type="checkbox"].toggle + label {
+    position: relative;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"].toggle + label::before {
+    content: "";
+    width: 60px;
+    height: 30px;
+    background-color: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--light-gray);
+    transition: background-color 200ms ease-in-out;
+    margin-left: 10px;
+  }
+
+  input[type="checkbox"].toggle + label::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    content: "\2715";
+    font-size: 20px;
+    left: .2em;
+    width: 1.8em;
+    height: 1.8em;
+    background-color: rgba(var(--danger), 1);
+    color: var(--white);
+    border-radius: 1em;
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+  }
+
+  input[type="checkbox"].toggle:focus + label::before {
+    outline: 1px solid var(--dark);
+  }
+
+  input[type="checkbox"].toggle:checked + label::before {
+    background-color: rgba(var(--success), 0.40);
+  }
+
+  input[type="checkbox"].toggle:checked + label::after {
+    content: "\2713";
+    transform: translateX(100%);
+    background-color: rgba(var(--success), 1);
+  }
+
+  input[type="checkbox"].toggle:disabled + label {
+    color: var(--light-gray);
+  }
+
+  input[type="checkbox"].toggle:disabled + label::before {
+    background-color: var(--light-gray);
+  }
+
+  input[type="checkbox"].toggle:disabled + label::after {
+    background-color: var(--light-gray);
+  }
+
+}
+@mixin switches_color($name, $color) {
+  .switch-#{$name} input[type="checkbox"].toggle:checked + label::before {
+    background: rgba(#{$color}, 1) !important;;
+  }
+}
+
+@mixin switches_colors($name, $color) {
+  .switch-#{$name} input[type="checkbox"].toggle:checked + label::after {
+    content: "\2713";
+    transform: translateX(100%);
+    background: rgba(#{$color}, 1) ;
+  }
+}
+.main-switch-color{
+  @each $name, $color in $colors {
+    @include switches_color($name, map-get($colors, $name));
+  }
+  @each $name, $color in $colors {
+    @include switches_colors($name, map-get($colors, $name));
+  }
+}
+/*----*/
+
+@mixin switch_border($name, $color) {
+  .switch-border-#{$name} input[type="checkbox"].toggle + label::before {
+    background-color: var(--white);
+    border: 1px solid rgba(#{$color}, 1) !important;
+  }
+}
+.switch_border{
+  @each $name, $color in $colors {
+    @include switch_border($name, map-get($colors, $name));
+  }
+}
+
+@mixin switch-unchecked($name, $color) {
+  .switch-unchecked-#{$name} input[type="checkbox"].toggle + label::after {
+    background-color: rgba(#{$color}, 1);
+    color: var(--white);
+  }
+}
+.switch-unchecked{
+  @each $name, $color in $colors {
+    @include switch-unchecked($name, map-get($colors, $name));
+  }
+}
+
+.swich-size input[type="checkbox"].toggle + label::before {
+  width: 45px;
+  height: 25px;
+  font-size: 14px;
+}
+.swich-size input[type=checkbox].toggle + label::after {
+  height: 25px;
+  width: 25px;
+  font-size: 14px;
+}
+.swich-size2 input[type="checkbox"].toggle + label::before {
+  width: 30px;
+  height: 20px;
+}
+.swich-size2 input[type=checkbox].toggle + label::after {
+  height: 20px;
+  width: 20px;
+  font-size: 10px;
+}
+
+
+// >>-- 28 Switch css end --<<

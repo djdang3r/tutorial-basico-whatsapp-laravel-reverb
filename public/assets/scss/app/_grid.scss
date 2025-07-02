@@ -1,0 +1,32 @@
+// >>-- 19 Grid css start --<<
+
+
+.grid-page{
+    .card-body{
+        [class*="col"]{
+            transition: var(--app-transition);
+            &:hover{
+                transition: var(--app-transition);
+                transform: translateY(-1px);
+               >div{
+                background-color: rgba(var(--secondary),0.15) !important;
+               }
+            }
+        }
+    }
+}
+
+.grids{
+    tr{
+        td{
+        border: 1px solid var(--border_color);
+    }
+
+        & th{
+            border: 1px solid var(--border_color);
+            font-weight: 600;
+        }
+    }
+}
+
+// >>-- 19 Grid css end --<<

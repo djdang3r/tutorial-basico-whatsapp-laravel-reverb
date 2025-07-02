@@ -1,0 +1,165 @@
+// >>-- 82 Customizer css start --<<
+
+.customizer-btn{
+    position: fixed;
+    bottom: 50%;
+    right: 0;
+    border: none;
+    font-size: 36px;
+    border-radius: var(--bs-border-radius);
+    padding: 0 10px;
+    background-color: rgba(var(--primary), 1);
+    color: var(--white);
+    z-index: 111;
+    i{
+        &:before{
+            margin-top: 9px;
+            display: inline-block;
+        }
+    }
+}
+.app-customizer{
+    font-size: 14px;
+    .btn-close{
+        position: absolute;
+        right:15px;
+    }
+
+    .offcanvas-body{
+        >ul{
+            li{
+                position: relative;
+                &.selected{
+                    &:before {
+                        content: "\ea5e";
+                        font-family: "tabler-icons" !important;
+                        position: absolute;
+                        height: 16px;
+                        width: 16px;
+                        background-color: rgba(var(--success), 1);
+                        border-radius: 100%;
+                        color: var(--white);
+                        left: -5px;
+                        top: -5px;
+                        padding-left: 2px;
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+        .app-divider-v{
+            h6{
+                margin-top: 0 !important;
+            }
+        }
+        .sidebar-option,.layout-option{
+            display: flex;
+            gap: 12px;
+            width: 100%;
+            padding: 0;
+            >li{
+                cursor: pointer;
+                .body{
+                    position: relative;
+                    .badge{
+                        position: absolute;
+                        left: 6px;
+                        top: 15px;
+                    }
+                }
+            }
+
+            ul{
+                margin-bottom: -5px;
+                width: 100%;
+                padding: 0;
+            }
+            .header{
+                position: relative;
+                padding: 7px;
+                &:before,&:after{
+                    content: "";
+                    position: absolute;
+                    height: 2px;
+                    width: 4px;
+                    background-color: rgba(var(--dark), 0.2);
+                    top: 6px;
+                    border-radius: 3px;
+                    box-shadow: 54px 0 0 0 rgba(0, 0, 0, 0.2);
+                }
+                &:before{
+                    right: 10px;
+                    box-shadow: -7px 0 0 0 rgba(0, 0, 0, 0.2);
+                }
+            }
+            .sidebar{
+                width: 5px;
+                height: 50px;
+                padding: 6px;
+                position: relative;
+                &:before,&:after{
+                    content: "";
+                    position: absolute;
+                    height: 2px;
+                    width: 4px;
+                    background-color: rgba(var(--dark), 0.2);
+                    left: 4px;
+                    border-radius: 3px;
+                    box-shadow: 0 13px 0 0 rgba(0, 0, 0, 0.2)
+                }
+                &:before{
+                    top: 12px;
+                    box-shadow: 0 13px 0 0 rgba(0, 0, 0, 0.2);
+                }
+            }
+            .body{
+                width: calc(100% - 18px);
+                height: 50px;
+            }
+            li{
+                display: inline-block;
+                border: 1px solid rgba(var(--dark), 0.2);
+                width: 100%;
+                padding: 8px;
+                border-radius: var(--bs-border-radius);
+            }
+        }
+        .color-hint{
+            >li{
+                display: inline-block;
+                border: 1px solid rgba(var(--dark), 0.2);
+                height: 90px;
+                width: 46px;
+                padding: 8px;
+                border-radius: var(--bs-border-radius);
+                &+li{
+                    margin-left: 10px;
+                }
+                div{
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 5px;
+                    background: linear-gradient(to bottom, rgba(var(--primary),1) 50%, rgba(var(--secondary),1) 50%);
+                }
+            }
+        }
+        .text-size{
+            position: relative;
+            li{
+                cursor: pointer;
+                display: inline-block;
+                text-align: center;
+                border: 1px solid rgba(var(--dark), 0.2);
+                padding: 7px 15px;
+                border-radius: var(--bs-border-radius);
+            }
+        }
+    }
+    .offcanvas-footer{
+        padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
+        border-top: 1px solid var(--border_color);
+    }
+}
+
+// >>-- 82 Customizer css start --<<
+

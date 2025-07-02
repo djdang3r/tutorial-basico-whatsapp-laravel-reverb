@@ -1,0 +1,521 @@
+// >>-- 04 Nav css start --<<
+
+.toggle-semi-nav {
+    float: right;
+    padding: 5px;
+    line-height: 1.1;
+    border-radius: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+.semi-nav {
+    &:hover {
+        .toggle-semi-nav {
+            display: block;
+        }
+    }
+
+    .app-logo {
+        &:hover {
+            .toggle-semi-nav {
+                background-color: rgba(var(--primary), 0.2) !important;
+                transition: var(--app-transition);
+            }
+        }
+    }
+}
+
+nav {
+    width: $sidebar-width;
+    height: 100vh;
+    display: inline-block;
+    box-shadow: 0 -0.8rem 1.2rem var(--light-gray);
+    position: fixed;
+    background-color: var(--white);
+    z-index: 1003;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    .app-logo {
+        padding: 1.5rem 1.5rem 0 1.5rem;
+        .logo {
+            img {
+                width: 140px;
+                float: left;
+            }
+        }
+    }
+
+    .app-nav {
+        height: calc(100% - 50px);
+        overflow: auto;
+
+        .main-nav {
+            > li {
+                padding: 0px 0.5rem;
+                &.no-sub {
+                    a {
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+
+                &:not(.menu-title) {
+                    position: relative;
+                    transition: var(--app-transition);
+
+                    > a {
+                        padding: 0.6rem 1rem;
+                        font-weight: 500;
+                        color: rgba(var(--dark), 1);
+                        width: 100%;
+                        display: inline-flex;
+                        font-size: 16px;
+                        align-items: center;
+                        text-transform: capitalize;
+                        border-radius: var(--app-border-radius);
+                        &[aria-expanded="true"] {
+                            color: var(--white);
+                            background: rgba(var(--primary), 1);
+                        }
+
+                        &[aria-expanded="false"] {
+                            &::after {
+                                content: "\ec86";
+                                transition: var(--app-transition);
+                            }
+                        }
+
+                        i {
+                            font-size: 1.3rem;
+                            // font-weight: 500;
+                            margin-right: 0.3rem;
+                            margin-top: 0;
+                        }
+
+                        &::after {
+                            content: "\ebf8";
+                            transition: var(--app-transition);
+                            background-image: none;
+                            font-family: "Phosphor-Bold" !important;
+                            right: 1.5rem;
+                            position: absolute;
+                            font-size: 0.7rem;
+                            top: 14px;
+                        }
+                    }
+
+                    ul {
+                        padding: 0.6rem 0.5rem;
+                        list-style-position: inside;
+
+                        li {
+                            padding: 0.3rem 1.5rem 0.3rem 3rem;
+                            font-weight: 400;
+                            line-height: 2;
+                            position: relative;
+                            width: 100%;
+                            display: block;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+
+                            &.active {
+                                color: rgba(var(--primary), 1);
+                                font-weight: 500;
+                                border-radius: 5px;
+                                a {
+                                    &::before {
+                                        background-color: rgba(var(--primary), 1);
+                                        outline: 2px solid rgba(var(--primary), 0.2);
+                                        outline-offset: 2px;
+                                        animation: bounceIn ease-in-out 0.5s;
+                                    }
+                                }
+                            }
+
+                            &:last-child {
+                                a {
+                                    &::after {
+                                        border-left: 0;
+                                    }
+                                }
+                            }
+
+                            a {
+                                &::before {
+                                    content: "";
+                                    width: 6px;
+                                    height: 6px;
+                                    position: absolute;
+                                    left: 30px;
+                                    font-size: 20px;
+                                    top: 18px;
+                                    border-radius: 100%;
+                                    outline: 1px solid rgba(var(--secondary), 1);
+                                }
+                            }
+
+                            &.another-level {
+                                &:last-child {
+                                    padding-bottom: 0;
+                                }
+                                > a {
+                                    display: block;
+                                    &::after {
+                                        content: "\ebf8";
+                                        transition: var(--app-transition);
+                                        font-family: "Phosphor-Bold" !important;
+                                        position: absolute;
+                                        right: 1rem;
+                                    }
+
+                                    &[aria-expanded="false"] {
+                                        &::after {
+                                            content: "\ec86";
+                                            transition: var(--app-transition);
+                                        }
+                                    }
+                                }
+
+                                ul {
+                                    margin-left: -30px;
+                                    margin-top: -10px;
+                                    padding-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // ul {
+                //     background-color: rgba(var(--light), 0.1);
+                //     border-radius: 24px;
+                //     margin: 0.5rem 0;
+                //     border: 1px dashed rgba(var(--secondary), 0.2);
+                // }
+            }
+        }
+
+        .menu-title {
+            padding: 0.75rem 1.25rem 0.2rem !important;
+            margin-bottom: 0.75rem;
+            span {
+                text-transform: uppercase;
+                color: rgba(var(--primary), 1);
+                font-size: 14px;
+                background-color: var(--light-gray);
+                padding: 0.2rem 1rem;
+                border-radius: 15px;
+            }
+        }
+
+        .menu-item {
+            padding: 0.5rem 1rem;
+            .btn {
+                padding: 0;
+                color: rgba(var(--secondary), 1);
+                font-weight: 500;
+                .ti {
+                    &:before {
+                        width: auto;
+                        display: inline-block;
+                        font-size: 20px;
+                        vertical-align: super;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.app-wrapper {
+    .semi-nav {
+        //:not(.horizontal-sidebar){
+        width: $semi-nav;
+        transition: var(--app-transition);
+        .badge {
+            display: none;
+        }
+        &:hover {
+            width: $sidebar-width;
+            transition: var(--app-transition);
+
+            .app-logo {
+                padding: 1.5rem 1.5rem 0 1.5rem;
+                .logo {
+                    width: auto;
+                    overflow: unset;
+                    transition: var(--app-transition);
+                }
+            }
+            .app-nav {
+                width: 100%;
+                .menu-title {
+                    span {
+                        display: inline;
+                        text-overflow: unset;
+                        overflow: unset;
+                        white-space: unset;
+                        color: rgba(var(--secondary), 1);
+                        font-size: inherit;
+                        transition: var(--app-transition);
+                    }
+                }
+
+                .main-nav {
+                    > li {
+                        &:not(.menu-title) {
+                            ul {
+                                height: auto;
+                                opacity: 1;
+                                transition: var(--app-transition);
+                            }
+                            > a::after {
+                                content: "\ec86";
+                                transition: var(--app-transition);
+                            }
+                            a[aria-expanded="true"]::after, >a [aria-expanded="true"]::after {
+                                content: "\ebf8";
+                                transition: var(--app-transition);
+                            }
+                        }
+                        a {
+                            font-size: inherit;
+                            text-align: left;
+                            transition: var(--app-transition);
+                            transition-duration: 0.15s;
+                            i {
+                                font-size: 1.2rem;
+                                margin-right: 0.25rem;
+                                margin-top: -4px;
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        & ~ .app-content {
+            padding-left: $semi-nav;
+
+            transition: var(--app-transition);
+            header {
+                &.header-main {
+                    padding-left: calc($semi-nav + 20px);
+                    transition: var(--app-transition);
+                }
+            }
+            footer {
+                padding-left: $semi-nav;
+            }
+        }
+
+        .app-logo {
+            padding: 1.5rem 1.5rem 0 1.5rem;
+            .logo {
+                width: 25px;
+                overflow: hidden;
+                transition: var(--app-transition);
+            }
+        }
+
+        .app-nav {
+            .menu-title {
+                > span {
+                    display: block;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    font-size: 10px;
+                    color: rgba(var(--primary), 1);
+                    transition: var(--app-transition);
+                }
+            }
+
+            .main-nav {
+                margin-bottom: 2rem;
+                > li {
+                    &:not(.menu-title) {
+                        ul {
+                            height: 0;
+                            opacity: 0;
+                            transition: var(--app-transition);
+                        }
+                    }
+                }
+                li {
+                    &:not(.menu-title) > a::after {
+                        content: none;
+                    }
+                    a {
+                        font-size: 0;
+                        text-align: center;
+                        i {
+                            font-size: 1.2rem;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+        //}
+    }
+
+    //horizontal sidebar
+    nav {
+        &.horizontal-sidebar {
+            width: 100%;
+            height: 45px;
+            top: 69px;
+            left: 0;
+            box-shadow: none;
+            border-bottom: 1px solid var(--border_color);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+
+            .menu-navs {
+                width: 1330px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 7px;
+                margin: 0 auto;
+                z-index: -1;
+                > span {
+                    padding: 2px 6px;
+                    font-size: 20px;
+                    border-radius: 100%;
+                    background-color: rgba(var(--primary), 0.1);
+                    color: rgba(var(--primary), 1);
+                    cursor: pointer;
+                    &.menu-next {
+                        float: right;
+                    }
+                }
+            }
+            .simplebar-horizontal {
+                visibility: visible;
+            }
+            .simplebar-vertical {
+                visibility: hidden;
+            }
+            .app-nav {
+                min-height: 50px;
+                width: 1260px;
+                height: auto;
+                margin: 0 auto;
+                .main-nav {
+                    margin-top: 0 !important;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    width: max-content;
+                    transition: var(--app-transition);
+                    > li:not(.menu-title) {
+                        width: auto;
+                        display: inline-block;
+                        a {
+                            width: auto;
+                            display: flex;
+                            padding-right: 30px;
+                            border-radius: 0;
+                            &::after {
+                                right: 0.5rem;
+                            }
+                        }
+
+                        ul {
+                            position: fixed;
+                            background-color: var(--white);
+                        }
+                    }
+                    > li {
+                        padding: 0px;
+                    }
+                }
+                .menu-title {
+                    display: none;
+                }
+                
+            }
+
+            ~ footer {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                .container-fluid{
+                    max-width: 1366px;
+                }
+            }
+            .app-logo {
+                position: relative;
+                width: 1366px;
+                margin: 0 auto;
+                padding: 0;
+                .logo {
+                    position: absolute;
+                    top: -48px;
+                    padding: 0;
+                    left: 18px;
+                }
+            }
+
+            & ~ .app-content {
+                padding-top: 130px;
+                padding-left: 0;
+                width: 1366px;
+                margin: 0 auto;
+                box-shadow: none;
+                padding-right: 0;
+                footer {
+                    padding: 12px 16px;
+                    width: 100%;
+                    margin: 0 auto;
+                    .container-fluid {
+                        width: 1346px;
+                    }
+                }
+                .container-fluid {
+                    padding: 0;
+                }
+                .header-main {
+                    padding-left: 0;
+                    right: 0;
+                    top: 0;
+                    .header-toggle {
+                        width: 0;
+                        opacity: 0;
+                    }
+                    .container-fluid {
+                        padding: 0;
+                        &> {
+                            .row {
+                                width: 1366px;
+                                margin: 0 auto;
+                                padding: 1rem 1.25rem;
+                            }
+                        }
+                    }
+
+                    .card {
+                        box-shadow: none;
+                        border-bottom: 1px solid rgba(var(--secondary), 0.1);
+                        border-radius: 0;
+                        .card-body {
+                            width: 1366px;
+                            margin: 0 auto;
+                            padding-left: 150px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .main {
+            max-width: 1366px;
+        }
+    }
+}
+
+// >>-- 04 Nav css end --<<

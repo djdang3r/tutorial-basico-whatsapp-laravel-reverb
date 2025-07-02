@@ -1,0 +1,69 @@
+// >>-- 118 Apex chart css start --<<
+
+.apexcharts-toolbar{
+    display: none !important;
+}
+.apexcharts-tooltip{
+  background-color: var(--white) !important;
+  color: rgba(var(--dark),1) !important;
+}
+
+.chart-box {
+  padding-left: 0;
+}
+
+.chart-year,
+.chart-quarter {
+  max-width: 100%;
+  box-shadow: none;
+  padding-left: 0;
+  padding-top: 20px;
+  background: var(--white);
+  border: 1px solid var(--white);
+}
+
+.chart-year {
+  float: left;
+  position: relative;
+  transition: 1s ease transform;
+  z-index: 3;
+}
+
+.chart-year.chart-quarter-activated {
+  transform: translateX(0);
+  transition: 1s ease transform;
+}
+
+.chart-quarter {
+  float: left;
+  position: relative;
+  z-index: -2;
+  transition: 1s ease transform;
+}
+
+.chart-quarter.active {
+  transition: 1.1s ease-in-out transform;
+  transform: translateX(0);
+  z-index: 1;
+}
+
+// @media screen and (min-width: 480px) {
+//   #chart-year {
+//     transform: translateX(50%);
+//   }
+//   #chart-quarter {
+//     transform: translateX(-50%);
+//   }
+// }
+
+select#model {
+  display: none;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  transform: scale(0.8);
+}
+
+  // >>-- 118 Apex chart css start --<<

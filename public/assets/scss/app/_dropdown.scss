@@ -1,0 +1,146 @@
+// >>-- 68 7ropdown css start --<<
+
+
+
+.header-right {
+  li {
+    cursor: pointer;
+  }
+}
+.hover-dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.hover-dropdown:hover {
+  ul {
+    margin-top: 2.5rem;
+  }
+}
+.hover-dropdown > .dropdown-toggle:active {
+  pointer-events: none;
+}
+.dropdown-icon-none {
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
+.alignment-dropdown {
+  .dropdown-toggle::after {
+    display: none;
+  }
+  .dropdown-toggle::before {
+    display: none;
+  }
+}
+.dropdown-light {
+  .dropdown-toggle::after {
+    display: none;
+  }
+  .dropdown-toggle::before {
+    display: none;
+  }
+}
+.form-dropdown{
+  width: 250px;
+}
+@mixin dropdown($name, $color) {
+  .dropdown-menu {
+    &.menu-#{$name} {
+      background-color: rgba(#{$color}, 1);
+      border: 1px solid rgba(#{$color}, 1);
+      color: var(--white);
+      i {
+        color: var(--white) !important;
+      }
+      .dropdown-divider{
+        border-top: 2px solid var(--white);
+      }
+    }
+  }
+}
+@each $name, $color in $colors {
+  @include dropdown($name, map-get($colors, $name));
+}
+
+.app-dropdown {
+  .dropdown-divider{
+    margin: 0;
+    border-top: 2px solid rgba(var(--secondary), 0.4);
+  }
+  .dropdown-menu {
+    position: relative;
+    width: 280px;
+    border-radius: 5px;
+    padding: 0;
+    border: 1px solid rgba(var(--secondary),.4);
+    &.menu-light{
+      .dropdown-item{
+        color: rgba(var(--dark),1) !important;
+        i {
+        color: rgba(var(--dark),1) !important;
+      }
+      }
+    }
+    .dropdown-item {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--white);
+
+      i {
+        font-size: 20px;
+        color: rgba(var(--secondary),1);
+      }
+      &:hover {
+        background-color: rgba(var(--light), 0.2);
+      }
+    }
+    &.sub-menu {
+      position: absolute;
+      transform: translate(280px, 96px) !important;
+    }
+    .active {
+      background-color: rgba(var(--primary), 1);
+      color: var(--white);
+      &:hover {
+        color: var(--black);
+        background-color: rgba(var(--primary), 0.6);
+      }
+    }
+  }
+}
+
+.app-hover-dropdown {
+  position: relative;
+  .dropdown-menu {
+    width: 280px;
+    border-radius: 5px;
+    top: 0px;
+    .dropdown-item {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 1rem;
+      text-decoration: none;
+      color: var(--white);
+      i {
+        font-size: 20px;
+        color: var(--font-light-color);
+      }
+      &:hover {
+        background-color: rgba(var(--light), 0.2);
+      }
+    }
+    &.hover-submenu {
+      position: absolute;
+      bottom: 0px;
+      transform: translate(280px, 0px) !important;
+    }
+  }
+}
+
+// >>-- 67 Dropdown css end --<<
+
+

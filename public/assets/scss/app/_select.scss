@@ -1,0 +1,131 @@
+// >>-- 56 Select css start --<<
+
+@mixin select_mixin($name, $color) {
+  .select_#{$name} {
+    .select2-container--default   {
+      .select2-selection--multiple{
+        .select2-selection__choice{
+          background-color: rgba(#{$color},0.10) !important;
+          color: rgba(#{$color},1) !important;
+        }
+      }
+    }
+  }
+}
+
+@each $name, $color in $colors {
+  @include select_mixin($name, map-get($colors, $name));
+}
+.select2-dropdown{
+  background-color: var(--white) !important;
+}
+.app-form{
+
+  .select2-container--default{
+    outline: 0 !important;
+    .select2-selection--single {
+      height: calc(1.75rem + 0.75rem + calc(var(--bs-border-width) * 2));
+      .select2-selection__rendered{
+        color: rgba(var(--secondary), 1);
+        font-weight: 500;
+        line-height: 2.50rem;
+        padding-left: 1rem;
+      }
+      .select2-selection__arrow{
+        height: calc(1.75rem + 0.75rem + calc(var(--bs-border-width) * 2));
+        b{
+          margin-left: -16px;
+          border-width: 6px 6px 0 6px;
+          border-color: rgb(var(--secondary)) transparent transparent transparent;
+        }
+      }
+    }
+
+    .select2-selection{
+      background-color: var(--white);
+      border: 1px solid rgba(var(--secondary),.4);
+      border-radius: .375rem;
+    }
+    .select2-selection--multiple{
+
+      .select2-selection__choice__remove{
+        border-right: 0;
+        padding: 0 6px;
+      }
+      .select2-selection__choice {
+        background-color: rgb(var(--secondary),.1);
+        border: 1px dashed rgb(var(--secondary),1);
+      }
+    }
+  }
+  .select2-container{
+    width: 100% !important;
+  }
+}
+
+.select2-container--default {
+  .select2-dropdown--below{
+    border-color:rgb(var(--secondary),.4) ;
+  }
+  .select2-results__option--highlighted{
+    &.select2-results__option--selectable{
+      background-color: rgb(var(--primary),1) !important;
+      color: var(--white) !important;
+    }
+  }
+  .select2-results__option--selected{
+    background-color: rgb(var(--primary),.1);
+    color: rgb(var(--primary),1);
+  }
+}
+
+.app-form{
+  .select2-container--default{
+    outline: 0 !important;
+    .select2-selection--single {
+      height: calc(1.75rem + 0.75rem + calc(var(--bs-border-width) * 2));
+      .select2-selection__rendered{
+        color: rgb(var(--dark), 75);
+        font-weight: 500;
+        line-height: 2.50rem;
+        padding-left: 1rem;
+      }
+      .select2-selection__arrow{
+        height: calc(1.75rem + 0.75rem + calc(var(--bs-border-width) * 2));
+        b{
+          margin-left: -16px;
+          border-width: 6px 6px 0 6px;
+          border-color: rgb(var(--secondary)) transparent transparent transparent;
+        }
+      }
+    }
+    .select2-selection{
+      background-color: var(--white);
+      border: 1px solid rgba(var(--secondary),.4);
+      border-radius: .375rem;
+    }
+    .select2-selection--multiple{
+      .select2-selection__choice__display{
+        vertical-align: 1px;
+      }
+      .select2-selection__choice__remove{
+        border-right: 0;
+        padding: 1px 6px;
+
+      }
+      .select2-selection__choice {
+        background-color: rgb(var(--secondary),.1);
+        border: 1px dashed rgb(var(--secondary),1);
+      }
+    }
+  }
+  .select2-container{
+    width: 100% !important;
+  }
+}
+
+.tooltip .bs-tooltip-auto fade show {
+  display: none !important;
+}
+
+// >>-- 56 Select css end --<<

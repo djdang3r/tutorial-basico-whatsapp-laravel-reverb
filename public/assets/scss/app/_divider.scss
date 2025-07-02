@@ -1,0 +1,129 @@
+// >>-- 32 Divider css start --<<
+
+.app-divider-v{
+  position: relative;
+  white-space: nowrap;
+  background-color:transparent;
+  color: var(--font-color);
+  //margin: 2rem 0;
+  padding: 1.5rem 0;
+  display: flex;
+  >p,h1,h2,h3,h4,h5,h6,span{
+    background-color: var(--white);
+    z-index: 1;
+    padding-right: 10px;
+    margin: 0;
+  }
+
+  &:before {
+    border-top: 1px solid rgba(var(--secondary), 0.3);
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: calc(50% - 0.5px);
+  }
+
+  &.dotted{
+    &:before {
+      border-top-style: dotted;
+    }
+  }
+
+  &.dashed{
+    &:before {
+      border-top-style: dashed;
+    }
+  }
+
+  &.justify-content-center{
+    >p,h1,h2,h3,h4,h5,h6,span{
+      padding-left: 10px;
+    }
+  }
+
+  &.justify-content-end{
+    >p,h1,h2,h3,h4,h5,h6,span{
+      padding-left: 10px;
+      padding-right: 0;
+    }
+  }
+}
+
+.app-divider-h{
+  position: relative;
+  white-space: nowrap;
+  background-color: var(--white);
+  color: var(--font-color);
+  margin: 0 1rem;
+  display: flex;
+  height: 100%;
+  &:before {
+    border-left: 1px solid rgba(var(--secondary), 0.3);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    left: calc(50% - 0.5px);
+  }
+
+  >p,h1,h2,h3,h4,h5,h6,span{
+    background-color: var(--white);
+    z-index: 1;
+    height: fit-content;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  &.dotted{
+    &:before {
+      border-left-style: dotted;
+    }
+  }
+
+  &.dashed{
+    &:before {
+      border-left-style: dashed;
+    }
+  }
+
+  &.align-items-center{
+    >p,h1,h2,h3,h4,h5,h6,span{
+      padding-top: 10px;
+    }
+  }
+
+  &.align-items-end{
+    >p,h1,h2,h3,h4,h5,h6,span{
+      padding-top: 10px;
+      padding-bottom: 0;
+    }
+  }
+}
+.divider-body{
+  height: 150px;
+}
+@mixin divider_mixin($name, $color) {
+  .app-divider-v{
+    &.#{$name} {
+      &:before {
+        border-top-color: rgba(#{$color},0.4);
+      }
+    }
+  }
+
+  .app-divider-h{
+    &.#{$name} {
+      &:before {
+        border-left-color: rgba(#{$color},0.4);
+      }
+    }
+  }
+}
+
+@each $name, $color in $colors {
+  @include divider_mixin($name, map-get($colors, $name));
+}
+
+// >>-- 32 Divider css start --<<
+

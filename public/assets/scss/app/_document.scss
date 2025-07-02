@@ -1,0 +1,215 @@
+.doc_sidebar {
+    height: calc(100% - 0px);
+    overflow: hidden scroll;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    padding: 30px;
+    bottom: 0;
+    z-index: 7;
+    width: 17rem;
+    .nav-pills {
+        .nav-link {
+            color: rgba(var(--light),1);
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &.active{
+                color: var(--white);
+            }
+        }
+    }
+}
+
+:not(pre) > code[class*=language-], pre[class*=language-]{
+    background: rgba(var(--secondary), 0.1);
+    border: 1px solid rgba(var(--secondary), .4) !important;
+}
+
+.section-space{
+    margin: 2rem 0;
+}
+
+.document_content {
+    padding-left: 18.5rem;
+    margin-bottom: 20px;
+    .header-title {
+        margin-bottom: 1.5rem ;
+        h2 {
+            font-weight: 600;
+            color: rgba(var(--dark), 1);
+            margin-bottom: 0;
+        }
+        p {
+            font-size: 16px;
+            color: rgba(var(--dark), .75);
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+    }
+    .header-sub-title{
+        h4{
+            font-size: 1.50rem;
+            font-weight: 500;
+            color: rgba(var(--primary), 1);
+            margin-bottom: 0;
+        }
+        p {
+            font-size: 14px;
+            color: rgba(var(--dark), 0.8);
+        }
+    }
+    section {
+        padding: 2rem 0;
+        position: relative;
+    }
+}
+.get_start_section {
+    .list-unstyled {
+        li {
+            margin-top: 10px;
+            white-space: nowrap;
+            strong {
+                color: rgba(var(--dark), 0.75);
+            }
+        }
+    }
+}
+
+.folder_structure_section {
+    .folder_tree {
+        position: relative;
+        font-weight: 600;
+        li{
+            padding: 0.3rem 0;
+        }
+        .inner-folder{
+            margin-left: 2rem;
+        }
+    }
+}
+
+.installation_section {
+    .installation_list {
+        margin-top: 1.25rem;
+        li {
+            margin-top: 10px;
+            font-size: 14px;
+            color: rgba(var(--secondary), 1);
+        }
+    }
+}
+
+.scss_section{
+    .scss_content{
+        p{
+            color: rgba(var(--secondary), 1);
+            margin-top: 1rem;
+        }
+    }
+}
+
+.source_credits_section{
+    .source_list{
+        a{
+            color: rgba(var(--primary), 1);
+            text-decoration: underline;
+            font-size: 14px;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        li{
+            margin-top: 10px;
+            font-size: 16px;
+            color: rgba(var(--secondary), 1);
+        }
+    }
+}
+
+.apps_section{
+    .app-list{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        li{
+            background-color: var(--white);
+            border: 1px dashed rgba(var(--secondary), 1);
+            padding: 0.5rem 1rem;
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(var(--dark),1);
+            cursor: pointer;
+        }
+    }
+}
+.doc-provided-features{
+    .features-section  {
+        .features-list{
+            --bs-gutter-y: 1rem;
+        }
+    }
+}
+
+// Responsive css
+
+@media screen and (max-width: 1440px) and (min-width: 992px){
+    .helper_class_section{
+        .col-lg-3{
+            width: 100%;
+        }
+    }
+    .document_content {
+        padding-left: 22rem;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .document_content {
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 567px){
+    .document_content  {
+        section{
+            padding: 0;
+        }
+    }
+    .helper_class_section{
+        .header-sub-title{
+            .d-flex{
+                display: block !important;
+                h4{
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+    .header-title,
+    .header-sub-title{
+        .d-flex{
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        h4{
+            font-size: 1.2rem !important;
+        }
+        p{
+            font-size: 14px !important;
+        }
+        .btn{
+            padding: 8px 18px;
+        }
+    }
+    .changelog_section{
+        h2 {
+            font-size: 1.16rem !important;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+}

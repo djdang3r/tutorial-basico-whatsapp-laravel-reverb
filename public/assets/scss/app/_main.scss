@@ -1,0 +1,26 @@
+// >>-- 05 Main css start --<<
+
+
+main{
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    padding-top: 2rem;
+    .page-title{
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+}
+.f-s-oblique {
+    font-style: oblique;
+}
+.f-s-initial {
+    font-style: initial;
+}
+.f-s-inherit {
+    font-style: inherit;
+}
+.f-s-italic {
+    font-style: italic;
+}
+
+// >>-- 05 Main css end --<<

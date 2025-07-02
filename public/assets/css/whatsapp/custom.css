@@ -1,0 +1,108 @@
+.message-content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px; /* Ajusta el ancho según tus necesidades */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/* .plantillas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+} */
+
+.plantilla-card {
+    /* background-color: #ffffff; */
+    background: #3987192e;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+    /* flex: 1 1 calc(33% - 10px);
+    min-width: 250px;
+    box-sizing: border-box; */
+}
+
+.plantilla-card-header {
+    background: ##00805d !important;
+    color: white;
+    width: 100%;
+}
+
+.plantilla-card-content {
+    width: 100%;
+}
+
+.plantilla-title {
+    background-color: green;
+    color: white;
+}
+
+.plantilla-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.plantilla-header span {
+    overflow-wrap: break-word;
+    text-align: initial;
+}
+
+.plantilla-body {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.plantilla-body span {
+    overflow-wrap: break-word;
+    text-align: initial;
+}
+
+.plantilla-footer {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #777;
+}
+
+.plantilla-time {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.plantilla-button {
+    background-color: #25d366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
+
+.plantilla-button a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.plantilla-button:hover {
+    background-color: #1eb954;
+}
+
+.wb-template {
+    /* width: 250px; */
+    /* background: beige; */
+    /* padding: 20px; */
+}

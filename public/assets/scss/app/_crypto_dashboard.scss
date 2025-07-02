@@ -1,0 +1,369 @@
+// >>-- 93 Crypto Dashboard css start --<<
+.currency-card {
+    .currency-icon {
+        position: absolute;
+        top: -8px;
+    }
+    .currency-chart-box {
+        padding-bottom: 1px;
+        margin-top: 1rem;
+        border-radius: var(--app-border-radius);   
+    }
+    .currency-chart {
+        margin-bottom: -42px;
+    }
+    &:hover {
+        i {
+            animation: pulse 1s ease-in-out infinite;
+        }
+    }
+}
+.growth-tabs,
+.wallet-tabs {
+    .nav-tabs {
+        border: 0;
+        gap: 0.5rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        justify-content: end;
+        .nav-link {
+            border-radius: var(--app-border-radius);
+            color: rgba(var(--secondary), 1) !important;
+            border: 1px dashed rgba(var(--dark), 0.2);
+        }
+    }
+}
+.wallet-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(var(--light), 0.1);
+    border: 1px dashed rgba(var(--dark), 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: var(--app-border-radius);
+    margin-top: 1rem;
+    .form-select {
+        font-size: 14px;
+        color: rgba(var(--primary), 1);
+        font-weight: 500;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border: none;
+        background-color: rgba(var(--primary), 0.1);
+    }
+}
+.currency-coin-box {
+    background-color: rgba(var(--light), 0.1);
+    padding: 1rem 1.25rem;
+    border-radius: var(--app-border-radius);
+    border: 1px dashed rgba(var(--light), 0.2);
+    &:hover{
+            img {
+                animation: flipInX 1s ease-in-out infinite;
+            }
+    }
+}
+.transaction-list {
+    .transaction-list-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 0.55rem 0;
+        &:last-child {
+            padding-bottom: 0;
+        }
+        & + {
+            li {
+                border-top: 1px dashed rgba(var(--dark), 0.2);
+            }
+        }
+
+        h6 {
+            & + {
+                p {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+
+        .transaction-list-avtar {
+            position: absolute;
+            left: 0;
+        }
+        .transaction-list-content {
+            margin-left: 45px;
+        }
+    }
+}
+
+.currency-market-table {
+    thead {
+        th {
+            color: rgba(var(--dark), 0.75);
+            &:nth-child(1) {
+                min-width: 145px;
+                padding-left: 20px;
+            }
+            &:nth-child(2) {
+                min-width: 100px;
+            }
+        }
+    }
+    tbody {
+        td {
+            padding: 0 0.5rem !important;
+            .position-absolute {
+                top: -4px;
+            }
+            &:nth-child(1) {
+                padding-left: 20px !important;
+            }
+        }
+    }
+    &.table-bottom-border {
+        tbody {
+            tr {
+                border-top: 1px dashed rgba(var(--dark), 0.2) !important;
+            }
+        }
+    }
+}
+
+// Box layout
+
+.box-layout {
+    .currency-card {
+        .d-flex {
+            flex-direction: column;
+            align-items: start !important;
+            h5 {
+                margin-left: 45px;
+            }
+        }
+        .currency-icon {
+            top: 4px;
+        }
+    }
+    .growth-tabs {
+        .nav-link {
+            font-size: 12px !important;
+        }
+    }
+    .currency-coin-box {
+        padding: 0.5rem;
+    }
+    .wallet-card {
+        margin-top: 0.5rem;
+    }
+    .wallet-tabs {
+        .nav-tabs {
+            flex-wrap: nowrap;
+        }
+    }
+    .text-end {
+        &.mt-4 {
+            margin-top: 1rem !important;
+        }
+    }
+    .wallet-card-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .currency-data-card {
+        h2 {
+            font-size: var(--h3-font-size);
+        }
+    }
+    .transaction-list-item {
+        .transaction-list-avtar {
+            width: 35px !important;
+            height: 35px !important;
+        }
+    }
+}
+
+// Rtl css
+.rtl {
+    .currency-card {
+        .ms-5 {
+            margin-left: 0 !important;
+            margin-right: 3rem !important;
+        }
+    }
+    .wallet-card {
+        .mg-s-45 {
+            margin-left: 0 !important;
+            margin-right: 45px !important;
+        }
+    }
+    .transaction-list-content {
+        margin-left: 0 !important;
+        margin-right: 45px;
+    }
+    .currency-growth-card {
+        .total-growth {
+            direction: ltr;
+        }
+    }
+    .currency-market-table {
+        .ms-5 {
+            margin-left: 0 !important;
+            margin-right: 3rem !important;
+        }
+        td:nth-child(1),
+        th:nth-child(1) {
+            padding-left: 8px !important;
+            padding-right: 20px !important;
+        }
+    }
+    .transaction-list-item {
+        .transaction-list-avtar {
+            left: auto;
+            right: 0;
+        }
+    }
+    @media screen and (max-width: 1400px) and (min-width: 992px) {
+        .currency-card  {
+            .d-flex {
+                h5{
+                    margin-left: 0;
+                    margin-right: 45px;
+                }
+            }
+
+        }
+    }
+}
+[class="ltr dark"] {
+    .apexcharts-canvas {
+        svg {
+            .apexcharts-yaxis {
+                .apexcharts-yaxis-texts-g {
+                    .apexcharts-yaxis-label {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .currency-coin-box {
+        background-color: rgba(var(--secondary), 0.1);
+        border: 1px dashed rgba(var(--secondary), 0.2);
+    }
+}
+
+// Responsive css
+@media screen and (max-width: 1550px) and (min-width: 992px) {
+    .currency-coin-box {
+        padding: 1rem 0.75rem;
+        h6 {
+            white-space: nowrap;
+        }
+
+    }
+}
+@media screen and (max-width: 1400px) and (min-width: 992px) {
+    .currency-card {
+        .d-flex {
+            flex-direction: column;
+            align-items: start !important;
+            h5 {
+                margin-left: 45px;
+            }
+        }
+        .currency-icon {
+            top: 4px;
+        }
+    }
+    .wallet-tabs {
+        .nav-tabs {
+            .nav-link {
+                font-size: 12px;
+            }
+        }
+    }
+    .mg-s-40 {
+        p {
+            font-size: 12px;
+        }
+    }
+    .transaction-list {
+        .transaction-list-item {
+            gap: 0.5rem;
+            .transaction-list-avtar {
+                display: none;
+            }
+            .transaction-list-content {
+                margin-left: 0 !important;
+                margin-right: 0;
+                h6 {
+                    font-size: 15px !important;
+                }
+
+            }
+        }
+    }
+    .currency-data-card {
+        h2 {
+            font-size: 26px !important;
+        }
+    }
+    .currency-coin-box {
+
+        .d-flex-center {
+            width: 35px !important;
+            height: 35px !important;
+        }
+        p {
+            font-size: 12px !important;
+        }
+        h6 {
+            font-size: 14px !important;
+        }
+    }
+    .card-added {
+        p {
+            font-size: 13px !important;
+        }
+    }
+
+}
+@media screen and (max-width: 992px) and (min-width: 768px) {
+}
+@media screen and (max-width: 1550px) {
+    .wallet-tabs {
+        .nav-tabs {
+            flex-wrap: nowrap;
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .currency-growth-card {
+        .d-flex {
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: start !important;
+        }
+    }
+    .wallet-card{
+        margin-top: 0.625rem;
+    }
+    .transaction-list{
+        &.mt-3{
+            margin-top: 0.625rem !important;
+        }
+    }
+}
+@media screen and (max-width: 991px) {
+    .order--1-md {
+        order: -1;
+    }
+}
+
+// >>-- 93 Crypto Dashboard css end --<<

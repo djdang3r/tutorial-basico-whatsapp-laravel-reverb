@@ -1,0 +1,16 @@
+// >>-- 102 Clipboard css start --<<
+.copy-clipboard {
+    // border: 1px dashed #00008b2b;
+    .copytext {
+        padding: 14px !important;
+        border: 1px solid rgba(var(--secondary), 0.5);
+    }
+
+    textarea {
+        max-height: 54px;
+        overflow: auto;
+        height: 70px;
+
+    }
+}
+// >>-- 102 Clipboard css end --<<

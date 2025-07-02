@@ -1,0 +1,52 @@
+// >>-- 10 Badge css start --<<
+
+.badge{
+    padding: 0.3em 0.9em 0.3em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    &.badge-notification{
+      padding: 0.3em 0.5em 0.15em;
+      // font-size: 11px;
+    }
+}
+
+
+@mixin badge_mixin($name, $color) {
+    .text-bg-#{$name} {
+      background-color: rgba(#{$color},1) !important;
+      color: var(--white);
+      &:hover,&:active ,&.active ,&.show,&:checked,&:focus {
+        background-color: rgba(#{$color},0.90) ;
+      }
+    }
+
+    .text-outline-#{$name} {
+      background-color: transparent;
+      color: rgba(#{$color},1);
+      border: 1px solid rgba(#{$color},1);
+      &:hover,&.active ,&.show,&:checked,&:focus {
+        background-color: rgba(#{$color},1);
+        color: var(--white);
+      }
+    }
+
+    .text-light-#{$name} {
+      background-color: rgba(#{$color},0.10) ;
+      color: rgba(#{$color},1) ;
+      border-color: transparent;
+      transition: var(--app-transition);
+      &:hover,&.active ,&.show,&:checked,&:focus {
+        background-color: rgba(#{$color},0.20) ;
+        border-color: rgba(#{$color}, 1) ;
+        color: rgba(#{$color},1) ;
+        transition: var(--app-transition);
+      }
+    }
+  }
+
+  @each $name, $color in $colors {
+    @include badge_mixin($name, map-get($colors, $name));
+  }
+
+  // >>-- 10 Badge css end --<<

@@ -1,0 +1,47 @@
+// >>-- 06 Footer css start --<<
+
+div{
+>footer{
+    padding: 12px 0;
+    position: fixed;
+    bottom: 0;
+    padding-left: 17rem;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--app-transition);
+    background-color: var(--bodybg-color);
+    border-top: 1px solid rgba(var(--secondary), 0.05);
+    ul{
+        &.footer-text{
+            li{
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.semi-nav{
+    ~footer{
+        padding-left: 4.5rem;
+        transition: var(--app-transition);
+    }
+}
+}
+
+@media screen and (max-width: 768px) {
+    .footer-text {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .footer-text{
+        text-align: center;
+        &.text-end{
+            display: none;
+        }
+    }
+}
+
+// >>-- 06 Footer css end --<<

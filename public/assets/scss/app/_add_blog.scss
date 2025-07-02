@@ -1,0 +1,43 @@
+// >>-- 114 Add Blog start --<<
+// .filepondsolid1  {
+//     &.filepond--root {
+//         height: 27px !important;
+//         background-color: var(--white) !important;
+//         border: 2px dotted rgba(var(--secondary), 0.6);
+//         border-radius: var(--bs-border-radius);
+//         overflow: hidden;
+//         color: rgb(var(--dark), 1);
+//         .filepond--drop-label {
+//             height: 100%;
+//             background-color: var(--white);
+//             color: rgb(var(--dark), 1);
+//         }
+//     }
+//     .filepond--credits {
+//         display: none;
+//     }
+// }
+.file-uploader {
+    input {
+        display: none;
+    }
+    label{
+        width: 100%;
+        height: 280px;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 20px;
+        border: 1px dashed rgba(var(--secondary),.4);
+        background-color: rgba(var(--light), .1
+        );
+    }
+}
+.uploaded-image{
+    width: 400px;
+    height: 200px;
+}
+
+// >>-- 114 Add Blog end --<<

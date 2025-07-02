@@ -1,0 +1,433 @@
+// >>-- 02 Reboot css start --<<
+body {
+  font-size: var(--font-size);
+  font-family: $font-Golos;
+  color: var(--font-color);
+  background-color: var(--bodybg-color);
+}
+
+p{
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  margin-bottom: 5px;
+}
+
+a{
+  color: rgba(var(--dark),1);
+  text-decoration: none;
+  &:hover {
+      text-decoration: none;
+  }
+}
+
+ul{
+  padding-left: 0;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+.list-disc{
+  list-style-type: disc;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+line-height: 1.4;
+color: var(--font-color);
+}
+
+h1{
+  font-size: var(--h1-font-size);
+}
+
+h2{
+  font-size: var(--h2-font-size);
+}
+
+h3{
+  font-size: var(--h3-font-size);
+}
+
+h4{
+  font-size: var(--h4-font-size);
+  margin-bottom: 0;
+}
+
+h5{
+  font-size: var(--h5-font-size);
+  margin-bottom: 0;
+}
+
+h6{
+  font-size: var(--h6-font-size);
+}
+
+
+code {
+color: rgba(var(--danger), 1);
+background-color: rgba(var(--danger), 0.10);
+padding: 0 3px;
+border-radius: 5px;
+}
+
+.btn{
+padding: 7px 25px;
+font-size: var(--btn-font-size);
+border-radius: 5px;
+}
+
+.go-top {
+position: fixed;
+bottom: 48px;
+right: 24px;
+height: 50px;
+width: 50px;
+display: none;
+place-items: center;
+border-radius: 100%;
+box-shadow: var(--box-shadow);
+z-index: 1001;
+cursor: pointer;
+.progress-value {
+  height: calc(100% - 6px);
+  width: calc(100% - 6px);
+  background-color: var(--white);
+  border-radius: 50%;
+  display: grid;
+  font-size: 24px;
+  color: rgba(var(--dark), 1);
+  padding: 5px;
+  .ti{
+    &:before{
+      margin-left: 5px;
+      line-height: 1.3;
+    }
+  }
+}
+}
+
+.txt-ellipsis{
+    max-width: calc(100% - 80px);
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+::selection {
+background: rgba(var(--primary),1);
+color: var(--white);
+}
+
+.cursor-pointer{
+cursor: pointer;
+}
+
+.form-switch .form-check-input{
+  width: 1.6em;
+}
+
+$unit: 'px'; // Feel free to change the unit.
+@mixin size-loop($classname, $stylename, $max, $offset) {
+$i: 0;
+@while $i <= $max {
+  #{$classname + $i} {
+    #{$stylename}: #{$i + $unit} !important;
+  }
+
+  $i: $i + $offset;
+}
+}
+
+// Margin css starts
+@include size-loop('.mg-', 'margin',100,1);
+@include size-loop('.mg-t-', 'margin-top',100,1);
+@include size-loop('.mg-e-', 'margin-right',100,1);
+@include size-loop('.mg-b-', 'margin-bottom',100,1);
+@include size-loop('.mg-s-', 'margin-left',100,1);
+// Margin css ends
+
+// Paddings css starts
+@include size-loop('.pa-', 'padding',40,1);
+@include size-loop('.pa-t-', 'padding-top',40,1);
+@include size-loop('.pa-e-', 'padding-right',40,1);
+@include size-loop('.pa-b-', 'padding-bottom',40,1);
+@include size-loop('.pa-s-', 'padding-left',40,1);
+
+
+// Paddings css ends
+
+// Border-radius css starts
+$unit: 'px'; // Feel free to change the unit.
+@mixin border-Radius($classname, $stylename, $max, $offset) {
+$i: 0;
+@while $i <= $max {
+  #{$classname + $i} {
+    #{$stylename}: #{$i + $unit} !important;
+    &:before{
+      #{$stylename}: #{$i + $unit} !important;
+    }
+  }
+
+  $i: $i + $offset;
+}
+}
+
+@include border-Radius('.b-r-', 'border-radius',100,1);
+
+// Border-radius css ends
+
+// Font size css starts
+
+@include size-loop('.f-s-', 'font-size',80,1);
+
+// Font size css ends
+
+// image size css starts
+
+@include size-loop('.h-', 'height',400,5);
+@include size-loop('.w-', 'width',400,5);
+
+// image size css ends
+.w-100{
+width: 100% !important;
+}
+
+.h-100{
+height: 100% !important;
+}
+
+.card{
+&.h-100{
+  height: calc(100% - 1.25rem)!important;
+}
+}
+
+@include size-loop('.start-', 'left',40,1);
+
+$colors: (
+primary: var(--primary),
+secondary: var(--secondary),
+success: var(--success),
+danger: var(--danger),
+warning: var(--warning),
+info: var(--info),
+light: var(--light),
+dark: var(--dark),
+);
+
+@mixin bg_mixin($name, $color) {
+  .bg-#{$name} {
+    background-color: rgba(#{$color},1) !important;
+    color: var(--white);
+    &:hover,&:active ,&.active ,&.show,&:checked,&:focus {
+      background-color: rgba(#{$color},0.80) ;
+    }
+}
+
+  .bg-light-#{$name} {
+    background-color: rgba(#{$color},0.10) !important;
+    color: rgba(#{$color},1) !important;
+    &:hover,&:active ,&.active ,&.show,&:checked,&:focus {
+      background-color: rgba(#{$color},0.15) ;
+    }
+  }
+
+  .bg-outline-#{$name} {
+    border-color: rgba(#{$color},0.8) !important;
+    background-color: var(--white);
+    color: rgba(#{$color},0.8) !important;
+    &:hover,&:active ,&.active ,&.show,&:checked,&:focus {
+      background-color: rgba(#{$color},0.80) ;
+      color: var(--white) !important;
+    }
+  }
+}
+
+@each $name, $color in $colors {
+  @include bg_mixin($name, map-get($colors, $name));
+}
+
+// background color shade start
+
+// Border css ends
+
+$units: 'px';
+@mixin border_1($classname, $stylename,$name,$color,$max,$offset) {
+$i: 1;
+@while $i <= $max {
+ #{$classname + $i + -$name} {
+   #{$stylename}: #{$i+$units solid rgba(#{$color},1)} !important;
+ }
+
+ $i: $i + $offset;
+}
+}
+
+@each $name, $color in $colors {
+@include border_1('.b-', 'border',$name, map-get($colors, $name),20,1);
+@include border_1('.b-t-', 'border-top',$name, map-get($colors, $name),20,1);
+@include border_1('.b-b-', 'border-bottom',$name, map-get($colors, $name),20,1);
+@include border_1('.b-s-', 'border-left',$name, map-get($colors, $name),20,1);
+@include border_1('.b-e-', 'border-right',$name, map-get($colors, $name),20,1);
+}
+
+
+// Border style css start
+
+$units: 'px';
+@mixin border_style($classname, $stylename,$name,$color,$max,$offset) {
+$i: 1;
+@while $i <= $max {
+ #{$classname + $i + -$name} {
+   #{$stylename}: #{$i+$units dashed rgba(#{$color},1)} !important;
+ }
+
+ $i: $i + $offset;
+}
+}
+
+@each $name, $color in $colors {
+@include border_style('.dashed-', 'border',$name, map-get($colors, $name),20,1);
+}
+
+$units: 'px';
+@mixin border_style($classname, $stylename,$name,$color,$max,$offset) {
+$i: 1;
+@while $i <= $max {
+ #{$classname + $i + -$name} {
+   #{$stylename}: #{$i+$units dotted rgba(#{$color},1)} !important;
+ }
+
+ $i: $i + $offset;
+}
+}
+
+@each $name, $color in $colors {
+@include border_style('.dotted-', 'border',$name, map-get($colors, $name),20,1);
+}
+
+// opacity css starts
+
+@mixin opacity($classname, $stylename, $max, $offset) {
+$i: 0.1;
+$class : 1;
+@while $i <= $max {
+  #{$classname + $class} {
+    #{$stylename}: #{$i};
+  }
+
+  $class: $class+1;
+  $i: $i + $offset;
+}
+}
+
+@include opacity('.o-', 'opacity',1,0.1);
+
+.d-flex-center{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.d-inline-flex-center{
+display: inline-flex;
+align-items: center;
+justify-content: center;
+}
+
+// border-radius css starts
+
+@mixin border-radius($classname, $stylename, $max, $offset) {
+$i: 1px;
+$class : 1;
+@while $i <= $max {
+  #{$classname + $class} {
+    #{$stylename}: #{$i};
+  }
+
+  $class: $class+1;
+  $i: $i + $offset;
+}
+}
+
+// @include border-radius('.b-r-', 'border-radius',60,1);
+@include border-radius('.b-r-t-', 'border-top-left-radius',60,1);
+@include border-radius('.b-r-b-', 'border-bottom-right-radius',60,1);
+@include border-radius('.b-r-s-', 'border-top-right-radius',60,1);
+@include border-radius('.b-r-e-', 'border-bottom-left-radius',60,1);
+
+// font css starts
+
+// $unit: 'px'; // Feel free to change the unit.
+@mixin font-loop($classname, $stylename, $max, $offset) {
+$i: 0;
+@while $i <= $max {
+  #{$classname + $i} {
+    #{$stylename}: #{$i} !important;
+  }
+
+  $i: $i + $offset;
+}
+}
+
+@include font-loop('.f-w-', 'font-weight',900,100);
+
+.app-scroll{
+&::-webkit-scrollbar {
+    position: absolute;
+    right: 0;
+    width: 4px;
+    height: 4px;
+    background-color: rgba(var(--secondary),0.1);
+}
+
+&::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--secondary),0.3);
+    border-radius: 20px;
+}
+}
+.title-text {
+  color: rgba(var(--dark), 0.8) !important;
+  font-weight: 600;
+}
+.txt-ellipsis-1{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.txt-ellipsis-2{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.txt-ellipsis-3{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.txt-ellipsis-4{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+code[class*=language-], pre[class*=language-]{
+  text-shadow: none ;
+  color: rgba(var(--dark), 0.75) !important; ;
+}
+.token.boolean, .token.constant, .token.deleted, .token.number, .token.property, .token.symbol, .token.tag{
+  color: rgba(var(--danger),1);
+}
+.language-css .token.string, .style .token.string, .token.entity, .token.operator, .token.url{
+  color: rgba(var(--warning),1);
+  background-color: transparent;
+}
+.token.attr-name, .token.builtin, .token.char, .token.inserted, .token.selector, .token.string {
+  color: rgba(var(--success));
+}
+// >>-- 02 Reboot css end --<<

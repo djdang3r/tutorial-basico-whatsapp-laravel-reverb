@@ -1,0 +1,169 @@
+// >>-- 65 Dual Listboxes  start --<<
+.dual-listbox {
+  .dual-listbox__available,  .dual-listbox__selected {
+    width: 100%;
+  }
+
+  .dual-listbox__button{
+    border-radius: 5px;
+    background-color: rgba(var(--primary), 0.9);
+    padding: 7px 12px;
+
+    &:hover{
+      background-color: rgba(var(--primary), 1);
+      transition: all 0.3s ease;
+    }
+  }
+
+   .dual-listbox__available, .dual-listbox__selected {
+     &::-webkit-scrollbar {
+       position: absolute;
+       right: 0;
+       width: 4px;
+       height: 4px;
+       background-color: rgba(var(--secondary),0.1);
+     }
+
+     &::-webkit-scrollbar-thumb {
+       background-color: rgba(var(--secondary),0.3);
+       border-radius: 20px;
+     }
+   }
+
+
+}
+.dual-listbox .dual-listbox__available,
+.dual-listbox .dual-listbox__selected {
+    width: 100%;
+}
+
+.dual-listbox .dual-listbox__item.dual-listbox__item--selected {
+  background-color: rgba(var(--primary), 0.1);
+  color: rgba(var(--primary), 1);
+}
+
+.dual-listbox {
+  width: 100%;
+
+  .dual-listbox__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: unset;
+    > div:not(.dual-listbox__buttons){
+        width: 50%;
+    }
+  }
+  .dual-listbox__search{
+    color: rgba(var(--secondary), 1);
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--border_color);
+    border-radius: 0.3rem;
+    &:focus{
+      color: rgba(var(--dark), 1);
+      box-shadow: 0 0 0 0.25rem rgba(var(--primary), 0.3);
+      border: 1px solid rgba(var(--primary), 1);
+      outline: none;
+    }
+  }
+}
+.dual-listbox .dual-listbox__title {
+  font-weight: 600;
+  color: rgba(var(--dark), 0.60);
+  padding: 0.6rem 1rem;
+  border-radius: 0.3rem 0.3rem 0 0;
+  border-color: rgba(var(--dark), 0.20);
+}
+.dual-listbox .dual-listbox__available, .dual-listbox .dual-listbox__selected{
+  border-radius: 0 0 0.3rem 0.3rem;
+  border: 1px solid rgba(var(--dark), 0.20);
+}
+.dual-listboxes-wrap{
+  .dual-listbox{
+    .dual-listbox__container{
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .dual-listboxes-wrap{
+    .dual-listbox{
+      .dual-listbox__container{
+        .dual-listbox__search{
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .dual-listbox__buttons {
+    margin-top: 30px !important;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .dual-listboxes-wrap{
+    .explanation-none{
+      display: none ;
+    }
+    .excepted-none{
+      display: none
+    }
+    .listbox-none{
+      td:nth-child(2){
+        display: none ;
+      }
+      td:nth-child(3){
+        display: none ;
+      }
+    }
+    .listbox-explanation{
+      td:nth-child(3){
+        display: none ;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 360px) {
+
+  .dual-listbox{
+    .dual-listbox__container{
+      div:nth-child(3){
+        width: 100%;
+        .dual-listbox__selected{
+          width: 100%;
+        }
+      }
+      .dual-listbox__available{
+        width: 100%;
+      }
+      .dual-listbox__buttons{
+        width: 100%;
+      }
+    }
+  }
+
+  .arguments-none{
+    display: none;
+  }
+  .dual-listboxes-wrap{
+    .default-none{
+      display: none
+    }
+    .listbox-none{
+      td:nth-child(4){
+        display: none ;
+      }
+    }
+    .listbox-explanation{
+      td:nth-child(2){
+        display: none ;
+      }
+    }
+  }
+}
+
+// >>-- 65 Dual Listboxes css end --<<

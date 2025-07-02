@@ -1,0 +1,108 @@
+// >>-- 45 Kanban_board css start --<<
+
+.kanban-board-container {
+  overflow: auto;
+}
+
+.board {
+  position: relative;
+  height: calc(100vh - 200px);
+}
+.board-column {
+  position: absolute;
+  width: 300px;
+  margin: 0 20px;
+  background: rgba(var(--secondary), 0.1);
+  border-radius: 3px;
+  z-index: 1;
+}
+.board-column {
+  &.muuri-item-releasing {
+    z-index: 2;
+  }
+  .muuri-item-dragging {
+    z-index: 3;
+    cursor: move;
+  }
+}
+
+.board-column-header {
+  position: relative;
+  padding: 1rem;
+  border-top: 3px solid rgb(var(--secondary), 1);
+  color: rgba(var(--dark), 0.75);
+  font-weight: 600;
+}
+
+.board-column-content-wrapper {
+  position: relative;
+  max-height: 640px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    position: absolute;
+    right: 0;
+    width: 4px;
+    height: 4px;
+    background-color: rgba(var(--secondary),0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--secondary),0.3);
+    border-radius: 20px;
+  }
+
+}
+.board-column-content-wrapper {
+  position: relative;
+  max-height: 640px;
+  overflow-y: auto;
+}
+.board-column-content {
+  position: relative;
+  border: 10px solid transparent;
+  min-height: 95px;
+}
+
+.board-item {
+  position: absolute;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.board-item.muuri-item-releasing {
+  z-index: 9998;
+}
+
+.board-item.muuri-item-dragging {
+  z-index: 9999;
+  cursor: move;
+}
+
+.board-item.muuri-item-hidden {
+  z-index: 0;
+}
+
+.board-item-content {
+  position: relative;
+  padding: 15px;
+  background: var(--white);
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  overflow: hidden;
+  .board-footer {
+    margin-top: 1rem;
+  }
+  h6 {
+    font-weight: 500;
+
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+}
+
+// >>-- 45 Kanban_board css end --<<

@@ -1,0 +1,477 @@
+// >>-- 33 Ratings css start --<<
+.rating{
+  text-align: center;
+  direction: rtl;
+}
+.rating label {
+  color: rgba(var(--light), 1);
+  font-size: 1.25rem;
+}
+
+.rating input[type="radio"] {
+  display: none;
+}
+
+.rating input[type="radio"]:checked~label {
+  color: rgba(var(--warning), 1);
+}
+
+.star-filled {
+  color: rgba(var(--light), 1);
+}
+
+
+// hover feedback css start //
+.stars_rating {
+  text-align: center;
+
+  .stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.stars .stars1 {
+  position: relative;
+  color: rgba(var(--warning), 0.40);
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0 0.3125rem;
+
+  &:after {
+    content: '★';
+    position: absolute;
+    transform: translateX(-100%);
+    top: 0rem;
+    font-size: 3rem;
+  }
+}
+
+.stars .stars1.rated {
+  color: rgba(var(--warning), 1);
+}
+
+.stars:hover {
+  .stars1 {
+    color: rgba(var(--warning), 0.50);
+  }
+
+  .stars1:hover~* {
+    color: rgba(var(--warning), 0.20);
+  }
+}
+
+// hover feedback css end//
+
+
+// 1 to 10 rating css srart //
+.br-theme-bars-1to10 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 74px;
+
+  .br-widget {
+    white-space: nowrap;
+    gap: 2px;
+    display: flex;
+
+    a {
+      display: block;
+      width: 14px;
+      padding: 5px 0;
+      height: 28px;
+      float: left;
+      background-color: rgb(var(--warning), 0.2);
+      margin: 1px;
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .br-current-rating {
+      font-size: 20px;
+      line-height: 2;
+      float: left;
+      height: 30px;
+      width: 30px;
+      color: rgb(var(--warning), 1);
+      font-weight: 400;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+    }
+
+  }
+
+  .br-readonly {
+    a {
+      cursor: default;
+
+      .br-active,
+      .br-selected {
+        background-color: rgb(var(--warning), 0.2);
+      }
+    }
+
+    .br-current-rating {
+      color: rgb(var(--warning), 0.2);
+    }
+  }
+}
+
+.br-theme-bars-1to10 .br-widget a.br-active,
+.br-theme-bars-1to10 .br-widget a.br-selected {
+  background-color: rgb(var(--warning), 1);
+}
+
+// 1 to 10 rating css end//
+
+
+// movie rating css start //
+.br-theme-bars-movie {
+  .br-widget {
+    height: 10px;
+    white-space: nowrap;
+
+    a {
+      display: block;
+      width: 100px;
+      height: 12px;
+      float: left;
+      background-color: rgb(var(--warning), 0.3);
+      margin: 4px;
+    }
+
+    .br-current-rating {
+      color: rgb(var(--dark), 1);
+    }
+  }
+
+  .br-current-rating {
+    clear: both;
+    text-align: center;
+    font-weight: 600;
+    display: block;
+    padding: .5em 0;
+    color: rgb(var(--warning), 1) !important;
+    font-weight: 600;
+    font-size: 16px;
+
+  }
+
+  .br-readonly {
+    a {
+      cursor: default;
+    }
+
+    .br-current-rating {
+      color: rgb(var(--warning), 0.3);
+    }
+  }
+}
+
+.br-theme-bars-movie .br-widget a.br-active,
+.br-theme-bars-movie .br-widget a.br-selected {
+  background-color: rgb(var(--warning), 1);
+}
+
+.br-theme-bars-movie .br-readonly a.br-active,
+.br-theme-bars-movie .br-readonly a.br-selected {
+  background-color: rgb(var(--warning), 0.3);
+}
+
+// movie rating css end //
+
+
+// square rating css start //
+.br-theme-bars-square {
+  .br-widget {
+    height: 15px;
+    white-space: nowrap;
+
+    a {
+      display: block;
+      width: 30px;
+      height: 30px;
+      float: left;
+      border: 2px solid rgb(var(--warning), 0.2);
+      background-color: var(--white);
+      margin: 2px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 2;
+      text-align: center;
+      color: rgb(var(--warning), 0.2);
+      font-weight: 600;
+      border-radius: 40px;
+      background: rgb(var(--warning), 0.1);
+    }
+
+    .br-current-rating {
+      clear: both;
+      width: 330px;
+      text-align: center;
+      font-weight: 600;
+      display: block;
+      padding: .5em 0;
+      color: var(--font-light-color);
+    }
+  }
+
+  .br-readonly a {
+    cursor: default;
+  }
+
+}
+
+.br-theme-bars-square .br-widget a.br-active,
+.br-theme-bars-square .br-widget a.br-selected {
+  border: 2px solid rgb(var(--warning), 1);
+  color: rgb(var(--warning), 1);
+}
+
+// squre rating css end //
+
+
+// pill rating start //
+.br-theme-bars-pill {
+  .br-widget {
+    white-space: nowrap;
+
+    a {
+      padding: 7px 15px;
+      background-color: rgb(var(--warning), 0.1);
+      color: rgb(var(--warning), 1);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 3;
+      text-align: center;
+      font-weight: 400;
+
+      &:first-child {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+
+  .br-readonly a {
+    cursor: default;
+  }
+}
+
+.br-theme-bars-pill .br-widget a.br-active,
+.br-theme-bars-pill .br-widget a.br-selected {
+  background-color: rgb(var(--warning), 1);
+  color: var(--white);
+}
+
+// pill rating css end //
+
+// reversed rating css start //
+.box-example-reversed {
+  .br-theme-bars-reversed {
+    .br-widget {
+      height: 25px;
+      white-space: nowrap;
+
+      a {
+        display: block;
+        width: 22px;
+        height: 22px;
+        float: left;
+        background-color: rgb(var(--warning), 0.2);
+        margin: 1px;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.4;
+        color: rgb(var(--warning), 1);
+        border-radius: 6px;
+
+      }
+    }
+
+    .br-current-rating {
+      line-height: 1.3;
+      float: left;
+      color: rgb(var(--warning), 1);
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    .br-readonly {
+      .br-current-rating {
+        color: rgb(var(--warning), 1);
+      }
+
+      a {
+        cursor: default;
+      }
+    }
+  }
+}
+
+
+.br-theme-bars-reversed .br-widget a.br-active,
+.br-theme-bars-reversed .br-widget a.br-selected {
+  background-color: rgb(var(--warning), 1);
+  color: var(--white);
+}
+
+// reversed rating css end //
+
+
+// horizontal rating css //
+
+.br-theme-bars-horizontal .br-widget a {
+  display: block;
+  width: 120px;
+  height: 6px;
+  background-color: rgb(var(--warning), 0.2);
+  margin: 1px;
+}
+
+.br-theme-bars-horizontal .br-widget a.br-active,
+.br-theme-bars-horizontal .br-widget a.br-selected {
+  background-color: rgb(var(--warning), 1);
+}
+
+.br-theme-bars-horizontal .br-widget .br-current-rating {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2;
+  text-align: center;
+  color: rgb(var(--warning), 1);
+}
+// horizontal rating end //
+
+// emoji rating start //
+.emoji-container {
+  width: 44px;
+  border-radius: 50%;
+  display: flex;
+  overflow: hidden;
+  text-align: center;
+  margin: auto;
+
+  .far {
+    margin: 1px;
+    transform: translateX(0);
+    transition: 0.2s;
+    color: #5333ed;
+  }
+
+
+
+}
+
+.rating-container {
+  text-align: center;
+
+  .fa-star {
+    color: lightgray;
+    cursor: pointer;
+  }
+
+  .fa-star.active {
+    color: rgb(var(--warning));
+  }
+}
+// emoji rating end //
+
+// emoji progress start //
+.rate-1 {
+  text-align: center;
+  .emoji {
+    font-size: 30px;
+  }
+  
+  .text {
+    display: inline-block;
+    font-size: 14pt;
+
+  }
+  
+  .text label {
+    font-size: 16pt;
+  }
+  
+  input {
+    cursor: ew-resize;
+  }
+  .emoji-slider{
+    .accent{
+      accent-color: rgba(var(--warning),1);
+    }
+  }
+}
+
+// emoji progress end //
+
+// half star css start //
+.half-rate {
+  display: inline-block;
+  border: 0;
+
+  input {
+    display: none;
+  }
+
+  label {
+    float: right;
+    color: rgb(var(--light));
+
+    &:before {
+      display: inline-block;
+      font-size: 1.1rem;
+      padding: 0.3rem 0.2rem;
+      margin: 0;
+      cursor: pointer;
+      content: "\f005 ";
+      font-family: FontAwesome;
+    }
+
+    :last-child {
+      &:before {
+        content: "\f006 ";
+        color: #5333ed;
+      }
+    }
+  }
+
+  .half {
+    &:before {
+      content: "\f089 ";
+      position: absolute;
+      padding-right: 0;
+    }
+  }
+
+  input:checked~label,
+  label:hover,
+  label:hover~label {
+    color: rgb(var(--warning));
+  }
+
+  input:checked+label:hover,
+  input:checked~label:hover,
+  input:checked~label:hover~label,
+
+  label:hover~input:checked~label {
+    color: rgb(var(--warning));
+  }
+}
+// half star css end //
+input[type=range]::-webkit-slider-thumb {
+  background: #FF5733;
+}
+// >>-- 33 Ratings css end --<<

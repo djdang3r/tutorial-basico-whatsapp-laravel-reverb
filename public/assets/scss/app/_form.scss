@@ -1,0 +1,173 @@
+// >>-- 26 Form css start --<<
+
+.app-form {
+    .form-select,
+    .form-control {
+        color: rgba(var(--secondary), 1);
+        font-size: 14px;
+        padding: 0.8rem 0.75rem;
+        border: 1px solid rgba(var(--secondary), .4);
+        text-overflow: ellipsis;
+        &:focus {
+            color: rgba(var(--dark), 1);
+            box-shadow: 0 0 0 0.25rem rgba(var(--primary), 0.3);
+            border: 1px solid rgba(var(--primary), .8);
+            padding-left: 1.3rem;
+            transition: var(--app-transition);
+        }
+
+        &::placeholder {
+            color: rgba(var(--dark), 0.6) !important;
+            opacity: 1;
+        }
+        &.is-invalid {
+            border-color: rgba(var(--danger), 1);
+            &:focus {
+                box-shadow: 0 0 0 0.25rem rgba(var(--danger), 0.3);
+            }
+        }
+        &.form-control-lg {
+            min-height: calc(1.5em + 1rem + calc(var(--bs-border-width) * 2));
+            padding: 0.5rem 1rem;
+            font-size: 1.25rem;
+        }
+        &.form-control-sm{
+            min-height: calc(1.5em + 0.5rem + calc(var(--bs-border-width) * 2));
+            padding: 0.25rem 0.5rem;
+            font-size: .875rem;        
+        }
+    }
+    .form-label {
+        color: rgba(var(--dark), .8);
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .form-text {
+        color: rgba(var(--secondary), 1);
+    }
+    .input-group {
+        .input-group-text {
+            font-size: 14px;
+        }
+    }
+    .form-floating {
+        > .form-control {
+            &::placeholder {
+                color: transparent !important;
+            }
+            &:focus {
+                &::placeholder {
+                    color: rgba(var(--secondary), 1) !important;
+                }
+            }
+        }
+        > .form-select {
+            padding-top: 1.5rem;
+            padding-bottom: 0.625rem;
+        }
+    }
+    &.rounded-control {
+        .form-select,
+        .form-control {
+            border-radius: 20px;
+        }
+    }
+    .app-control {
+        position: relative;
+        padding-bottom: 20px;
+        &.success {
+            input {
+                border: 1px solid rgba(var(--success), 0.3);
+            }
+        }
+        &.error {
+            input {
+                border: 1px solid rgba(var(--danger), 1);
+                &:focus {
+                    box-shadow: 0 0 0 0.25rem rgba(var(--danger), 0.3);
+                }
+            }
+            small {
+                visibility: visible;
+            }
+        }
+        small {
+            color: rgba(var(--danger), 1);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            visibility: hidden;
+        }
+    }
+    &.app-icon-form {
+        .form-control {
+            padding: 0.5rem 0.75rem;
+            padding-left: 2rem;
+            border: 2px solid rgba(var(--secondary),.4);
+            &:focus {
+                border-color: rgba(var(--primary), 1);
+                box-shadow: none;
+                box-shadow: 0 0 0 0.25rem rgba(var(--primary), 0.3);
+            }
+        }
+        i {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 18px;
+        }
+    }
+    .form-select{
+        option{
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+
+            &:active,
+            &:checked{
+                background-color: rgb(var(--primary), 1);
+                color: var(--white);
+            }
+            &:hover{
+                background-color: rgb(var(--primary), .1);
+                color: rgb(var(--primary), 1);
+            }
+        }
+    }
+    &.was-validated{
+        .form-control{
+            &:invalid{
+                border-color: rgba(var(--danger), 1);
+            }
+            &:valid{
+                border-color: rgb(var(--success), 1);
+            }
+        }
+        .invalid-feedback{
+            color: rgba(var(--danger), 1);
+        }
+    }
+    
+    .icon-form{
+        position: relative;
+
+        i{
+            position: absolute;
+            top: 14px;
+            left: 8px;
+            font-size: 20px;
+            color: rgba(var(--dark),.75);
+        }
+    }
+
+.inline-form{
+    .form-prefrence-width{
+        width: 30% !important;
+    }
+}
+    
+    .form-check-width{
+        width: 20%;
+    }
+}
+
+// >>-- 26 Form css end  --<<

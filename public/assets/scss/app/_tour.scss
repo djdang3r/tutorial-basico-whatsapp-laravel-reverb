@@ -1,0 +1,63 @@
+// >>-- 46 Tour css start --<<
+
+.shepherd-title {
+  color: rgba(var(--dark), 1);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.shepherd-text {
+  font-size: 14px;
+  padding: 0 1.5em;
+  color: rgba(var(--dark), 0.6);
+}
+.shepherd-has-title {
+  .shepherd-content {
+    .shepherd-header{
+      background-color: transparent;
+      padding: 1.25em;
+    }
+  }
+}
+
+.shepherd-footer{
+  position: relative;
+  background-color: transparent;
+  padding: 1.5em;
+  .shepherd-button {
+    color: rgba(var(--primary), 0.9);
+    padding: 0;
+    font-weight: 600;
+    background-color: transparent;
+    line-height: 1;
+    border-radius: 0;
+    & +.shepherd-button{
+      padding-left: 10px;
+      border-left: 2px solid rgb(203 206 223);
+    }
+    &:hover{
+      background-color: transparent;
+      color: rgba(var(--primary), 1);
+    }
+  }
+}
+.shepherd-element.shepherd-has-title[data-popper-placement^=bottom]>.shepherd-arrow{
+  &:before {
+    background-color: var(--white);
+  }
+  &:after {
+    content: "";
+    transform: rotate(45deg);
+    background-color: rgba(var(--secondary), 0.1);
+    height: 18px;
+    position: absolute;
+    width: 18px;
+    z-index: -2;
+    margin-top: -1px;
+    margin-left: -1px;
+  }
+}
+.shepherd-enabled.shepherd-element{
+  margin: 5px 0;
+}
+
+// >>-- 46 Tour css end --<<

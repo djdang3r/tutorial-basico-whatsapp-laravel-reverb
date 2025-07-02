@@ -1,0 +1,189 @@
+// >>-- 78 Product css start --<<
+
+.product-wrapper-grid {
+    a {
+        color: rgb(var(--dark), 1);
+        font-weight: 700;
+    }
+    p {
+        font-size: 13px;
+        color: rgb(var(--secondary), 1);
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    .list-view {
+        .product-content-box {
+            display: flex;
+            align-items: center;
+            .product-grid {
+                max-width: 100px;
+                width: 100%;
+            }
+            .product-image {
+                border-radius: 1.5rem 0 0 1.5rem;
+                .images_box,
+                .pic-1 {
+                    height: 150px;
+                }
+            }
+            .p-3 {
+                width: 100%;
+            }
+            
+        }
+    }
+}
+.pricing-box {
+    h6 {
+        color: rgb(var(--dark), 0.9);
+        font-weight: 600;
+        margin-bottom: 0;
+        span {
+            color: rgb(var(--secondary), 1);
+            font-size: calc(12px + (14 - 12) * ((100vw - 300px) / (1920 - 300)));
+            font-weight: 400;
+        }
+    }
+}
+.product-view{
+   display: none;
+}
+.product-grid {
+    .product-image {
+        position: relative;
+        background-color: var(--white);
+
+        .images_box {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.5s ease 0s;
+            background-color: var(--white);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .product-links {
+        opacity: 0;
+        position: absolute;
+        left: 14px;
+        top: 14px;
+        z-index: 1;
+        transition: var(--app-transition);
+        li {
+            margin: 5px 0;
+            a {
+                cursor: pointer;
+                background: var(--white);
+                font-size: 15px;
+                line-height: 36px;
+                width: 35px;
+                height: 35px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgb(var(--dark), 0.1);
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    color: var(--white);
+                    background: rgb(var(--primary), 1);
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .images_box,
+        .product-links {
+            opacity: 1;
+        }
+    }
+}
+.product-box {
+    .accordion-header {
+        span {
+            color: rgb(var(--dark), 0.75);
+            font-weight: 600;
+        }
+    }
+    .accordion-button:not(.collapsed) {
+        background: none !important;
+        box-shadow: none;
+        color: rgb(var(--dark), 1);
+    }
+    .accordion-button {
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.product-modal {
+    display: none;
+}
+.product-filter-modal {
+    .accordion-button:not(.collapsed) {
+        background: none !important;
+        box-shadow: none;
+        color: rgb(var(--dark), 1);
+    }
+    .accordion-button {
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+.producttoggle {
+    display: block !important;
+    position: absolute;
+    z-index: 3;
+    width: calc(100% - 345px);
+}
+.product-box {
+    .accordion-header {
+        span {
+            color: rgb(var(--dark), 0.75);
+            font-weight: 600;
+        }
+    }
+    .accordion-item{
+        border-bottom: 1px solid var(--border_color);
+    }
+    .accordion-button:not(.collapsed) {
+        background: none !important;
+        box-shadow: none;
+        color: rgb(var(--dark), 1);
+    }
+    .accordion-button {
+        padding: 0.625rem 1rem  !important;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    .accordion-light-primary {
+        .accordion-item {
+            .accordion-button[aria-expanded=true]{
+                span {
+                    color: rgba(var(--primary),1) !important;
+                }
+            }
+        }
+    }
+}
+.product-header{
+.app-form{
+    width: 400px;
+}
+}
+// >>-- 78 Product css end --<<

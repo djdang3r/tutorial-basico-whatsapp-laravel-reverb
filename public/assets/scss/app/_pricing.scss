@@ -1,0 +1,128 @@
+// >>-- 52 Pricing css start --<<
+
+.pricing-table {
+    &.table-responsive {
+        table {
+            thead {
+                tr {
+                    th:first-child {
+                        width: 34%;
+                    }
+
+                    th:nth-child(2) {
+                        width: 22%;
+                    }
+
+                    th:nth-child(3) {
+                        width: 22%;
+                    }
+
+                    th:nth-child(4) {
+                        width: 22%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.simple-pricing-card {
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(var(--secondary),.2);
+    .simple-price-body {
+        .simple-price-value {
+            color: #fff;
+            margin: 25px auto 60px;
+            width: 80%;
+            padding: 10px;
+        }
+        .simple-price-content {
+            p {
+                font-size: 14px !important;
+            }
+            button {
+                margin-top: 50px;
+            }
+
+        }
+    }
+}
+
+.flip-pricing {
+    margin: 10px;
+
+    &:hover .flip-card {
+        transform: rotateY(190deg);
+        transition: transform 0.9s;
+    }
+    .app-divider-v{
+        &:before{
+            border: 1px solid rgba(var(--secondary),.2);
+        }
+    }
+
+    .flip-card {
+        transition: transform 0.1s;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+
+        .front-pricing {
+            position: relative;
+        }
+
+        .front-pricing,
+        .back-pricing {
+            width: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 6px 12px;
+            border: 1px solid rgba(var(--secondary),.2);
+
+            .pricing-header {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .price {
+                font-weight: 500;
+                font-size: 40px;
+            }
+
+            .pricing-content {
+                margin-bottom: 20px;
+
+                .pricing-list {
+                    text-align: center;
+                    margin-bottom: 20px;
+
+                    li {
+                        margin: 20px 0 0 0;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: rgb(var(--dark), 0.75);
+                    }
+                }
+            }
+        }
+
+        .back-pricing {
+            position: absolute;
+            top: 0;
+            transform: rotateY(-180deg);
+        }
+    }
+}
+
+.flip-pricing-container {
+    .slick-slide img {
+        display: inline;
+    }
+}
+.pricing-plan-section{
+    .pricing-cards{
+        border: 1px solid rgba(var(--secondary),.2);
+    }
+}
+// >>-- 52 Pricing css end --<<

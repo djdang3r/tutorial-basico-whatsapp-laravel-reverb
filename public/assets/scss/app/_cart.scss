@@ -1,0 +1,108 @@
+// >>-- 83 Cart css start --<<
+
+.cart-table {
+    select {
+        color: rgba(var(--dark), 1);
+    }
+
+    .cart-details{
+        .fs-6{
+            text-transform: capitalize;
+            color: rgba(var(--dark), 1);
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        p{
+            color: rgba(var(--dark), 0.75);
+            margin-bottom: 0;
+            span{
+                font-size: 12px;
+                color: rgba(var(--secondary), .8);
+                margin-left: 2px;
+            }
+        }
+    }
+
+    .dataTables_wrapper {
+        table {
+            thead {
+              th{
+                  border-bottom: none !important;
+              }
+                th:nth-child(1) {
+                    min-width: 200px;
+                }
+                th:nth-child(5) {
+                    min-width: 100px;
+                }
+            }
+            tbody {
+                tr {
+
+                    th,td {
+                        border-top: 1px dashed rgba(var(--secondary),.4);
+                        color: rgba(var(--dark), 0.8);
+                        font-size: 15px;
+                        h6 {
+                            color: rgba(var(--dark), 0.8);
+                            font-weight: 600;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cart-side-table{
+    tr{
+      th,td{
+        padding: 0.8rem 0 !important;
+      }
+      td{
+        color: rgba(var(--dark), 0.75);
+        font-weight: 500;
+      }
+      &.total-price{
+        font-size: 16px;
+        color: rgba(var(--dark), 0.8);
+        font-weight: 600;
+      }
+    }
+  }
+
+  .scratch-card{
+    text-align: center;
+    // padding: 0.5rem;
+    border: 4px dashed rgb(var(--secondary), 1);
+    // position: relative;
+    .scratch-code-box{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px dashed rgb(var(--dark), .2);
+      padding: 0.5rem;
+    }
+    h4{
+      color: rgb(var(--dark), .75);
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+    
+  .scratch-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ccc, #fff);
+    background: rgba(var(--secondary));
+    opacity: 0.2;
+    border-radius: 20px;
+    z-index: 1;
+    display: block;
+  }
+  }
+
+// >>-- 83 Cart css start --<<

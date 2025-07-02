@@ -1,0 +1,21 @@
+// >>-- 49 Error css start --<<
+
+.error-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-image: url("../images/background/06.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    h1{
+        font-size: calc(22px + (36 - 22) * ((100vw - 300px) / (1920 - 300)));
+    }
+    p{
+        color: rgb(var(--dark), 1);
+        font-weight: 500;
+        font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1920 - 300))); 
+    }
+}
+// >>-- 49 Error css end --<<

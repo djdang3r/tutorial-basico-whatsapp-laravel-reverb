@@ -1,0 +1,73 @@
+// >>-- 86 Invoice css start --<<
+
+.invoice-table {
+    tr {
+        th,
+        td {
+            padding: 0.8rem 0.75rem !important;
+        }
+
+        h6,
+        p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        // th {
+        //     &:nth-child(2){
+        //         min-width: 240px;
+        //     }
+        //     &:nth-child(5),
+        //     &:nth-child(6) {
+        //         min-width: 100px;
+        //     }
+        // }
+
+    }
+}
+@media print {
+    .invoice-footer,
+    footer,
+    header,
+    nav{
+        display: none;
+        margin: 0 !important;
+        padding:0 !important;
+    }
+    main{
+        width: 100%;
+        padding: 0px;
+        .container{
+            max-width: 100%;
+            padding: 0;
+        }
+    }
+    .app-wrapper {
+        .app-content{
+            padding: 0px;
+            .go-top{
+                display: none !important;
+            }
+            .invoice-container{
+                .main-title,
+                .breadcrumb{
+                    display: none;
+                }
+            }
+        }
+    }
+    .customizer-btn{
+        display: none;
+    }
+    .invoice-container{
+        .card-body{
+            padding: 0;
+        }
+    }
+}
+
+
+
+// >>-- 89 Invoice css end --<<

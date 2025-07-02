@@ -1,0 +1,67 @@
+// >>-- 81 Orders_details css start --<<
+
+.orders-details-datatable {
+
+
+    .table {
+        thead {
+            tr {
+                th:nth-child(1) {
+                    min-width: 180px;
+                }
+                th {
+                    color: rgba(var(--dark), 0.8);
+                    font-weight: 600;
+                }
+                th:nth-child(6),
+                th:nth-child(3) {
+                    min-width: 160px;
+                }
+                th:nth-child(7) {
+                    min-width: 150px;
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    color: rgba(var(--scendary), 0.75);
+                    h6 {
+                        color: rgba(var(--dark), 0.8);
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.orders-details-cards {
+    tbody {
+        tr {
+            td {
+                color: rgba(var(--secondary), 0.8);
+                font-weight: 500;
+                h6 {
+                    color: rgba(var(--dark), 0.8);
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.product-table {
+    thead {
+        tr {
+            th:nth-child(4) {
+                min-width: 100px;
+            }
+            th:nth-child(5) {
+                min-width: 100px;
+            }
+        }
+    }
+}
+
+// >>-- 81 Orders_details css end --<<

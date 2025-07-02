@@ -1,0 +1,43 @@
+// >>-- 57 SweetAlert css start --<<
+
+.swal2-confirm {
+    background-color: rgb(var(--primary), 1) !important;
+    &:focus {
+        box-shadow: 0 0 0 3px rgb(var(--primary), 0.5) !important;
+    }
+}
+.swal2-deny {
+    background-color: rgb(var(--secondary), 1) !important;
+}
+.swal2-cancel {
+    background-color: rgb(var(--danger), 1) !important;
+}
+
+.swal2-icon {
+    &.swal2-question{
+        border-color: rgba(var(--info), 1) !important;
+        color: rgba(var(--info), 1) !important;
+    }
+
+}
+.sweetalert-table {
+    &.table-bottom-border {
+        & > tbody {
+            & > tr {
+                border-top: 1px dashed var(--border_color);
+            }
+        }
+    }
+    thead {
+        tr {
+            th:nth-child(2) {
+                min-width: 300px;
+            }
+            th:nth-child(3) {
+                min-width: 150px;
+            }
+        }
+    }
+}
+
+// >>-- 57 SweetAlert css end --<<

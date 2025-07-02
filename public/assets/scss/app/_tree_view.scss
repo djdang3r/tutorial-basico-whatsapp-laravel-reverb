@@ -1,0 +1,83 @@
+// >>-- 108 Tree View css start --<<
+.nestable {
+    .jstree-default {
+
+        .jstree-clicked {
+            background: transparent;
+            box-shadow: none;
+
+            &:hover {
+                background: transparent;
+            }
+        }
+    }
+    .jstree-container-ul{
+        .jstree-hovered{
+            background: white !important;
+        }
+    }
+}
+
+.level-nestable {
+    .jstree-default {
+
+        .jstree-clicked {
+            background: transparent;
+            box-shadow: none;
+
+            &:hover {
+                background: transparent;
+            }
+            .jstree-checkbox {
+                &::before{
+                    background-color: rgba(var(--primary),1);
+                }
+            }
+        }
+        .jstree-checkbox {
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            position: relative;
+    
+            &::before {
+                transition: var(--app-transition);
+                cursor: pointer;
+                position: absolute;
+                top: 2px;
+                content: ' ';
+                display: block;
+                width: 16px;
+                height: 16px;
+                border: 1px dashed rgba(var(--dark),.2);
+                border-radius: 2px;
+            }
+    
+            &::after {
+                position: absolute;
+                content: ' ';
+                display: block;
+                top: 4px;
+                left: 5px;
+                width: 5px;
+                height: 9px;
+                border: 2px dashed var(--white);
+                border-top: none;
+                border-left: none;
+                transform: rotate(45deg);
+            }
+    
+            &.jstree-icon {
+                background-image: none !important;
+            }
+        }
+    }
+    .jstree-container-ul{
+        .jstree-hovered{
+            background: var(--white) !important;
+        }
+    }
+}
+// >>-- 108 Tree View css end --<<

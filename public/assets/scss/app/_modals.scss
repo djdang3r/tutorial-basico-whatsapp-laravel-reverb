@@ -1,0 +1,45 @@
+// >>-- 22 Modals css start --<<
+
+
+[class*=bg-]{
+    .btn-close{
+        filter: brightness(0) invert(1);
+    }
+}
+ .bg-none{
+    background: none;
+ }
+
+.modal-btn{
+button{
+    margin-bottom: 10px;
+    margin-right: 8px;
+}
+}
+.modal-tabel{
+    &.table-bottom-border {
+        & > tbody {
+            & > tr {
+                border-top: 1px dashed var(--border_color);
+            }
+        }
+    }
+        thead{
+            tr{
+                th:nth-child(1){
+                    min-width: 250px;
+                }
+                th:nth-child(2){
+                    min-width: 200px;
+                }
+                th:nth-child(3){
+                    min-width: 250px;
+                }
+                th:nth-child(4){
+                    min-width: 250px;
+                }
+            }
+        }
+}
+
+ // >>-- 22 Modals css end --<<

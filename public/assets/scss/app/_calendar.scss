@@ -1,0 +1,186 @@
+// >>-- 38 Calender css start --<<
+
+.app-calendar {
+    &.fc-theme-standard{
+        th,td{
+            border-color: rgba(var(--dark), 0.2);
+        }
+        border-color: rgba(var(--dark), 0.2);
+        .fc-scrollgrid{
+           
+            border-color: rgba(var(--dark), 0.2);
+            border-radius: var(--app-border-radius);
+            overflow: hidden;
+        }
+    }
+
+    .fc-toolbar-title {
+        color: rgba(var(--dark), 0.75);
+        font-weight: 600;
+    }
+    .fc-col-header-cell-cushion {
+        font-size: 15px;
+        color: rgba(var(--dark), 0.75);
+        cursor: default;
+        padding: 10px 4px;
+    }
+    .fc-v-event,
+    .fc-h-event {
+        padding: 0.5rem 0.25rem;
+        text-align: center;
+        background-color: rgba(var(--primary), 0.1);
+        border: 1px solid rgba(var(--primary), 1);
+        font-size: 15px;
+        .fc-event-main {
+            color: rgba(var(--primary), 1);
+        }
+    }
+    .fc-button-primary {
+        background-color: rgba(var(--primary), 0.8) !important;
+        border-color: rgba(var(--primary), 0.8);
+        &:hover {
+            border-color: transparent;
+        }
+        &:focus {
+            box-shadow: none !important;
+        }
+    }
+    .fc-button-active {
+        background-color: rgba(var(--primary), 1) !important;
+        border: 1px solid rgba(var(--primary), 1) !important;
+    }
+    .fc-daygrid-event-dot {
+        border-color: rgba(var(--primary), 1);
+    }
+    .fc-popover-header {
+        background-color: rgba(var(--primary), 1);
+        color: var(--white);
+    }
+    .fc-daygrid-day {
+        .fc-daygrid-day-top {
+            a {
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+        &.fc-day-today {
+            background-color: rgba(var(--primary), 0.1);
+            // border: 1px solid rgba(var(--primary),1);
+            .fc-daygrid-day-top {
+                a {
+                    font-weight: 500;
+                    color: var(--white);
+                    background-color: rgba(var(--primary), 1);
+                }
+            }
+        }
+    }
+
+    .fc-list-event-dot {
+        border: calc(var(--fc-list-event-dot-width) / 2) solid rgba(var(--primary), 1);
+    }
+    &.fc{
+        .fc-scrollgrid-sync-table,
+        .fc-daygrid-body,
+        .fc-col-header{
+            width: 100% !important;
+        }
+    }
+    .fc-button-group{
+        button{
+            padding: 0.8rem 0.75rem;
+        }
+    }
+}
+
+@mixin list_event_mixin($name, $color) {
+    .event-#{$name} {
+        background-color: rgba(#{$color}, 0.1) !important;
+        border: 1px solid rgba(#{$color}, 1) !important;
+        color: rgba(#{$color}, 1) !important;
+        .fc-event-main {
+            color: rgba(#{$color}, 1) !important;
+            text-align: center;
+        }
+    }
+}
+
+@each $name, $color in $colors {
+    @include list_event_mixin($name, map-get($colors, $name));
+}
+
+/* Drag and drop css */
+.list-event {
+    padding: 0.8rem 0.75rem;
+    cursor: all-scroll;
+    margin: 10px 0px;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-size: 16px;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.event-container {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    .event-box {
+        border: 1px dashed rgba(var(--dark), 0.2);
+        padding: 0.8rem 0.75rem;
+        //margin: 0.5rem 1rem;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        border-left: 4px solid rgba(var(--dark), 0.75);
+        background-color: var(--white);
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        h6 {
+            color: rgba(var(--dark), 0.75);
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1920 - 300)));
+        }
+    }
+    .slick-active {
+        &.slick-center {
+            box-shadow: var(--box-shadow);
+            border-color: rgba(var(--primary), 1);
+            h6 {
+                color: rgba(var(--primary), 1);
+            }
+            .text-end {
+                color: rgba(var(--primary), 1);
+            }
+        }
+    }
+}
+
+.calendar-remove-check {
+    margin-top: 1rem;
+    &.form-check {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        .form-check-input{
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 2px solid rgba(var(--dark), 0.2);
+        }
+        .form-check-label{
+            font-size: 15px;
+            font-weight: 500;
+            color: rgba(var(--dark), 0.75);
+        }
+    }
+}
+// >>-- 38 Calender css end --<<

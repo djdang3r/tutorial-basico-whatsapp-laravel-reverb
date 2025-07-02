@@ -1,0 +1,39 @@
+// >>-- 39 Faq css start --<<
+
+.faq-header{
+    min-height: 280px;
+    background-image: url("../images/background/01.jpg");
+    background-blend-mode:overlay;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    background-color: #e9ecef;
+    h2{
+      font-size: calc(22px + (32 - 22) * ((100vw - 300px) / (1920 - 300)));
+    }
+    .search-div{
+      width: 60%;
+      padding: 0.375rem 0.75rem;
+    }
+  }
+.faq-heading{
+  text-align: center;
+  h3{
+    font-size: calc(18px + (28 - 18) * ((100vw - 300px) / (1920 - 300)));
+  }
+}
+
+[class="ltr dark"]{
+.faq-header {
+  background-color: #595d60;
+}
+}
+
+
+// >>-- 39 Faq css end --<<

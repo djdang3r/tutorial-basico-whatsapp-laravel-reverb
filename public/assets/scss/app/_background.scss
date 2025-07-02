@@ -1,0 +1,38 @@
+// >>-- 24 Background css start --<<
+
+// background-color css starts
+
+@mixin bg-colors($name, $stylename,$color,$max, $offset) {
+    $i: .30;
+    @while $i <= $max {
+      .bg-#{$name}-#{$i*1000} {
+        #{$stylename}: rgba(#{$color},#{$i}) !important;
+        color: var(--white);
+        &:hover,&:active ,&.active ,&.show,&:checked,&:focus {
+            color: var(--white);
+            transition: var(--app-transition);
+          }
+      }
+
+      $i: $i + $offset;
+    }
+  }
+
+  @each $name, $color in $colors {
+    @include bg-colors($name, 'background-color',map-get($colors, $name),.90,.10);
+  }
+
+.alert-outline-light,
+.alert-light-border-light,
+.alert-light-light,
+.alert-light,
+.text-bg-light,
+.btn-light,
+.btn-outline-light,
+.btn-light-light,
+.bg-light,
+.box-shadow-light{
+  color: rgba(var(--dark),1) !important;
+}
+  // >>-- 24 Background css end --<<
+

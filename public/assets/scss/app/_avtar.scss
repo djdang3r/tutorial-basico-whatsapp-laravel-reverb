@@ -1,0 +1,30 @@
+// >>-- 20 Avtar css start --<<
+
+
+.avatar-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  li{
+    transition: var(--app-transition);
+    cursor: pointer;
+    &.h-25{
+      &+li{
+        margin-left: -10px;
+      }
+    }
+    &+li{
+      margin-left: -15px;
+      font-size: 80%;
+      z-index: 0;
+    }
+
+    &:hover{
+      transform: translate(0, -2px);
+      transition: var(--app-transition);
+      z-index: 1;
+    }
+  }
+}
+
+// >>-- 20 Avtar css end --<<

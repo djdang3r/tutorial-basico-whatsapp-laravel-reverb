@@ -1,0 +1,9 @@
+// >>-- 99 Prisum css start --<<
+
+:not(pre)>code[class*=language-], pre[class*=language-]{
+  background: rgba(var(--light), 0.2);
+  margin: 0;
+  border-radius: 5px;
+}
+
+// >>-- 99 Prisum css end --<<

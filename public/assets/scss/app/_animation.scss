@@ -1,0 +1,16 @@
+// >>-- 17 Animation css start --<<
+.animation-blocks{
+    margin: 0 -6px 1.25rem;
+    .animation-card{
+        width: calc(20% - 12px);
+        margin: 0 6px 12px;
+    }
+    .d-flex{
+        a{
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+}
+
+// >>-- 17 Animation css end --<<

@@ -1,0 +1,64 @@
+// >>-- 08 Advance Table css start --<<
+
+.advance-drag-drop-table{
+    &.table-bottom-border {
+        & > tbody {
+            & > tr {
+                td{
+                    color: rgba(var(--secondary));
+                    font-size: 14px;
+                    &:first-child{
+                        padding-left: 20px;
+                    }
+                }
+                td:nth-child(2){
+                    min-width: 200px;
+                }
+            }
+        }
+    }
+    thead{
+        tr{
+            th{
+                color: rgba(var(--dark),.75);
+                font-weight: 600;
+                font-size: 16px;
+                &:first-child{
+                    padding-left: 20px;
+                }
+            }
+            th:nth-child(3),
+            th:nth-child(2){
+                min-width: 220px;
+            }
+            th:nth-child(8){
+                min-width: 150px;
+            }
+            th:nth-child(9){
+                min-width: 100px;
+            }
+        }
+    }
+}
+
+.advance-table-section{
+    .project-table {
+        table {
+            thead {
+                tr {
+                    th:nth-child(7),
+                    th:nth-child(6) {
+                        min-width: 100px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//.dataTables_wrapper .dataTables_info {
+//    padding-left: 20px;
+//    padding-top: 18px;
+//}
+
+// >>-- 08 Advance Table css end --<<

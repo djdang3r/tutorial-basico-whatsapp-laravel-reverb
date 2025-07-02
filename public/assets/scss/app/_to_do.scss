@@ -1,0 +1,78 @@
+// >>-- 40 To_do css start --<<
+
+.todo-container{
+  height: 600px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+    margin: 10px 0;
+    background-color: var(--white);
+    border: 1px solid rgba(var(--secondary), 0.2);
+    border-radius: 10px;
+    font-weight: 500;
+    color: rgba(var(--dark), 1);
+  }
+
+}
+.todo-table{
+  &.table-bottom-border {
+    & > tbody {
+        & > tr {
+            border-top: 1px dashed rgba(var(--secondary), 0.4);
+          td{
+            &.notes {
+              span{
+                i{
+                  vertical-align: middle;
+                }
+              }
+            }
+          }
+        }
+    }
+}
+  thead{
+    tr{
+      th{
+        color: rgba(var(--dark), 0.8);
+        font-weight: 600;
+      }
+      th:nth-child(3){
+        min-width: 400px;
+      }
+      th:nth-child(6){
+        min-width: 150px;
+      }
+      th:nth-child(7){
+        min-width: 225px;
+      }
+
+    }
+
+  }
+  th,
+  td{
+    border:none;
+  }
+}
+.search-lg{
+  .app-icon-form  {
+    &.app-icon-form{
+      .form-control{
+        padding: 0.8rem 0.75rem;
+      }
+      i {
+        top: 12px;
+      }
+    }
+  }
+}
+// >>-- 40 To_do css end --<<

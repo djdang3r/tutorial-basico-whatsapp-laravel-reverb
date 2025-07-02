@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9929ae0f39b99702c171f9c9695fdcb9",
+    "content-hash": "9ee9a39b24cc139a09b9c4b5da33e2c2",
     "packages": [
         {
             "name": "brick/math",
@@ -3482,6 +3482,71 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.8.1"
             },
             "time": "2025-06-01T06:28:46+00:00"
+        },
+        {
+            "name": "scriptdevelop/whatsapp-manager",
+            "version": "1.0.387",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/djdang3r/whatsapp-api-manager.git",
+                "reference": "ad5e95551476d5093f8810535d653978ba12bdaa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/djdang3r/whatsapp-api-manager/zipball/ad5e95551476d5093f8810535d653978ba12bdaa",
+                "reference": "ad5e95551476d5093f8810535d653978ba12bdaa",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.0",
+                "laravel/framework": "^12.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "orchestra/testbench": "^10.2",
+                "phpunit/phpunit": "^12.1"
+            },
+            "suggest": {
+                "laravel/reverb": "Permite recibir eventos websocket desde el paquete vía broadcasting"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Whatsapp": "ScriptDevelop\\WhatsappManager\\Facades\\Whatsapp"
+                    },
+                    "providers": [
+                        "ScriptDevelop\\WhatsappManager\\Providers\\WhatsappServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Helpers/CountryCodes.php"
+                ],
+                "psr-4": {
+                    "ScriptDevelop\\WhatsappManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Paquete para manejo de WhatsApp Business API en Laravel",
+            "keywords": [
+                "api",
+                "chat",
+                "laravel",
+                "messaging",
+                "notifications",
+                "whatsapp"
+            ],
+            "support": {
+                "issues": "https://github.com/djdang3r/whatsapp-api-manager/issues",
+                "source": "https://github.com/djdang3r/whatsapp-api-manager/tree/v1.0.387"
+            },
+            "time": "2025-07-02T15:47:29+00:00"
         },
         {
             "name": "symfony/clock",

@@ -117,6 +117,10 @@
                                     </td>
                                     <td>
                                         <!-- Botón Live Chat -->
+                                        <a href="{{ route('whatsapp.livechat', $number->phone_number_id) }}"
+                                           class="btn btn-primary btn-sm">
+                                            <i class="ph-duotone ph-chats-teardrop me-1"></i> Live Chat
+                                        </a>
                                     </td>
                                 </tr>
                             @empty

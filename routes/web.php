@@ -5,6 +5,7 @@ use Livewire\Volt\Volt;
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WhatsappController;
+use App\Http\Controllers\WhatsappLiveChatController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,6 +16,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
     Route::post('/whatsapp/register', [WhatsappController::class, 'register'])->name('whatsapp.register');
+    Route::get('/whatsapp/livechat/{phoneNumberId}', [WhatsappLiveChatController::class, 'show'])->name('whatsapp.livechat');
 
     Volt::route('settings/profile', 'settings.profile')->name('settings.profile');
     Volt::route('settings/password', 'settings.password')->name('settings.password');

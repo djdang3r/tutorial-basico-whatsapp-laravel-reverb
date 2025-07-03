@@ -35,4 +35,78 @@ class WhatsappLiveChatController extends Controller
 
         return view('livechat', compact('phoneNumber', 'contacts', 'contact_list'));
     }
+
+    public function getContactMessages(Request $request)
+    {
+        $phoneNumber = session('whatsapp_phone_number');
+
+        if (!$phoneNumber) {
+            return response()->json(['error' => 'Número de teléfono no encontrado en la sesión.'], 400);
+        }
+
+        $contactId = $request->input('contact_id');
+        $contact = Contact::findOrFail($contactId);
+
+        $messages = $contact->messages()
+            ->with('mediaFiles')
+            ->where('whatsapp_phone_id', $phoneNumber->phone_number_id)
+            ->orderBy('created_at', 'asc')
+            ->get()
+            ->map(function ($message) use ($contact) {
+                // Parsear correctamente el contenido JSON
+                $jsonContent = null;
+                if ($message->json) {
+                    $decoded = json_decode($message->json, true);
+                    if (is_string($decoded)) {
+                        $jsonContent = json_decode($decoded, true);
+                    } else {
+                        $jsonContent = $decoded;
+                    }
+                }
+
+                $interactiveResponse = null;
+                if ($message->message_method === 'INPUT' && $message->message_type === 'INTERACTIVE' && $message->json_content) {
+                    $decodedContent = json_decode($message->json_content, true);
+                    if (is_string($decodedContent)) {
+                        $interactiveResponse = json_decode($decodedContent, true);
+                    } else {
+                        $interactiveResponse = $decodedContent;
+                    }
+                }
+
+                return [
+                    'id' => $message->message_id,
+                    'content' => $message->message_content,
+                    'time' => $message->created_at->format('h:i A'),
+                    'is_sent' => $message->message_method === 'OUTPUT',
+                    'is_read' => !is_null($message->read_at),
+                    'message_type' => $message->message_type,
+                    'message_method' => $message->message_method,
+                    'message_context_id' => $message->message_context_id,
+                    'json_content' => $message->json_content,
+                    'profile_picture_url' => $message->message_method === 'OUTPUT'
+                        ? $contact->profile_picture_url
+                        : asset('assets/images/default-avatar.png'),
+                    'media_files' => $message->mediaFiles->map(function ($mediaFile) {
+                        return [
+                            'url' => $mediaFile->url,
+                            'file_name' => $mediaFile->file_name,
+                            'mime_type' => $mediaFile->mime_type,
+                            'file_size' => $mediaFile->file_size,
+                        ];
+                    }),
+                    'json' => $jsonContent,
+                    'interactive_response' => $interactiveResponse, // Respuesta interactiva
+                ];
+            });
+
+        return response()->json([
+            'contact' => [
+                'contact_name' => $contact->contact_name,
+                'profile_picture_url' => $contact->profile_picture_url ?? asset('assets/images/avtar/14.png'),
+                'status' => 'Online',
+            ],
+            'messages' => $messages
+        ]);
+    }
 }

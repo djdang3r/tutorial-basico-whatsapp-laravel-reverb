@@ -592,5 +592,178 @@
 @stop
 
 @section('js')
+    @verbatim
+        <script>
+            $(document).ready(function () {
+                // =============================================
+                // CONFIGURACIÓN INICIAL
+                // =============================================
+                function initialize() {
+                    // Configuración CSRF para AJAX
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
 
+                    setupEventListeners();
+                    showSelectContactMessage();
+                }
+
+                // =============================================
+                // CONFIGURACIÓN DE EVENTOS
+                // =============================================
+                function setupEventListeners() {
+                    // Eventos de chat
+                    $('.chat-contactbox').on('click', handleContactSelection);
+                }
+
+                // =============================================
+                // FUNCIONES DE CHAT
+                // =============================================
+                function showSelectContactMessage() {
+                    $('.chat-container-content-box').hide();
+                    $('#no-contact-message').show();
+                }
+
+                async function handleContactSelection() {
+                    $('.chat-contactbox').removeClass('active');
+                    $(this).addClass('active');
+                    $(this).find('.unread-badge-container').empty();
+
+                    try {
+                        const phoneNumberId = $('#phone_number_id').val();
+                        const contactId = $(this).data('id');
+                        await loadContactMessages(phoneNumberId, contactId);
+                        $('#no-contact-message').hide();
+                        $('.chat-container-content-box').show();
+                    } catch (error) {
+                        console.error('Error al cambiar de contacto:', error);
+                    }
+                }
+
+                async function loadContactMessages(phoneNumberId, contactId) {
+                    try {
+                        const response = await $.ajax({
+                            url: '/get-contact-messages',
+                            type: 'GET',
+                            data: { phone_number_id: phoneNumberId, contact_id: contactId }
+                        });
+
+                        updateContactHeader(response.contact);
+                        renderMessages(response.messages);
+                    } catch (error) {
+                        console.error('Error al cargar mensajes:', error);
+                        alert('Error al cargar los mensajes del contacto');
+                    }
+                }
+
+                function updateContactHeader(contact) {
+                    $('.chat-header .profileimg img').attr('src', contact.profile_picture_url || 'assets/images/avtar/14.png');
+                    $('.chat-header .fs-6').text(contact.contact_name || 'Sin nombre');
+                    $('.chat-header .text-muted').text(contact.status || 'Offline');
+                }
+
+                function renderMessages(messages) {
+                    const chatContainer = $('.chat-container');
+                    chatContainer.empty();
+
+                    messages.forEach(message => {
+                        const messageElement = createMessageElement(message);
+                        chatContainer.append(messageElement);
+                    });
+
+                    chatContainer.scrollTop(chatContainer.prop("scrollHeight"));
+                }
+
+                function createMessageElement(message) {
+                    const isOutgoing = message.is_sent;
+                    const isRead = message.status === 'read';
+                    const messageTime = message.time || 'Sin tiempo';
+                    const uniqueId = `msg-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+
+                    let messageContent = '';
+
+                    switch (message.message_type?.toUpperCase()) {
+                        case "TEXT":
+                            messageContent = renderTextMessage(message, isRead);
+                            break;
+                        default:
+                            messageContent = renderUnsupportedMessage(message, isRead);
+                    }
+
+                    return $(`
+                        <div class="position-relative">
+                            <div class="${isOutgoing ? "chat-box-right" : "chat-box"}">
+                                <!-- Contenedor de acciones flotante -->
+                                <div class="message-actions position-absolute top-0 end-0 mt-1 me-2">
+                                    <div class="btn-group dropdown-icon-none">
+                                        <a role="button" data-bs-placement="top" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="true" aria-expanded="false"
+                                        class="message-action-trigger">
+                                            <i class="ti ti-dots-vertical fs-5"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" data-popper-placement="bottom-start">
+                                            <li>
+                                                <a class="dropdown-item send-reaction" href="#"
+                                                data-message-id="${message.id}">
+                                                    <i class="ti ti-brand-hipchat me-1"></i>
+                                                    <span class="f-s-13">Reacción</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item send-reply" href="#"
+                                                data-message-id="${message.id}">
+                                                    <i class="ti ti-arrow-back-up me-1"></i>
+                                                    <span class="f-s-13">Responder</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Contenido específico del mensaje -->
+                                ${messageContent}
+                            </div>
+                        </div>
+                    `);
+                }
+
+                // =============================================
+                // FUNCIONES DE RENDERIZADO DE MENSAJES
+                // =============================================
+                function renderTextMessage(message, isRead) {
+                    return `
+                        <div>
+                            <p class="chat-text">${message.message_content || message.content || 'Sin contenido'}</p>
+                            <p class="text-muted">
+                                <i class="ti ti-checks ${isRead ? "text-primary" : ""}"></i>
+                                ${message.time || 'Sin tiempo'}
+                            </p>
+                        </div>
+                    `;
+                }
+
+                function renderUnsupportedMessage(message, isRead) {
+                    return `
+                        <div>
+                            <p class="chat-text text-warning">
+                                <i class="ti ti-alert-circle me-1"></i>
+                                Tipo de mensaje no soportado: ${message.message_type}
+                            </p>
+                            <p class="text-muted">
+                                <i class="ti ti-checks ${isRead ? "text-primary" : ""}"></i>
+                                ${message.time || 'Sin tiempo'}
+                            </p>
+                        </div>
+                    `;
+                }
+
+                // =============================================
+                // INICIALIZACIÓN
+                // =============================================
+                initialize();
+            });
+        </script>
+    @endverbatim
 @stop

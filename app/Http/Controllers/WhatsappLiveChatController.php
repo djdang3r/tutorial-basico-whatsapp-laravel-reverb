@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use ScriptDevelop\WhatsappManager\Facades\Whatsapp;
 use ScriptDevelop\WhatsappManager\Models\Contact;
 use ScriptDevelop\WhatsappManager\Models\WhatsappPhoneNumber;
 
@@ -108,5 +109,34 @@ class WhatsappLiveChatController extends Controller
             ],
             'messages' => $messages
         ]);
+    }
+
+    public function sendTextMessage(Request $request)
+    {
+        $phoneNumberId = $request->input('phone_number_id');
+        $contactId = $request->input('contact_id');
+        $messageContent = $request->input('message_content');
+
+        if (!$phoneNumberId || !$contactId || !$messageContent) {
+            return response()->json(['error' => 'Faltan datos necesarios para enviar el mensaje.'], 400);
+        }
+
+        try {
+            // Obtener el número de teléfono y el contacto
+            $phoneNumber = WhatsappPhoneNumber::findOrFail($phoneNumberId);
+            $contact = Contact::findOrFail($contactId);
+
+            // Enviar el mensaje de texto
+            $message = Whatsapp::message()->sendTextMessage(
+                $phoneNumber->phone_number_id,
+                $contact->country_code,
+                $contact->phone_number,
+                $messageContent
+            );
+
+            return response()->json(['success' => 'Mensaje enviado correctamente.', 'message' => $message]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Error al enviar el mensaje: ' . $e->getMessage()], 500);
+        }
     }
 }

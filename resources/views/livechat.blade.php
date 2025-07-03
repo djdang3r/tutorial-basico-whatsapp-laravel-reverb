@@ -616,6 +616,18 @@
                 function setupEventListeners() {
                     // Eventos de chat
                     $('.chat-contactbox').on('click', handleContactSelection);
+
+                    // Evento para el botón de enviar (CORREGIDO)
+                    $('#sendTextBtn').on('click', function(e) {
+                        e.preventDefault();
+                        sendMessage();
+                    });
+                    $('#messageInput').on('keypress', function(e) {
+                        if (e.which === 13) {  // 13 es el código de la tecla Enter
+                            e.preventDefault();
+                            sendMessage();
+                        }
+                    });
                 }
 
                 // =============================================
@@ -728,6 +740,69 @@
                         </div>
                     `);
                 }
+
+                function sendMessage() {
+                    const phoneNumberId = $('#phone_number_id').val();
+                    const $activeContact = $('.chat-contactbox.active');
+
+                    if (!$activeContact.length) {
+                        alert('Por favor, selecciona un contacto primero.');
+                        return;
+                    }
+
+                    const contactId = $activeContact.data('id');
+                    const messageContent = $('#messageInput').val().trim();
+
+                    if (!messageContent) {
+                        alert('Por favor, escribe un mensaje antes de enviarlo.');
+                        return;
+                    }
+
+                    // Usamos FormData para enviar los datos correctamente
+                    const formData = new FormData();
+                    formData.append('phone_number_id', phoneNumberId);
+                    formData.append('contact_id', contactId);
+                    formData.append('message_content', messageContent);
+
+                    $.ajax({
+                        url: '/send-text-message',
+                        type: 'POST',
+                        data: formData,
+                        processData: false,  // Importante: no procesar los datos
+                        contentType: false,   // Importante: no establecer tipo de contenido
+                        success: function(response) {
+                            appendSentMessage(messageContent);
+                            $('#messageInput').val('');
+
+                            // Actualizar el chat con el nuevo mensaje
+                            loadContactMessages(phoneNumberId, contactId);
+                        },
+                        error: function(xhr) {
+                            alert(xhr.responseJSON?.error || 'Error al enviar el mensaje.');
+                        }
+                    });
+                }
+
+                function appendSentMessage(content) {
+                    const chatContainer = $('.chat-container');
+                    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+                    chatContainer.append(`
+                        <div class="position-relative">
+                            <div class="chat-box-right">
+                                <div>
+                                    <p class="chat-text">${content}</p>
+                                    <p class="text-muted">
+                                        <i class="ti ti-checks"></i>${time}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+
+                    chatContainer.scrollTop(chatContainer.prop("scrollHeight"));
+                }
+
 
                 // =============================================
                 // FUNCIONES DE RENDERIZADO DE MENSAJES

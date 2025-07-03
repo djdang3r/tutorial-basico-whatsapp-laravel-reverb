@@ -56,3 +56,31 @@ php artisan serve
 ---
 
 ¡Sigue el video para ver la implementación paso a paso!
+
+
+
+
+## Pasos del TUtorial
+
+- Instalacion laravel 12.
+- Instalacion plantilla
+  - Layout
+  - assets
+- Instalara whatsapp-api-manager
+  - Instalacion completa
+- Registrar Cuenta de whatsapp api cloud
+  - Vista
+  - Controlador
+  - Ruta
+- Livechat
+  - Boton livechat en tabla dashboard
+  - Vista principal
+  - Ruta
+  - Controlador
+  - Listar Contactos
+  - Enviar mensaje
+  - Instalacion Laravel Reverb
+  - Configuracion Laravel Reverb, echo.js y canales publicos
+    - .env     WHATSAPP_BROADCAST_CHANNEL_TYPE=public
+    - Configuracion echo.js y canal mensajes
+    - Render mensaje nuevo

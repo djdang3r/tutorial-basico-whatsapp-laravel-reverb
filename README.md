@@ -60,7 +60,7 @@ php artisan serve
 
 
 
-## Pasos del TUtorial
+## Pasos del Tutorial
 
 - Instalacion laravel 12.
 - Instalacion plantilla
